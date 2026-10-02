@@ -27,6 +27,9 @@ Depois abra o Hermes, comece uma conversa nova com `/new` e digite:
 
 Ele não pede nem guarda senha, documento, endereço ou telefone.
 
+Os pedidos prontos para colar no Claude, usados no caderno do minicurso, estão em
+[PROMPTS.md](PROMPTS.md).
+
 As duas habilidades de honestidade vêm de
 [agent-cortex](https://github.com/Rafaelrr5/agent-cortex).
 
