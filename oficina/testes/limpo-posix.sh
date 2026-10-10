@@ -27,7 +27,7 @@ export PATH="$HOME/.local/bin:$PATH"
 L1="$P-preparar_1.log"
 grep -q 'Peças do Hermes conferidas' "$L1" && grep -q 'vai funcionar nas próximas' "$L1" && echo "conferencia_ok=yes" >> "$S" || echo "conferencia_ok=no" >> "$S"
 grep -qE 'auth.openai.com/codex/device|claude.ai/oauth/authorize' "$L1" && echo "login_aberto=yes" >> "$S" || echo "login_aberto=no" >> "$S"
-grep -q 'A conexão com a conta fica para a oficina' "$L1" && echo "final_honesto=yes" >> "$S" || echo "final_honesto=no" >> "$S"
+grep -q 'com a conta fica para a oficina' "$L1" && ! grep -q 'já está conectado' "$L1" && echo "final_honesto=yes" >> "$S" || echo "final_honesto=no" >> "$S"
 inv > "$P-inventario-depois.txt" 2>&1
 step preparar_2 "$GET | bash"
 grep -q 'já está instalado' "$P-preparar_2.log" && ! grep -q 'Instalando o Hermes' "$P-preparar_2.log" && echo "preparar_2_pulou=yes" >> "$S" || echo "preparar_2_pulou=no" >> "$S"

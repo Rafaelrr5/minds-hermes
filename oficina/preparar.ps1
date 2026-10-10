@@ -43,8 +43,9 @@ function Conferir-Instalacao {
 }
 
 function Conversa-Ok {
-    $r = (hermes chat -q "Responda apenas com a palavra: funcionando" --oneshot 2>&1 | Out-String)
-    return [bool]($r -match '(?i)funcionando')
+    # A pergunta não contém a resposta: assim um erro que repete a pergunta não passa por sucesso.
+    $r = (hermes chat -q "Quanto é dois mais três? Responda só com o número escrito por extenso." --oneshot 2>&1 | Out-String)
+    return [bool]($r -match '(?i)cinco')
 }
 
 function Conectar-Conta {
@@ -74,8 +75,8 @@ function Conectar-Conta {
     hermes config set model.provider $prov *> $null
     Faz "Testando uma conversa de verdade"
     if (Conversa-Ok) { Ok "Conectado: o Hermes respondeu pela sua conta"; return $true }
-    if ($prov -eq 'anthropic') {
-        Faz "O Hermes não conseguiu conversar pela conta do Claude. O plano Pro não libera esse uso."
+    if ($prov -eq 'anthropic' -and ((hermes auth status anthropic 2>$null | Out-String) -match 'logged in')) {
+        Faz "O login no Claude deu certo, mas a conta não liberou conversa pelo Hermes. O plano Pro não libera esse uso."
         Faz "Rode este comando de novo e escolha ChatGPT, ou deixe para a oficina."
     } else { Faz "O login não terminou. Rode este comando de novo ou deixe para a oficina." }
     return $false

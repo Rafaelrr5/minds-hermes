@@ -64,6 +64,7 @@ instalar() {
 
   faz "Instalando o Hermes. Leva de 5 a 15 minutos e às vezes parece parado. Não feche."
   curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --non-interactive --skip-browser --skip-computer-use
+  hash -r
 }
 
 conferir() {
@@ -81,7 +82,8 @@ conferir() {
 }
 
 conversa_ok() {
-  hermes chat -q "Responda apenas com a palavra: funcionando" --oneshot </dev/null 2>&1 | grep -qi funcionando
+  # A pergunta não contém a resposta: assim um erro que repete a pergunta não passa por sucesso.
+  hermes chat -q "Quanto é dois mais três? Responda só com o número escrito por extenso." --oneshot </dev/null 2>&1 | grep -qi cinco
 }
 
 conectar() {
@@ -112,8 +114,8 @@ conectar() {
   faz "Testando uma conversa de verdade"
   if conversa_ok; then
     ok "Conectado: o Hermes respondeu pela sua conta"
-  elif [ "$PROV" = anthropic ]; then
-    faz "O Hermes não conseguiu conversar pela conta do Claude. O plano Pro não libera esse uso."
+  elif [ "$PROV" = anthropic ] && hermes auth status anthropic 2>/dev/null | grep -q 'logged in'; then
+    faz "O login no Claude deu certo, mas a conta não liberou conversa pelo Hermes. O plano Pro não libera esse uso."
     faz "Rode este comando de novo e escolha ChatGPT, ou deixe para a oficina."
     return 1
   else
