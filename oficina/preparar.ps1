@@ -66,11 +66,16 @@ function Conectar-Conta {
     elseif ($conta -eq 'claude') { $prov = 'anthropic'; Faz "Vai aparecer um link. Abra no navegador, entre na sua conta do Claude, autorize e cole aqui o código que aparecer." }
     else { Faz "Login não feito agora. Na oficina, rode: hermes model"; return $false }
 
+    $exe = (Get-Command hermes).Source
     if ($env:PREPARAR_LIMITE) {
-        $p = Start-Process -FilePath (Get-Command hermes).Source -ArgumentList "auth add $prov --type oauth" -NoNewWindow -PassThru
+        # Só para testes automáticos: limita a espera e mostra o que o login escreveu.
+        $tmp = [IO.Path]::GetTempFileName()
+        $p = Start-Process -FilePath $exe -ArgumentList "auth add $prov --type oauth" -NoNewWindow -PassThru -RedirectStandardOutput $tmp -RedirectStandardError "$tmp.err"
         if (-not $p.WaitForExit([int]$env:PREPARAR_LIMITE * 1000)) { try { $p.Kill() } catch {} }
+        Start-Sleep 1; Get-Content $tmp, "$tmp.err" -ErrorAction SilentlyContinue | Out-Host
     } else {
-        hermes auth add $prov --type oauth | Out-Host
+        # Direto no console: o endereço, o código e a pergunta aparecem na hora.
+        Start-Process -FilePath $exe -ArgumentList "auth add $prov --type oauth" -NoNewWindow -Wait
     }
     hermes config set model.provider $prov *> $null
     Faz "Testando uma conversa de verdade"

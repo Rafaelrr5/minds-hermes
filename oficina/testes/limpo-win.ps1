@@ -30,9 +30,16 @@ $res.user_path_antes = [Environment]::GetEnvironmentVariable('Path', 'User')
 
 $url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/preparar.ps1"
 $r0 = Rx
-$env:CONTA = $Conta; $env:PREPARAR_LIMITE = '40'
-$t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
-Remove-Item Env:CONTA, Env:PREPARAR_LIMITE
+$env:CONTA = $Conta
+if ($Conta -eq 'chatgpt') {
+    # The device login waits up to 15 min for a human: cap it and capture what it printed.
+    $env:PREPARAR_LIMITE = '40'
+    $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
+} else {
+    # Claude: the real participant branch (login straight on the console), captured through cmd.
+    $t = Run 'preparar_1' "powershell.exe -NoProfile -Command `"irm $url | iex`"" 2400 'cmd'
+}
+Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
 $r1 = Rx
 $res.conferencia_ok = [bool](($t -match 'do Hermes conferidas') -and ($t -match 'vai funcionar nas pr'))
 $res.login_aberto = [bool]($t -match 'auth.openai.com/codex/device|claude.ai/oauth/authorize')
