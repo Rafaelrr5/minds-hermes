@@ -5,7 +5,7 @@ name: oficina-testes
 on:
   push:
     branches: [oficina-testes]
-    paths: ['oficina/testes/**', '.github/workflows/oficina-testes.yml']
+    paths: ['oficina/testes/win-aluno.ps1', 'oficina/testes/win-orquestrar.ps1', 'oficina/testes/posix-aluno.sh', '.github/workflows/oficina-testes.yml']
   workflow_dispatch:
 
 permissions:

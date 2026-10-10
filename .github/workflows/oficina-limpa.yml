@@ -1,0 +1,146 @@
+name: oficina-limpa
+# "Assume nothing" install test: machines stripped of developer tools, NON-ADMIN participant,
+# running oficina/preparar.* exactly as the guide says. Each job records what existed before,
+# what preparar installed, and checks that a second run installs nothing.
+on:
+  push:
+    branches: [oficina-testes]
+    paths: ['oficina/preparar.*', 'oficina/testes/limpo-*', '.github/workflows/oficina-limpa.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: [windows-2025, windows-2022]
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows sem ferramentas, aluno sem admin
+        shell: pwsh
+        run: ./oficina/testes/limpo-win-orquestrar.ps1 -Variant limpo
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: win-${{ matrix.image }}-limpo
+          path: C:\oficina\out
+
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: ubuntu-zerado
+            image: ubuntu:24.04
+            base: "apt-get update -qq && apt-get install -y -qq sudo wget ca-certificates xz-utils >/dev/null"
+          - name: ubuntu-ja-tem-git-curl
+            image: ubuntu:24.04
+            base: "apt-get update -qq && apt-get install -y -qq sudo wget ca-certificates xz-utils git curl libatomic1 >/dev/null"
+          - name: fedora-zerado
+            image: fedora:41
+            base: "dnf install -y -q sudo wget xz >/dev/null"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: ${{ matrix.name }}
+        run: |
+          mkdir -p out; chmod 777 out
+          docker run --rm -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash -c '
+            set -e
+            ${{ matrix.base }}
+            useradd -m -s /bin/bash aluno
+            echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno
+            sudo -u aluno -H bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }}
+          ' || echo "container exit $?"
+          cat out/*steps.txt; echo; cat out/*inventario-antes.txt; echo; cat out/*inventario-depois.txt
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-${{ matrix.name }}
+          path: out
+
+  macos:
+    runs-on: macos-15
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Mac sem ferramentas da Apple, aluno padrao
+        run: |
+          set -x
+          OUT=/tmp/oficina/out; mkdir -p $OUT; chmod 777 /tmp/oficina $OUT
+          cp oficina/testes/limpo-posix.sh /tmp/oficina/; chmod 755 /tmp/oficina/limpo-posix.sh
+          # Hide every developer toolchain the runner image ships.
+          sudo mv /Library/Developer/CommandLineTools /Library/Developer/CLT.hidden || true
+          sudo mkdir -p /Applications/.hidden
+          for x in /Applications/Xcode*.app; do sudo mv "$x" /Applications/.hidden/ || true; done
+          sudo xcode-select --reset || true
+          /usr/bin/git --version && echo "GIT STILL WORKS" || echo "git unavailable (as on a fresh Mac)"
+          PW="Mf$(uuidgen | tr -d - | cut -c1-14)z9"
+          sudo sysadminctl -addUser aluno -password "$PW" -home /Users/aluno
+          sudo createhomedir -c -u aluno || true
+          rx() { netstat -ibn | awk '$1=="en0" && $3 ~ /Link/ {print $7; exit}'; }
+          # Plays the participant's click on "Instalar" when preparar asks for Apple's tools.
+          (
+            until grep -q 'Faltam as ferramentas' $OUT/mac-limpo-preparar_1.log 2>/dev/null; do
+              [ -f $OUT/done-mac-limpo.flag ] && exit 0; sleep 5; done
+            r0=$(rx); t0=$(date +%s)
+            sudo touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+            LABEL=$(softwareupdate -l 2>&1 | grep -o 'Label: Command Line Tools.*' | sed 's/Label: //' | tail -1)
+            echo "label=$LABEL" > $OUT/clt.txt
+            if [ -n "$LABEL" ] && sudo softwareupdate -i "$LABEL" >> $OUT/clt.txt 2>&1; then
+              echo "clt_via=softwareupdate" >> $OUT/clt.txt
+            else
+              sudo mv /Library/Developer/CLT.hidden /Library/Developer/CommandLineTools
+              echo "clt_via=restored-hidden-copy" >> $OUT/clt.txt
+            fi
+            echo "clt_download_mb=$(( ($(rx)-r0)/1048576 )) clt_min=$(( ($(date +%s)-t0)/60 ))" >> $OUT/clt.txt
+          ) &
+          r0=$(rx); t0=$(date +%s)
+          sudo -u aluno -H env -i HOME=/Users/aluno USER=aluno LOGNAME=aluno TERM=dumb \
+            PATH=/usr/bin:/bin:/usr/sbin:/sbin bash /tmp/oficina/limpo-posix.sh $OUT mac-limpo ${{ github.sha }}
+          echo "download_mb_total=$(( ($(rx)-r0)/1048576 )) wall_min=$(( ($(date +%s)-t0)/60 ))" > $OUT/meta-mac-limpo.txt
+          wait || true
+          cat $OUT/*steps.txt $OUT/meta-*.txt $OUT/clt.txt $OUT/*inventario-antes.txt
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-limpo
+          path: /tmp/oficina/out
+
+  mac-intel:
+    runs-on: macos-15-intel
+    timeout-minutes: 20
+    steps:
+      - name: Mac Intel deve parar com aviso, sem baixar nada
+        run: |
+          mkdir -p out
+          curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/${{ github.sha }}/oficina/preparar.sh | bash > out/mac-intel-preparar.log 2>&1; echo "exit=$?" >> out/mac-intel-preparar.log
+          cat out/mac-intel-preparar.log
+          test -d ~/.hermes/hermes-agent && echo "INSTALLED SOMETHING" >> out/mac-intel-preparar.log || echo "nothing installed" >> out/mac-intel-preparar.log
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-intel
+          path: out
+
+  collect:
+    if: always()
+    needs: [windows, linux, macos, mac-intel]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: resultados
+      - run: |
+          cd resultados
+          git init -q -b oficina-resultados-limpo
+          git config user.name "oficina-ci"; git config user.email "oficina-ci@users.noreply.github.com"
+          echo "run ${{ github.run_id }} sha ${{ github.sha }} $(date -u +%FT%TZ)" > RUN.txt
+          git add -A && git commit -qm "resultados limpos run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" oficina-resultados-limpo
