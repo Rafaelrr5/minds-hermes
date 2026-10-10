@@ -1,0 +1,106 @@
+name: oficina-testes
+# Installs Hermes on clean machines as a NON-ADMIN participant would, then checks
+# version, doctor, skill install and the brain (cortex.py). Results land in branch
+# oficina-resultados.
+on:
+  push:
+    branches: [oficina-testes]
+    paths: ['oficina/testes/**', '.github/workflows/oficina-testes.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: [windows-2025, windows-2022]
+        variant: [full, lean]
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 70
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar como aluno sem admin
+        shell: pwsh
+        run: ./oficina/testes/win-orquestrar.ps1 -Variant ${{ matrix.variant }}
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: win-${{ matrix.image }}-${{ matrix.variant }}
+          path: C:\oficina\out
+
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        variant: [full, lean]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar como aluno sem sudo
+        run: |
+          set -x
+          OUT=/tmp/oficina/out; sudo mkdir -p $OUT; sudo chmod 777 /tmp/oficina $OUT
+          sudo useradd -m -s /bin/bash aluno
+          cp oficina/testes/posix-aluno.sh /tmp/oficina/; chmod 755 /tmp/oficina/posix-aluno.sh
+          rx() { cat /sys/class/net/*/statistics/rx_bytes | paste -sd+ | bc; }
+          r0=$(rx); t0=$(date +%s)
+          sudo -iu aluno bash /tmp/oficina/posix-aluno.sh $OUT ${{ matrix.variant }} linux
+          echo "download_mb=$(( ($(rx)-r0)/1048576 )) wall_min=$(( ($(date +%s)-t0)/60 ))" > $OUT/meta-linux-${{ matrix.variant }}.txt
+          cat $OUT/*steps.txt $OUT/meta-*.txt $OUT/*env.txt
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-${{ matrix.variant }}
+          path: /tmp/oficina/out
+
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        image: [macos-15, macos-15-intel]
+        variant: [full, lean]
+    runs-on: ${{ matrix.image }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar como aluno padrao (nao admin)
+        run: |
+          set -x
+          OUT=/tmp/oficina/out; mkdir -p $OUT; chmod 777 /tmp/oficina $OUT
+          cp oficina/testes/posix-aluno.sh /tmp/oficina/; chmod 755 /tmp/oficina/posix-aluno.sh
+          PW="Mf$(uuidgen | tr -d - | cut -c1-14)z9"
+          sudo sysadminctl -addUser aluno -password "$PW" -home /Users/aluno || true
+          sudo createhomedir -c -u aluno || true
+          id aluno && RUNAS="sudo -u aluno -H" || RUNAS=""
+          dseditgroup -o checkmember -m aluno admin || true
+          rx() { netstat -ibn | awk '$1=="en0" && $3 ~ /Link/ {print $7; exit}'; }
+          r0=$(rx); t0=$(date +%s)
+          $RUNAS bash /tmp/oficina/posix-aluno.sh $OUT ${{ matrix.variant }} mac-$(uname -m)
+          echo "download_mb=$(( ($(rx)-r0)/1048576 )) wall_min=$(( ($(date +%s)-t0)/60 )) runas=${RUNAS:-runner}" > $OUT/meta-mac-$(uname -m)-${{ matrix.variant }}.txt
+          cat $OUT/*steps.txt $OUT/meta-*.txt $OUT/*env.txt
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-${{ matrix.image }}-${{ matrix.variant }}
+          path: /tmp/oficina/out
+
+  collect:
+    if: always()
+    needs: [windows, linux, macos]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: resultados
+      - name: Publicar resultados no branch oficina-resultados
+        run: |
+          cd resultados
+          git init -q -b oficina-resultados
+          git config user.name "oficina-ci"; git config user.email "oficina-ci@users.noreply.github.com"
+          echo "run ${{ github.run_id }} sha ${{ github.sha }} $(date -u +%FT%TZ)" > RUN.txt
+          git add -A && git commit -qm "resultados run ${{ github.run_id }}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" oficina-resultados
