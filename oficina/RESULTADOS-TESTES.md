@@ -95,7 +95,7 @@ corrigido.
 
 | Máquina | Conferência | Tela de login apareceu | Mensagem final |
 |---|---|---|---|
-| Windows 2025 (ChatGPT) | ok | endereço + código | "conexão fica para a oficina" |
+| Windows 2025 (ChatGPT, login direto no console) | ok | endereço + código; esperou os ~15 min do código e seguiu | "conexão fica para a oficina" |
 | Windows 2022 (Claude, login direto no console) | ok | link (o navegador abriu sozinho), esperando o código colado | — (a máquina de teste não tem teclado e ficou esperando) |
 | Mac chip Apple (Claude) | ok | link | "conexão fica para a oficina" |
 | Ubuntu zerado, Ubuntu com git, Fedora | ok | endereço + código / link | "conexão fica para a oficina" |
