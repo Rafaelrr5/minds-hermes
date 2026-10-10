@@ -34,8 +34,14 @@ $env:CONTA = $Conta
 # Logins wait for a human (the device code up to 15 min, the Claude paste prompt reads the
 # console directly). Cap the wait and capture what the login printed. The uncapped console
 # branch was checked in run 38074773985: link shown, browser opened, waiting at the prompt.
-$env:PREPARAR_LIMITE = '40'
-$t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
+if ($Conta -eq 'chatgpt') {
+    # Real participant branch, captured through cmd. The device code expires on its own
+    # (about 15 min), so the run continues afterwards.
+    $t = Run 'preparar_1' "powershell.exe -NoProfile -Command `"irm $url | iex`"" 2700 'cmd'
+} else {
+    $env:PREPARAR_LIMITE = '40'
+    $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
+}
 Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
 $r1 = Rx
 $res.conferencia_ok = [bool](($t -match 'do Hermes conferidas') -and ($t -match 'vai funcionar nas pr'))

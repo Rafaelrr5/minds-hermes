@@ -40,7 +40,7 @@ $rx0 = RxBytes; $t0 = Get-Date
 $tr = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File $root\limpo-win.ps1 -Out $out -Variant $Variant -Ref $env:GITHUB_SHA -Conta $Conta"
 schtasks /create /tn "oficina-limpo" /ru $user /rp $pw /sc once /st 23:59 /rl LIMITED /f /tr $tr | Out-Null
 schtasks /run /tn "oficina-limpo" | Out-Null
-$deadline = (Get-Date).AddMinutes(60)
+$deadline = (Get-Date).AddMinutes(65)
 while (-not (Test-Path "$out\done-$Variant.flag") -and (Get-Date) -lt $deadline) { Start-Sleep 20; Write-Host "$(Get-Date -f HH:mm:ss) waiting" }
 $rx1 = RxBytes
 $size = (Get-ChildItem "C:\Users\$user" -Recurse -Force -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum
