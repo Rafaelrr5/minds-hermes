@@ -119,10 +119,13 @@ jobs:
     steps:
       - name: Mac Intel deve parar com aviso, sem baixar nada
         run: |
+          set +e
           mkdir -p out
-          curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/${{ github.sha }}/oficina/preparar.sh | bash > out/mac-intel-preparar.log 2>&1; echo "exit=$?" >> out/mac-intel-preparar.log
+          curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/${{ github.sha }}/oficina/preparar.sh | bash > out/mac-intel-preparar.log 2>&1
+          echo "exit=$?" >> out/mac-intel-preparar.log
+          if [ -e ~/.hermes/hermes-agent ]; then echo "INSTALLED SOMETHING" >> out/mac-intel-preparar.log; else echo "nothing installed" >> out/mac-intel-preparar.log; fi
           cat out/mac-intel-preparar.log
-          test -d ~/.hermes/hermes-agent && echo "INSTALLED SOMETHING" >> out/mac-intel-preparar.log || echo "nothing installed" >> out/mac-intel-preparar.log
+          grep -q 'processador Intel' out/mac-intel-preparar.log && grep -q 'nothing installed' out/mac-intel-preparar.log
       - if: always()
         uses: actions/upload-artifact@v4
         with:
