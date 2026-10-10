@@ -37,7 +37,8 @@ if ($Conta -eq 'chatgpt') {
     $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
 } else {
     # Claude: the real participant branch (login straight on the console), captured through cmd.
-    $t = Run 'preparar_1' "powershell.exe -NoProfile -Command `"irm $url | iex`"" 2400 'cmd'
+    # A scheduled task has no keyboard, so the paste prompt gets an empty line instead of hanging.
+    $t = Run 'preparar_1' "echo.| powershell.exe -NoProfile -Command `"irm $url | iex`"" 2400 'cmd'
 }
 Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
 $r1 = Rx
