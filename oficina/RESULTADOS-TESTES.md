@@ -81,6 +81,31 @@ Limitações desta rodada:
 - No Linux, a conta de teste podia instalar pacotes sem digitar senha; na vida real o
   computador pede a senha.
 
+## Terceira rodada: conferência e login no fim do preparar
+
+Depois de instalar, o `preparar` confere três coisas: se o Hermes abre, se as peças estão
+íntegras (`hermes pm doctor`) e se o comando vai funcionar nas próximas janelas do terminal.
+Em seguida faz uma pergunta de teste ao Hermes. Se não houver resposta, pergunta qual conta
+usar (1 ChatGPT, 2 Claude), abre o login e repete a pergunta de teste.
+
+A pergunta de teste é "quanto é dois mais três, por extenso", e o script procura "cinco" na
+resposta. A primeira versão pedia para o Hermes repetir uma palavra, e o teste passava mesmo
+sem conta conectada, porque a mensagem de erro repetia a pergunta. O CI pegou isso, e foi
+corrigido.
+
+| Máquina | Conferência | Tela de login apareceu | Mensagem final |
+|---|---|---|---|
+| Windows 2025 (ChatGPT) | ok | endereço + código | "conexão fica para a oficina" |
+| Windows 2022 (Claude, login direto no console) | ok | link (o navegador abriu sozinho), esperando o código colado | — (a máquina de teste não tem teclado e ficou esperando) |
+| Mac chip Apple (Claude) | ok | link | "conexão fica para a oficina" |
+| Ubuntu zerado, Ubuntu com git, Fedora | ok | endereço + código / link | "conexão fica para a oficina" |
+| Linux com terminal de verdade (VM) | ok | o menu 1/2 funcionou, inclusive quando o comando chega por `curl \| bash` | "conexão fica para a oficina" |
+
+Nas máquinas de teste ninguém completa o login, então todas terminaram no caminho
+"conexão fica para a oficina". O caminho com o login completo, que termina em "Tudo pronto",
+foi conferido só até o teste de conversa, numa máquina que já tinha conta conectada (a VM).
+**O login real até o fim ainda não foi feito com uma conta de participante.**
+
 ## O que não deu para testar aqui
 
 - Notebook Windows 10/11 doméstico com antivírus ativo (os testes rodaram em Windows Server).

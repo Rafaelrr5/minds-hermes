@@ -14,6 +14,12 @@ que falta. Se você rodar duas vezes, a segunda não baixa nada.
 - Se o seu computador é um **Mac com processador Intel**, o comando avisa que não dá para
   instalar. Nesse caso, avise no grupo: você faz a oficina em dupla.
 
+## Antes de rodar, tenha uma destas contas
+
+- **ChatGPT**: uma conta em chatgpt.com.
+- **Claude**: uma conta em claude.ai. Atenção: segundo a documentação do Hermes, o plano
+  Pro do Claude não libera esse uso. Se você só tem o Pro, prefira o ChatGPT.
+
 ## Windows
 
 1. Abra o menu Iniciar, digite **PowerShell** e abra o programa normalmente. Não precisa
@@ -49,25 +55,25 @@ wget -qO- https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/
 
 3. Se faltar alguma peça, o computador pede a **sua senha** para instalar. É normal.
 
-## Como saber que deu certo
+## Depois de instalar: conferência e login
 
-No fim aparece `[ok] Pronto: Hermes Agent v...`. Até lá pode demorar e parecer parado de vez
-em quando. Não feche a janela.
+Quando a instalação termina, o próprio comando confere se tudo ficou certo e depois
+pergunta com qual conta você quer usar o Hermes:
 
-1. **Feche a janela** e abra uma nova (PowerShell ou Terminal).
-2. Digite `hermes --version` e aperte Enter.
-3. Se aparecer `Hermes Agent v...`, está pronto. **Mande um print dessa tela no grupo.**
+- **1) ChatGPT**: aparece um endereço e um código. Abra o endereço no navegador, entre na
+  sua conta do ChatGPT e digite o código.
+- **2) Claude**: o navegador abre sozinho. Entre na sua conta do Claude, autorize, copie o
+  código que aparecer e cole na janela do PowerShell ou do Terminal.
 
-Não precisa configurar mais nada. A conexão com o ChatGPT, o Gemini ou o Claude é feita
-junto na oficina.
+Depois do login, o comando faz uma pergunta de teste ao Hermes. Se ele responder, aparece
+`[ok] Tudo pronto`. **Mande um print dessa tela no grupo.**
+
+Se o login não der certo, tudo bem: o Hermes continua instalado e a conexão é feita junto
+na oficina. Mande o print do mesmo jeito.
+
+Rodar o comando de novo é seguro: ele não instala outra vez, só confere e oferece o login.
 
 ## Se travar
 
 Mande no grupo um print da tela inteira, com a última mensagem visível. Na véspera da
 oficina tem plantão online de 30 minutos para resolver.
-
-## Para a oficina, crie uma destas contas
-
-- **ChatGPT**: uma conta em chatgpt.com.
-- **Gemini** (gratuito): entre em aistudio.google.com com sua conta Google e clique em
-  "Get API key". Guarde a chave só para você e nunca mande no grupo.

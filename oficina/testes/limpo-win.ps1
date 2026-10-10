@@ -31,15 +31,11 @@ $res.user_path_antes = [Environment]::GetEnvironmentVariable('Path', 'User')
 $url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/preparar.ps1"
 $r0 = Rx
 $env:CONTA = $Conta
-if ($Conta -eq 'chatgpt') {
-    # The device login waits up to 15 min for a human: cap it and capture what it printed.
-    $env:PREPARAR_LIMITE = '40'
-    $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
-} else {
-    # Claude: the real participant branch (login straight on the console), captured through cmd.
-    # A scheduled task has no keyboard, so the paste prompt gets an empty line instead of hanging.
-    $t = Run 'preparar_1' "echo.| powershell.exe -NoProfile -Command `"irm $url | iex`"" 2400 'cmd'
-}
+# Logins wait for a human (the device code up to 15 min, the Claude paste prompt reads the
+# console directly). Cap the wait and capture what the login printed. The uncapped console
+# branch was checked in run 38074773985: link shown, browser opened, waiting at the prompt.
+$env:PREPARAR_LIMITE = '40'
+$t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
 Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
 $r1 = Rx
 $res.conferencia_ok = [bool](($t -match 'do Hermes conferidas') -and ($t -match 'vai funcionar nas pr'))

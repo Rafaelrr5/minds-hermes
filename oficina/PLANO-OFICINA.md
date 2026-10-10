@@ -20,8 +20,10 @@ ferramentas da Apple num Mac que não tem, o git e o curl num Linux zerado. Depo
 Hermes enxuto, sem administrador e sem perguntas no meio. Rodar de novo não baixa nada. Foi
 testado em máquinas sem nada instalado (`RESULTADOS-TESTES.md`, segunda rodada).
 
-Cada pessoa responde no grupo com um print do `hermes --version`. Essa resposta vira a
-lista de prontos.
+No fim, o próprio comando confere a instalação, abre o login do ChatGPT ou do Claude e faz
+uma pergunta de teste. Cada pessoa manda no grupo o print da tela final. "Tudo pronto" quer
+dizer instalado e conectado; "a conexão fica para a oficina" quer dizer só instalado. Esses
+prints viram a lista de prontos.
 
 ### 1 dia antes: plantão online de 30 minutos
 
@@ -53,7 +55,7 @@ M1/M2/M3/M4", instala. Se aparecer "Processador Intel", fica em dupla.
 |---|---|---|
 | 0:00 – 0:10 | Abertura e demonstração ao vivo do resultado final | A turma vê aonde vai chegar |
 | 0:10 – 0:20 | Conferência: cada um abre o terminal e roda `hermes --version` | Grupos separados: prontos, atrasados, duplas |
-| 0:20 – 0:45 | Entrar no provedor (`hermes model`). Enquanto isso, os atrasados instalam pela rede reserva | Hermes respondendo um "oi" |
+| 0:20 – 0:45 | Quem não conectou em casa roda o mesmo comando de novo: ele pula a instalação e abre o login. Enquanto isso, os atrasados instalam pela rede reserva | Hermes respondendo um "oi" |
 | 0:45 – 1:15 | `/minds-boas-vindas`: segurança, idioma, três habilidades e entrevista | O Hermes sabe quem a pessoa é |
 | 1:15 – 1:30 | Cérebro: guardar dois fatos da própria rotina e buscar um deles | Memória longa funcionando |
 | 1:30 – 2:00 | Casos de uso, Telegram, testes e outros provedores | Primeira tarefa real |
