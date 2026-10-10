@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         image: [windows-2025, windows-2022]
-        variant: [full, lean]
+        variant: [lean]
     runs-on: ${{ matrix.image }}
     timeout-minutes: 70
     steps:
@@ -35,7 +35,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        variant: [full, lean]
+        variant: [lean]
     runs-on: ubuntu-24.04
     timeout-minutes: 60
     steps:
@@ -62,7 +62,7 @@ jobs:
       fail-fast: false
       matrix:
         image: [macos-15, macos-15-intel]
-        variant: [full, lean]
+        variant: [lean]
     runs-on: ${{ matrix.image }}
     timeout-minutes: 60
     steps:

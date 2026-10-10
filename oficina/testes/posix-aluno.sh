@@ -1,7 +1,7 @@
 #!/bin/bash
 # Runs AS the student account (no sudo). Mirrors what a participant does on macOS/Linux.
 # Plain bash 3.2 (macOS default): no associative arrays.
-OUT="$1"; VARIANT="$2"; OSNAME="$3"
+OUT="$1"; VARIANT="$2"; OSNAME="$3"; REF="${4:-oficina-testes}"
 P="$OUT/$OSNAME-$VARIANT"
 STEPS="$P-steps.txt"; : > "$STEPS"
 cd "$HOME"
@@ -23,17 +23,24 @@ step install 2400 "curl -fsSL https://hermes-agent.nousresearch.com/install.sh |
 export PATH="$HOME/.local/bin:$PATH"
 step version 120 "hermes --version"
 step doctor 300 "hermes doctor"
-step skill_install 300 "hermes skills install Rafaelrr5/minds-hermes/skills/minds-boas-vindas --yes"
+# Classroom simulation: burn GitHub's anonymous API quota (60/h per IP) first.
+for i in $(seq 1 65); do curl -s -o /dev/null https://api.github.com/repos/Rafaelrr5/minds-hermes; done
+code=$(curl -s -o /dev/null -w '%{http_code}' https://api.github.com/repos/Rafaelrr5/minds-hermes); echo "api_after_burn=$code" >> "$STEPS"
+RAW="https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$REF"
+step skill_install_shortcut 300 "hermes skills install Rafaelrr5/minds-hermes/skills/minds-boas-vindas --yes"
+step skill_install 300 "hermes skills install $RAW/skills/minds-boas-vindas/SKILL.md --yes"
+step skill_install_cerebro 300 "hermes skills install $RAW/skills/minds-cerebro/SKILL.md --yes"
 step skills_list 120 "hermes skills list"
 grep -q minds-boas-vindas "$P-skills_list.log" && echo "skill_listed=yes" >> "$STEPS" || echo "skill_listed=no" >> "$STEPS"
+grep -q minds-cerebro "$P-skills_list.log" && echo "cerebro_listed=yes" >> "$STEPS" || echo "cerebro_listed=no" >> "$STEPS"
 
-PY=$(find "$HOME/.hermes" -path '*venv/bin/python' 2>/dev/null | head -1)
+PY=$(find "$HOME/.hermes/installs" -path '*venv/bin/python' 2>/dev/null | head -1)
 echo "python=$PY" >> "$STEPS"
 if [ -n "$PY" ]; then
-  curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/cortex.py -o "$HOME/cortex.py"
-  step brain_add 120 "'$PY' '$HOME/cortex.py' add 'Ana prefere respostas curtas e informais' --category preference"
-  step brain_search 120 "'$PY' '$HOME/cortex.py' search 'respostas curtas' -n 3"
-  grep -q 'Ana prefere' "$P-brain_search.log" && echo "brain_ok=yes" >> "$STEPS" || echo "brain_ok=no" >> "$STEPS"
+  curl -fsSL "$RAW/skills/minds-cerebro/SKILL.md" -o "$HOME/minds-cerebro-SKILL.md"
+  curl -fsSL "$RAW/oficina/testes/testa_cerebro.py" -o "$HOME/testa_cerebro.py"
+  step brain 180 "'$PY' '$HOME/testa_cerebro.py' '$HOME/minds-cerebro-SKILL.md' $REF"
+  grep -q CEREBRO_OK "$P-brain.log" && echo "brain_ok=yes" >> "$STEPS" || echo "brain_ok=no" >> "$STEPS"
 fi
 du -sm "$HOME" 2>/dev/null | awk '{print "home_disk_mb="$1}' >> "$STEPS"
 touch "$OUT/done-$OSNAME-$VARIANT.flag"

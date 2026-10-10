@@ -35,7 +35,7 @@ Governo de Minas Gerais). Em uns 10 minutos, deixe o assistente:
 
 ## Passo 1 - Combinar
 
-Em até quatro linhas, explique o que vai acontecer: duas configurações rápidas, duas
+Em até quatro linhas, explique o que vai acontecer: duas configurações rápidas, três
 habilidades novas, seis perguntas sobre a pessoa e, no fim, a lista do que ficou guardado
 para ela conferir. Pergunte se pode começar.
 
@@ -54,12 +54,21 @@ hermes config set display.language pt
 
 Confirme com `hermes config get approvals.mode`: a resposta precisa ser `manual`.
 
-## Passo 3 - Duas habilidades de honestidade
+## Passo 3 - Habilidades novas
 
 ```bash
-hermes skills install Rafaelrr5/agent-cortex/skills/recall-and-claim-verification --yes
-hermes skills install Rafaelrr5/agent-cortex/skills/measurement-validity --yes
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/skills/recall-and-claim-verification/SKILL.md --yes
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/skills/measurement-validity/SKILL.md --yes
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/minds-cerebro/SKILL.md --yes
 ```
+
+Use sempre o endereço completo, como acima. O atalho `Rafaelrr5/...` consulta um serviço do
+GitHub que bloqueia depois de 60 pedidos por hora vindos da mesma internet, e numa sala
+com 20 pessoas isso acaba em minutos. O endereço completo baixa o arquivo direto e não
+tem esse limite.
+
+A terceira habilidade é o **cérebro**: um caderno de memória longa. Não instale nada nele
+agora; ele é apresentado no fim da oficina.
 
 Explique sem termo técnico:
 
@@ -125,6 +134,6 @@ mostre a lista final.
 ## Verificação (antes de dizer que terminou)
 
 - [ ] `hermes config get approvals.mode` respondeu `manual`.
-- [ ] `hermes skills list` mostra as duas habilidades novas, ou você disse quais falharam.
+- [ ] `hermes skills list` mostra as três habilidades novas, ou você disse quais falharam.
 - [ ] Cada fato da entrevista foi salvo e a pessoa viu a lista final.
 - [ ] Nada de senha, documento, endereço ou telefone foi salvo.
