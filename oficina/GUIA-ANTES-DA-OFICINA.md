@@ -1,48 +1,58 @@
 # Antes da oficina: instale o Hermes em casa
 
-Leva de 10 a 20 minutos, a maior parte esperando o download. Faça com a internet de casa:
-o Hermes baixa cerca de 1,6 GB no Windows e 0,5 GB no Mac. Na oficina, a internet é
-dividida por toda a turma e não aguenta 20 instalações ao mesmo tempo.
+Leva de 10 a 30 minutos, quase tudo esperando o download. Faça com a internet de casa: são
+cerca de 1,6 GB no Windows e no Linux, e até 1,5 GB no Mac. Na oficina, a internet é dividida
+pela turma toda e não aguenta 20 instalações ao mesmo tempo.
 
-Você **não** precisa ser administrador do computador nem desligar o antivírus.
+Você **não** precisa ter nada instalado antes, nem ser administrador do Windows, nem
+desligar o antivírus. O comando abaixo confere o que o seu computador já tem e instala só o
+que falta. Se você rodar duas vezes, a segunda não baixa nada.
 
 ## Antes de começar
 
-- Deixe pelo menos **6 GB livres** no disco.
-- No Mac, veja o tipo do computador: menu Apple, depois "Sobre este Mac".
-  - Se aparecer **Chip Apple (M1, M2, M3 ou M4)**, siga o guia.
-  - Se aparecer **Processador Intel**, não instale. Hoje o Hermes não instala nesses Macs.
-    Avise no grupo: você vai fazer a oficina em dupla.
+- Deixe pelo menos **6 GB livres** no disco. Se faltar espaço, o próprio comando avisa.
+- Se o seu computador é um **Mac com processador Intel**, o comando avisa que não dá para
+  instalar. Nesse caso, avise no grupo: você faz a oficina em dupla.
 
 ## Windows
 
 1. Abra o menu Iniciar, digite **PowerShell** e abra o programa normalmente. Não precisa
    escolher "Executar como administrador".
-2. Copie a linha abaixo inteira, cole na janela azul com o botão direito do mouse e aperte
-   Enter:
+2. Copie a linha abaixo, cole na janela azul (botão direito do mouse) e aperte Enter:
 
 ```powershell
-& ([scriptblock]::Create((irm https://hermes-agent.nousresearch.com/install.ps1))) -NonInteractive -SkipBrowser -SkipComputerUse
+irm https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/preparar.ps1 | iex
 ```
 
-3. Espere aparecer `Hermes Agent install complete`. Pode demorar uns 10 minutos e parecer
-   parado de vez em quando. Não feche a janela.
+## Mac
 
-## Mac (chip Apple) e Linux
-
-1. Abra o **Terminal**. No Mac, aperte Cmd + Espaço, digite Terminal e aperte Enter.
-2. Copie a linha abaixo inteira, cole no Terminal e aperte Enter:
+1. Aperte Cmd + Espaço, digite **Terminal** e aperte Enter.
+2. Copie a linha abaixo, cole no Terminal e aperte Enter:
 
 ```bash
-curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash -s -- --non-interactive --skip-browser --skip-computer-use
+curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/preparar.sh | bash
 ```
 
-3. Espere aparecer `Hermes Agent install complete`.
+3. Se o Mac não tiver as ferramentas de desenvolvedor da Apple, vai abrir uma janela
+   pedindo para instalar. Clique em **Instalar** e aceite. O comando espera essa instalação
+   terminar e depois continua sozinho. Não feche o Terminal.
 
-No Mac, se abrir uma janela pedindo para instalar as "ferramentas de desenvolvedor", clique
-em **Instalar**, espere terminar e cole a linha de novo.
+## Linux
 
-## Conferir
+1. Abra o **Terminal**.
+2. Copie a linha abaixo, cole e aperte Enter. Ela funciona mesmo sem o `curl`, que o Ubuntu
+   não traz de fábrica:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/preparar.sh | bash
+```
+
+3. Se faltar alguma peça, o computador pede a **sua senha** para instalar. É normal.
+
+## Como saber que deu certo
+
+No fim aparece `[ok] Pronto: Hermes Agent v...`. Até lá pode demorar e parecer parado de vez
+em quando. Não feche a janela.
 
 1. **Feche a janela** e abra uma nova (PowerShell ou Terminal).
 2. Digite `hermes --version` e aperte Enter.

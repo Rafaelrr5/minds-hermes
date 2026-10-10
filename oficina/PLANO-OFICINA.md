@@ -14,9 +14,11 @@ conversar.
 
 ### 3 dias antes: mensagem para a turma
 
-Mandar o `GUIA-ANTES-DA-OFICINA.md`, com um único comando para copiar e colar por sistema.
-Ele usa a instalação enxuta, sem administrador e sem perguntas no meio, que foi o caminho
-testado.
+Mandar o `GUIA-ANTES-DA-OFICINA.md`, com um único comando por sistema. O comando
+(`oficina/preparar.*`) confere o que o computador tem e instala só o que falta. Exemplos: as
+ferramentas da Apple num Mac que não tem, o git e o curl num Linux zerado. Depois instala o
+Hermes enxuto, sem administrador e sem perguntas no meio. Rodar de novo não baixa nada. Foi
+testado em máquinas sem nada instalado (`RESULTADOS-TESTES.md`, segunda rodada).
 
 Cada pessoa responde no grupo com um print do `hermes --version`. Essa resposta vira a
 lista de prontos.
@@ -40,7 +42,8 @@ M1/M2/M3/M4", instala. Se aparecer "Processador Intel", fica em dupla.
 ## O que levar
 
 - **Roteador 4G ou celular para a rede reserva**, só para as instalações atrasadas. São
-  cerca de 1,6 GB por máquina Windows e 0,5 GB por Mac com chip Apple.
+  cerca de 1,6 GB por máquina Windows ou Linux e até 1,4 GB por Mac com chip Apple que não
+  tem as ferramentas da Apple.
 - **Três notebooks reserva já instalados e com provedor configurado**, para as duplas.
 - 1 monitor para cada 6 a 8 pessoas.
 
@@ -82,5 +85,4 @@ com uma conta ChatGPT gratuita e uma chave Gemini gratuita.
 ## Pendências antes de marcar a próxima oficina
 
 1. Instalar com o guia num notebook Windows 11 de verdade, com antivírus ligado.
-2. Instalar num Mac com chip Apple que nunca teve as ferramentas de desenvolvedor.
-3. Testar o login com uma conta ChatGPT gratuita e uma chave Gemini gratuita.
+2. Testar o login com uma conta ChatGPT gratuita e uma chave Gemini gratuita.

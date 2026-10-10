@@ -14,7 +14,8 @@ powershell.exe -NoProfile -Command "Set-ExecutionPolicy Restricted -Scope LocalM
 $min = 'C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\'
 [Environment]::SetEnvironmentVariable('Path', $min, 'Machine')
 $hide = @('C:\Program Files\Git', 'C:\Program Files\nodejs', 'C:\hostedtoolcache', 'C:\Strawberry', 'C:\msys64',
-          'C:\Program Files (x86)\Git', 'C:\tools', 'C:\Rust', 'C:\Users\runneradmin\.cargo')
+          'C:\Program Files (x86)\Git', 'C:\tools', 'C:\Rust', 'C:\Users\runneradmin\.cargo',
+          'C:\Users\Default\.cargo', 'C:\Users\Default\.rustup', 'C:\Users\Default\.dotnet', 'C:\Program Files\dotnet')
 $hide += (Get-Item 'C:\Program Files\Python*', 'C:\Python*' -ErrorAction SilentlyContinue).FullName
 foreach ($d in $hide) {
     if ($d -and (Test-Path $d)) {

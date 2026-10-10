@@ -47,9 +47,43 @@ administrador. Workflow: `.github/workflows/oficina-testes.yml`. Logs brutos no 
    digitar no site e o Claude mostra um link. Os dois fluxos foram abertos até essa tela.
    O login real com cada tipo de conta **não foi testado**.
 
+## Segunda rodada: máquinas sem nada instalado
+
+As máquinas da primeira rodada já vinham com Python, Node, Git e ferramentas de
+desenvolvedor. Na segunda rodada (workflow `oficina-limpa.yml`, logs no branch
+`oficina-resultados-limpo`):
+
+- **Windows:** o caminho de busca ficou só com as pastas do Windows, e Git, Node, Python e
+  Rust foram tirados do lugar.
+- **Mac com chip Apple:** as ferramentas de desenvolvedor da Apple e o Xcode foram
+  escondidos, e a conta de teste só via os programas do próprio macOS.
+- **Linux:** Ubuntu 24.04 e Fedora 41 zerados, em contêiner.
+
+Cada máquina registrou o que tinha antes. Depois rodou o comando do guia
+(`oficina/preparar.*`) e rodou de novo, para provar que a segunda vez não instala nada.
+
+| Máquina | O que tinha | O que o preparar instalou | 2ª vez |
+|---|---|---|---|
+| Windows Server 2022/2025, usuária comum | nada de desenvolvedor | só o Hermes (1,6 GB) | não baixou nada |
+| Mac chip Apple, sem ferramentas da Apple | só o macOS | ferramentas da Apple (1.003 MB, ~2 min) e o Hermes. Total: 1,4 GB | não baixou nada |
+| Mac Intel | — | nada: parou com o aviso de dupla | — |
+| Ubuntu zerado (só wget) | sem git, sem curl | git, curl e libatomic, depois o Hermes | não baixou nada |
+| Ubuntu que já tinha git e curl | git, curl, libatomic | só o Hermes | não baixou nada |
+| Fedora zerado | curl | git e libatomic, depois o Hermes | não baixou nada |
+
+Nos três sistemas o Hermes baixou o próprio Python e não usou o do computador. Nos três,
+o cérebro e as habilidades pelo endereço completo funcionaram depois da instalação.
+
+Limitações desta rodada:
+
+- No Mac de teste, a instalação das ferramentas da Apple foi feita pelo comando que essa
+  janela usa, porque uma máquina de teste não clica em botão.
+- No Linux, a conta de teste podia instalar pacotes sem digitar senha; na vida real o
+  computador pede a senha.
+
 ## O que não deu para testar aqui
 
 - Notebook Windows 10/11 doméstico com antivírus ativo (os testes rodaram em Windows Server).
-- Mac sem as ferramentas de desenvolvedor da Apple: os Macs de teste já vêm com elas.
+- Linux de laboratório onde a pessoa não pode instalar pacotes (sem senha de administrador).
 - Login real com conta ChatGPT gratuita, conta Claude Pro e chave Gemini gratuita.
 - Velocidade em Wi-Fi ruim. A conta acima vem do tamanho medido, não de uma simulação.
