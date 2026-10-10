@@ -24,7 +24,7 @@ function Run([string]$name, [string]$cmdline, [int]$timeoutSec = 600, [string]$s
 }
 function Rx { try { (Get-NetAdapterStatistics -ErrorAction Stop | Measure-Object ReceivedBytes -Sum).Sum } catch { $null } }
 
-$inv = 'where git & where python & where python3 & where node & where cargo & where rustc & echo PATH=%PATH%'
+$inv = '(where git & where python & where python3 & where node & where cargo & where rustc & echo PATH=%PATH% & dir /b %USERPROFILE%\.cargo\bin %USERPROFILE%\.dotnet\tools)'
 Run 'inventario_antes' $inv 60 | Out-Null
 $res.user_path_antes = [Environment]::GetEnvironmentVariable('Path', 'User')
 
