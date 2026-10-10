@@ -16,7 +16,7 @@ with contextlib.redirect_stdout(buf):
     ns["cerebro"]("search", "enfermagem", "-n", "3")
 out = buf.getvalue()
 print(out)
-pasta = Path(os.environ.get("HERMES_HOME") or (Path(os.environ["LOCALAPPDATA"]) / "hermes" if os.name == "nt" else Path.home() / ".hermes")) / "cerebro"
+pasta = Path.home() / ".cortex"
 ok = "não gosta de jargão" in out and (pasta / "facts.jsonl").exists()
 print("CEREBRO_OK" if ok else "CEREBRO_FAIL", pasta)
 sys.exit(0 if ok else 1)

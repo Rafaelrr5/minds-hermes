@@ -34,24 +34,21 @@ veio junto com o Hermes, então funciona igual em qualquer sistema e não depend
 pessoa ter Python instalado.
 
 ```python
-import os, subprocess, sys, urllib.request
+import runpy, sys, urllib.request
 from pathlib import Path
 
-home = Path(os.environ.get("HERMES_HOME") or "")
-if not home.name:
-    home = Path(os.environ["LOCALAPPDATA"]) / "hermes" if os.name == "nt" else Path.home() / ".hermes"
-pasta = home / "cerebro"
-pasta.mkdir(parents=True, exist_ok=True)
-cortex = pasta / "cortex.py"
+cortex = Path.home() / ".cortex" / "cortex.py"       # o caderno fica nessa mesma pasta
+cortex.parent.mkdir(parents=True, exist_ok=True)
 if not cortex.exists():
-    url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/cerebro/cortex.py"
-    urllib.request.urlretrieve(url, cortex)
+    urllib.request.urlretrieve(
+        "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/cerebro/cortex.py", cortex)
 
 def cerebro(*args):
-    env = dict(os.environ, CORTEX_HOME=str(pasta), PYTHONIOENCODING="utf-8")
-    r = subprocess.run([sys.executable, str(cortex), *args], capture_output=True,
-                       text=True, encoding="utf-8", env=env)
-    print(r.stdout or r.stderr)
+    sys.argv = ["cortex", *args]
+    try:
+        runpy.run_path(str(cortex), run_name="__main__")
+    except SystemExit:
+        pass
 
 cerebro("stats")
 ```
@@ -71,7 +68,7 @@ Categorias úteis: `perfil`, `preferencia`, `rotina`, `projeto`, `decisao`.
 
 1. Explique em até três linhas: "Vou criar um caderno de memória longa. Ele fica só no seu
    computador. Eu consulto quando precisar, sem você ter que repetir as coisas."
-2. Rode o bloco acima. A saída precisa mostrar `facts` ou um total de fatos. Se der erro de
+2. Rode o bloco acima. A saída precisa mostrar a contagem (algo como `current 0`). Se der erro de
    internet, diga que o caderno será criado quando a internet voltar e siga a conversa.
 3. Guarde **um** fato de teste que a pessoa escolher, busque por uma palavra dele e mostre
    que voltou. Só então diga que o cérebro está funcionando.
