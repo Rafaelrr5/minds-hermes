@@ -69,7 +69,7 @@ function Conectar-Conta {
     $exe = (Get-Command hermes).Source
     if ($env:PREPARAR_LIMITE) {
         # Só para testes automáticos: limita a espera e mostra o que o login escreveu.
-        $tmp = [IO.Path]::GetTempFileName()
+        $tmp = [IO.Path]::GetTempFileName(); $env:PYTHONUNBUFFERED = '1'   # sem isso a saída se perde ao encerrar
         $p = Start-Process -FilePath $exe -ArgumentList "auth add $prov --type oauth" -NoNewWindow -PassThru -RedirectStandardOutput $tmp -RedirectStandardError "$tmp.err"
         if (-not $p.WaitForExit([int]$env:PREPARAR_LIMITE * 1000)) { try { $p.Kill() } catch {} }
         Start-Sleep 1; Get-Content $tmp, "$tmp.err" -ErrorAction SilentlyContinue | Out-Host
