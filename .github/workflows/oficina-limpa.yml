@@ -16,14 +16,18 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image: [windows-2025, windows-2022]
+        include:
+          - image: windows-2025
+            conta: chatgpt
+          - image: windows-2022
+            conta: claude
     runs-on: ${{ matrix.image }}
     timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - name: Windows sem ferramentas, aluno sem admin
         shell: pwsh
-        run: ./oficina/testes/limpo-win-orquestrar.ps1 -Variant limpo
+        run: ./oficina/testes/limpo-win-orquestrar.ps1 -Variant limpo -Conta ${{ matrix.conta }}
       - if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -36,12 +40,15 @@ jobs:
       matrix:
         include:
           - name: ubuntu-zerado
+            conta: chatgpt
             image: ubuntu:24.04
             base: "apt-get update -qq && apt-get install -y -qq sudo wget ca-certificates xz-utils >/dev/null"
           - name: ubuntu-ja-tem-git-curl
+            conta: claude
             image: ubuntu:24.04
             base: "apt-get update -qq && apt-get install -y -qq sudo wget ca-certificates xz-utils git curl libatomic1 >/dev/null"
           - name: fedora-zerado
+            conta: chatgpt
             image: fedora:41
             base: "dnf install -y -q sudo wget xz >/dev/null"
     runs-on: ubuntu-24.04
@@ -56,7 +63,7 @@ jobs:
             ${{ matrix.base }}
             useradd -m -s /bin/bash aluno
             echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno
-            sudo -u aluno -H bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }}
+            sudo -u aluno -H bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}
           ' || echo "container exit $?"
           cat out/*steps.txt; echo; cat out/*inventario-antes.txt; echo; cat out/*inventario-depois.txt
       - if: always()
@@ -103,7 +110,7 @@ jobs:
           ) &
           r0=$(rx); t0=$(date +%s)
           sudo -u aluno -H env -i HOME=/Users/aluno USER=aluno LOGNAME=aluno TERM=dumb \
-            PATH=/usr/bin:/bin:/usr/sbin:/sbin bash /tmp/oficina/limpo-posix.sh $OUT mac-limpo ${{ github.sha }}
+            PATH=/usr/bin:/bin:/usr/sbin:/sbin bash /tmp/oficina/limpo-posix.sh $OUT mac-limpo ${{ github.sha }} claude
           echo "download_mb_total=$(( ($(rx)-r0)/1048576 )) wall_min=$(( ($(date +%s)-t0)/60 ))" > $OUT/meta-mac-limpo.txt
           wait || true
           cat $OUT/*steps.txt $OUT/meta-*.txt $OUT/clt.txt $OUT/*inventario-antes.txt

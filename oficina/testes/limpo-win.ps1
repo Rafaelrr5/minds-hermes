@@ -1,6 +1,6 @@
 # Runs AS the standard student account on a machine stripped of developer tools.
 # Inventory -> preparar.ps1 (as in the guide) -> inventory -> preparar.ps1 again -> checks.
-param([string]$Out, [string]$Variant, [string]$Ref = 'oficina-testes')
+param([string]$Out, [string]$Variant, [string]$Ref = 'oficina-testes', [string]$Conta = 'chatgpt')
 $ErrorActionPreference = 'Continue'
 $res = [ordered]@{ os = 'windows'; variant = $Variant; user = $env:USERNAME }
 function Save { $res | ConvertTo-Json -Depth 5 | Set-Content -Encoding UTF8 "$Out\result-win-$Variant.json" }
@@ -30,9 +30,13 @@ $res.user_path_antes = [Environment]::GetEnvironmentVariable('Path', 'User')
 
 $url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/preparar.ps1"
 $r0 = Rx
+$env:CONTA = $Conta; $env:PREPARAR_LIMITE = '40'
 $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
+Remove-Item Env:CONTA, Env:PREPARAR_LIMITE
 $r1 = Rx
-$res.preparar_1_ok = [bool]($t -match 'Pronto:')
+$res.conferencia_ok = [bool](($t -match 'Peças do Hermes conferidas') -and ($t -match 'vai funcionar nas próximas'))
+$res.login_aberto = [bool]($t -match 'auth.openai.com/codex/device|claude.ai/oauth/authorize')
+$res.final_honesto = [bool]($t -match 'A conexão com a conta fica para a oficina')
 $res.preparar_1_download_mb = if ($r0 -and $r1) { [math]::Round(($r1 - $r0) / 1MB) } else { 'n/a' }
 
 $res.user_path_depois = [Environment]::GetEnvironmentVariable('Path', 'User')
@@ -41,7 +45,7 @@ Run 'inventario_depois' $inv 60 | Out-Null
 
 $t = Run 'preparar_2' "irm $url | iex" 600 'ps'
 $r2 = Rx
-$res.preparar_2_pulou = [bool]($t -match 'Nada para fazer')
+$res.preparar_2_pulou = [bool](($t -match 'já está instalado') -and -not ($t -match 'Instalando o Hermes'))
 $res.preparar_2_download_mb = if ($r1 -and $r2) { [math]::Round(($r2 - $r1) / 1MB, 1) } else { 'n/a' }
 
 Run 'version' 'hermes --version' 120 | Out-Null

@@ -1,7 +1,7 @@
 #!/bin/bash
 # Runs AS the student on a stripped machine/container (macOS or Linux).
 # Inventory -> preparar.sh (as in the guide) -> inventory -> preparar.sh again -> checks.
-OUT="$1"; NAME="$2"; REF="$3"
+OUT="$1"; NAME="$2"; REF="$3"; CONTA="${4:-chatgpt}"
 P="$OUT/$NAME"; S="$P-steps.txt"; : > "$S"
 cd "$HOME"
 inv() {
@@ -22,12 +22,15 @@ inv > "$P-inventario-antes.txt" 2>&1
 URL="https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$REF/oficina/preparar.sh"
 if command -v curl >/dev/null 2>&1; then GET="curl -fsSL $URL"; else GET="wget -qO- $URL"; fi
 echo "fetcher=$(echo $GET | cut -d' ' -f1)" >> "$S"
-step preparar_1 "$GET | bash"
+step preparar_1 "$GET | CONTA=$CONTA PREPARAR_LIMITE=40 bash"
 export PATH="$HOME/.local/bin:$PATH"
-grep -q 'Pronto:' "$P-preparar_1.log" && echo "preparar_1_ok=yes" >> "$S" || echo "preparar_1_ok=no" >> "$S"
+L1="$P-preparar_1.log"
+grep -q 'Peças do Hermes conferidas' "$L1" && grep -q 'vai funcionar nas próximas' "$L1" && echo "conferencia_ok=yes" >> "$S" || echo "conferencia_ok=no" >> "$S"
+grep -qE 'auth.openai.com/codex/device|claude.ai/oauth/authorize' "$L1" && echo "login_aberto=yes" >> "$S" || echo "login_aberto=no" >> "$S"
+grep -q 'A conexão com a conta fica para a oficina' "$L1" && echo "final_honesto=yes" >> "$S" || echo "final_honesto=no" >> "$S"
 inv > "$P-inventario-depois.txt" 2>&1
 step preparar_2 "$GET | bash"
-grep -q 'Nada para fazer' "$P-preparar_2.log" && echo "preparar_2_pulou=yes" >> "$S" || echo "preparar_2_pulou=no" >> "$S"
+grep -q 'já está instalado' "$P-preparar_2.log" && ! grep -q 'Instalando o Hermes' "$P-preparar_2.log" && echo "preparar_2_pulou=yes" >> "$S" || echo "preparar_2_pulou=no" >> "$S"
 
 step version "hermes --version"
 RAW="https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$REF"

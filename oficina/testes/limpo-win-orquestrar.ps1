@@ -1,6 +1,6 @@
 # Runs as the CI admin. Strips the machine down to what a participant's Windows laptop has,
 # creates a STANDARD account and runs limpo-win.ps1 as that account via Task Scheduler.
-param([string]$Variant = 'clean')
+param([string]$Variant = 'clean', [string]$Conta = 'chatgpt')
 $ErrorActionPreference = 'Continue'
 $root = 'C:\oficina'; $out = "$root\out"
 New-Item -ItemType Directory -Force $out | Out-Null
@@ -37,7 +37,7 @@ secedit /configure /db "$root\sec.sdb" /cfg "$root\sec2.inf" /areas USER_RIGHTS 
 
 function RxBytes { (Get-NetAdapterStatistics | Measure-Object ReceivedBytes -Sum).Sum }
 $rx0 = RxBytes; $t0 = Get-Date
-$tr = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File $root\limpo-win.ps1 -Out $out -Variant $Variant -Ref $env:GITHUB_SHA"
+$tr = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File $root\limpo-win.ps1 -Out $out -Variant $Variant -Ref $env:GITHUB_SHA -Conta $Conta"
 schtasks /create /tn "oficina-limpo" /ru $user /rp $pw /sc once /st 23:59 /rl LIMITED /f /tr $tr | Out-Null
 schtasks /run /tn "oficina-limpo" | Out-Null
 $deadline = (Get-Date).AddMinutes(60)
