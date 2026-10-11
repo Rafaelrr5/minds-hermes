@@ -1,0 +1,12 @@
+install exit=1 secs=90
+version exit=127 secs=0
+doctor exit=127 secs=0
+api_after_burn=403
+skill_install_shortcut exit=127 secs=0
+skill_install exit=127 secs=0
+skill_install_cerebro exit=127 secs=0
+skills_list exit=127 secs=0
+skill_listed=no
+cerebro_listed=no
+python=
+home_disk_mb=1219

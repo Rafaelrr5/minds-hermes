@@ -1,0 +1,114 @@
+
+┌─────────────────────────────────────────────────────────┐
+│             ☤ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+✓ prerequisites ok (git, curl)
+→ Cloning https://github.com/NousResearch/hermes-agent.git (main) into /Users/aluno/.hermes/hermes-agent
+Cloning into '/Users/aluno/.hermes/.hermes-clone-j714ru/tree'...
+Updating files:   0% (1/18069)Updating files:   1% (181/18069)Updating files:   2% (362/18069)Updating files:   3% (543/18069)Updating files:   4% (723/18069)Updating files:   5% (904/18069)Updating files:   6% (1085/18069)Updating files:   7% (1265/18069)Updating files:   8% (1446/18069)Updating files:   8% (1491/18069)Updating files:   9% (1627/18069)Updating files:  10% (1807/18069)Updating files:  11% (1988/18069)Updating files:  12% (2169/18069)Updating files:  13% (2349/18069)Updating files:  14% (2530/18069)Updating files:  15% (2711/18069)Updating files:  16% (2892/18069)Updating files:  17% (3072/18069)Updating files:  18% (3253/18069)Updating files:  19% (3434/18069)Updating files:  20% (3614/18069)Updating files:  21% (3795/18069)Updating files:  22% (3976/18069)Updating files:  23% (4156/18069)Updating files:  24% (4337/18069)Updating files:  25% (4518/18069)Updating files:  25% (4683/18069)Updating files:  26% (4698/18069)Updating files:  27% (4879/18069)Updating files:  28% (5060/18069)Updating files:  29% (5241/18069)Updating files:  30% (5421/18069)Updating files:  31% (5602/18069)Updating files:  32% (5783/18069)Updating files:  33% (5963/18069)Updating files:  34% (6144/18069)Updating files:  35% (6325/18069)Updating files:  36% (6505/18069)Updating files:  37% (6686/18069)Updating files:  38% (6867/18069)Updating files:  39% (7047/18069)Updating files:  40% (7228/18069)Updating files:  41% (7409/18069)Updating files:  42% (7589/18069)Updating files:  42% (7764/18069)Updating files:  43% (7770/18069)Updating files:  44% (7951/18069)Updating files:  45% (8132/18069)Updating files:  46% (8312/18069)Updating files:  47% (8493/18069)Updating files:  48% (8674/18069)Updating files:  49% (8854/18069)Updating files:  50% (9035/18069)Updating files:  51% (9216/18069)Updating files:  52% (9396/18069)Updating files:  53% (9577/18069)Updating files:  54% (9758/18069)Updating files:  55% (9938/18069)Updating files:  56% (10119/18069)Updating files:  57% (10300/18069)Updating files:  58% (10481/18069)Updating files:  59% (10661/18069)Updating files:  59% (10690/18069)Updating files:  60% (10842/18069)Updating files:  61% (11023/18069)Updating files:  62% (11203/18069)Updating files:  63% (11384/18069)Updating files:  64% (11565/18069)Updating files:  65% (11745/18069)Updating files:  66% (11926/18069)Updating files:  67% (12107/18069)Updating files:  68% (12287/18069)Updating files:  69% (12468/18069)Updating files:  70% (12649/18069)Updating files:  71% (12829/18069)Updating files:  72% (13010/18069)Updating files:  73% (13191/18069)Updating files:  74% (13372/18069)Updating files:  75% (13552/18069)Updating files:  75% (13644/18069)Updating files:  76% (13733/18069)Updating files:  77% (13914/18069)Updating files:  78% (14094/18069)Updating files:  79% (14275/18069)Updating files:  80% (14456/18069)Updating files:  81% (14636/18069)Updating files:  82% (14817/18069)Updating files:  83% (14998/18069)Updating files:  84% (15178/18069)Updating files:  85% (15359/18069)Updating files:  86% (15540/18069)Updating files:  87% (15721/18069)Updating files:  88% (15901/18069)Updating files:  89% (16082/18069)Updating files:  90% (16263/18069)Updating files:  91% (16443/18069)Updating files:  91% (16502/18069)Updating files:  92% (16624/18069)Updating files:  93% (16805/18069)Updating files:  94% (16985/18069)Updating files:  95% (17166/18069)Updating files:  96% (17347/18069)Updating files:  97% (17527/18069)Updating files:  98% (17708/18069)Updating files:  99% (17889/18069)Updating files: 100% (18069/18069)Updating files: 100% (18069/18069), done.
+✓ Hermes Agent cloned
+→ Downloading uv 0.12.3 (darwin-x64)
+✓ uv ready (uv 0.12.3 (507230998 2026-08-07 x86_64-apple-darwin))
+✓ bootstrap Python ready; PM prepares the dependency environment
+✓ uv ready (uv 0.12.3 (507230998 2026-08-07 x86_64-apple-darwin))
+→ Installing dependencies (hash-verified via uv.lock)
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  ffmpeg:  12.4%  4.0 MiB / 32.3 MiB
+  ffmpeg:  24.8%  8.0 MiB / 32.3 MiB
+  ffmpeg:  37.2%  12.0 MiB / 32.3 MiB
+  ffmpeg:  49.6%  16.0 MiB / 32.3 MiB
+  ffmpeg:  62.1%  20.0 MiB / 32.3 MiB
+  ffmpeg:  74.6%  24.1 MiB / 32.3 MiB
+  ffmpeg:  87.2%  28.1 MiB / 32.3 MiB
+  ffmpeg:  99.9%  32.2 MiB / 32.3 MiB
+  ffmpeg: 100.0%  32.3 MiB / 32.3 MiB
+  ffmpeg: 100.0%  32.3 MiB / 32.3 MiB
+  ffmpeg: unpacking
+✓ ffmpeg
+  node:  13.1%  4.0 MiB / 30.6 MiB
+  node:  26.2%  8.0 MiB / 30.6 MiB
+  node:  39.3%  12.0 MiB / 30.6 MiB
+  node:  55.0%  16.8 MiB / 30.6 MiB
+  node:  70.2%  21.5 MiB / 30.6 MiB
+  node:  85.4%  26.1 MiB / 30.6 MiB
+  node: 100.0%  30.6 MiB / 30.6 MiB
+  node: 100.0%  30.6 MiB / 30.6 MiB
+  node: unpacking
+✓ node
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: unpacking
+✓ npm
+  python:  16.4%  4.2 MiB / 25.5 MiB
+  python:  32.8%  8.4 MiB / 25.5 MiB
+  python:  49.3%  12.6 MiB / 25.5 MiB
+  python:  66.4%  16.9 MiB / 25.5 MiB
+  python:  82.8%  21.1 MiB / 25.5 MiB
+  python:  99.3%  25.3 MiB / 25.5 MiB
+  python: 100.0%  25.5 MiB / 25.5 MiB
+  python: 100.0%  25.5 MiB / 25.5 MiB
+  python: unpacking
+✓ python
+  ripgrep: 100.0%  1.8 MiB / 1.8 MiB
+  ripgrep: 100.0%  1.8 MiB / 1.8 MiB
+  ripgrep: unpacking
+✓ ripgrep
+  → Installing Python dependencies…
+  ✗ Installing Python dependencies failed; last 39 lines of output:
+         Building hermes-agent @ file:///Users/aluno/.hermes/installs/fec52558444a44a6/environments/d625b092577845f78e705cca236437eb/workspace
+      Downloading openai (1.1MiB)
+      Downloading pydantic-core (2.0MiB)
+      Downloading pygments (1.2MiB)
+      Downloading google-api-python-client (14.3MiB)
+      Downloading pillow-heif (4.5MiB)
+      Downloading resvg-py (1.1MiB)
+      Downloading firecrawl-anydoc (3.3MiB)
+      Downloading pillow (5.1MiB)
+       Downloaded resvg-py
+       Downloaded pydantic-core
+       Downloaded firecrawl-anydoc
+       Downloaded pillow-heif
+       Downloaded pillow
+       Downloaded pygments
+       Downloaded google-api-python-client
+         Building cryptography==50.0.1
+       Downloaded openai
+        × Failed to build `cryptography==50.0.1`
+        ├─▶ The build backend returned an error
+        ╰─▶ Call to `maturin.build_wheel` failed (exit status: 1)
+            [stdout]
+            Running `maturin pep517 build-wheel -i
+            /Users/aluno/.hermes/cache/uv/builds-v0/.tmpBT3X8D/bin/python
+            --compatibility off`
+            [stderr]
+            error: rustup could not choose a version of cargo to run, because one
+            wasn't specified explicitly, and no default is configured.
+            help: run 'rustup default stable' to download the latest stable release
+            of Rust and set it as your default toolchain.
+            💥 maturin failed
+              Caused by: Cargo metadata failed. Does your crate compile with `cargo
+            build`?
+              Caused by: `cargo metadata` exited with an error:
+            Error: command ['maturin', 'pep517', 'build-wheel', '-i',
+            '/Users/aluno/.hermes/cache/uv/builds-v0/.tmpBT3X8D/bin/python',
+            '--compatibility', 'off'] returned non-zero exit status 1
+      hint: `cryptography` (v50.0.1) was included because `hermes-agent` (v0.0.0) depends on `cryptography`
+      hint: Build failures usually indicate a problem with the package or the build environment
+✗ venv: uv sync exited 1:  set it as your default toolchain.
+      💥 maturin failed
+        Caused by: Cargo metadata failed. Does your crate compile with `cargo
+      build`?
+        Caused by: `cargo metadata` exited with an error:
+      Error: command ['maturin', 'pep517', 'build-wheel', '-i',
+      '/Users/aluno/.hermes/cache/uv/builds-v0/.tmpBT3X8D/bin/python',
+      '--compatibility', 'off'] returned non-zero exit status 1
+
+
+hint: `cryptography` (v50.0.1) was included because `hermes-agent` (v0.0.0) depends on `cryptography`
+hint: Build failures usually indicate a problem with the package or the build environment — retry, or run `hermes pm doctor`
+✗ pm install failed

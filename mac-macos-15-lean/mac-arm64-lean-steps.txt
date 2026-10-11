@@ -1,0 +1,14 @@
+install exit=0 secs=81
+version exit=0 secs=3
+doctor exit=1 secs=10
+api_after_burn=403
+skill_install_shortcut exit=1 secs=65
+skill_install exit=0 secs=56
+skill_install_cerebro exit=0 secs=56
+skills_list exit=0 secs=1
+skill_listed=yes
+cerebro_listed=yes
+python=/Users/aluno/.hermes/installs/fec52558444a44a6/environments/7fa914a5556941fda97eed3322942c58/venv/bin/python
+brain exit=0 secs=1
+brain_ok=yes
+home_disk_mb=2114

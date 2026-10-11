@@ -1,0 +1,3 @@
+user=aluno
+uname=Darwin iad20-gt1021-dc2de0f9-5242-4e80-9ead-7f7f3507eee3-CE0DA968D3AD.local 24.6.0 Darwin Kernel Version 24.6.0: Tue Jul 21 20:51:34 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_ARM64_VMAPPLE arm64
+sudo=no

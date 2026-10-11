@@ -1,0 +1,7 @@
+
+Fetching: Rafaelrr5/minds-hermes/skills/boas-vindas
+Error: Could not download 'Rafaelrr5/minds-hermes/skills/boas-vindas'.
+Hint: GitHub API rate limit exhausted (unauthenticated: 60 requests/hour).
+Set GITHUB_TOKEN in your .env or install the gh CLI and run gh auth login to 
+raise the limit to 5,000/hr.
+

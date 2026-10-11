@@ -1,0 +1,9 @@
+{
+  "variant": "lean",
+  "image": "win25-vs2026",
+  "os_caption": "Microsoft Windows Server 2025 Datacenter",
+  "download_mb": 1614.0,
+  "wall_min": 11.8,
+  "profile_disk_mb": 3939.0,
+  "finished": true
+}

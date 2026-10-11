@@ -1,0 +1,18 @@
+
+Fetching: 
+https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills/c
+erebro/SKILL.md
+Quarantined to .hub/quarantine/cerebro
+Running security scan...
+Scan: cerebro 
+(https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills/
+cerebro/SKILL.md/community)  Verdict: SAFE
+Decision: ALLOWED — Allowed (community source, safe verdict)
+Scan provenance: fresh; scanner skills-guard-v9; hash 
+sha256:5b41557238f29bbe21beaf368e773db0a8b625d21ca5c67ee69293b224d35651
+Source: 
+https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills/c
+erebro/SKILL.md; scanned 2026-10-11T03:00:32.366230+00:00; rules: none
+Installed: cerebro
+Files: SKILL.md
+

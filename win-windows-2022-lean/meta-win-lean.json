@@ -1,0 +1,9 @@
+{
+  "variant": "lean",
+  "image": "win22",
+  "os_caption": "Microsoft Windows Server 2022 Datacenter",
+  "download_mb": 1621.0,
+  "wall_min": 11.4,
+  "profile_disk_mb": 3922.0,
+  "finished": true
+}

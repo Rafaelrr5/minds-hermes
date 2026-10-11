@@ -1,0 +1,18 @@
+
+Fetching: 
+https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills/
+boas-vindas/SKILL.md
+Quarantined to .hub\quarantine\boas-vindas
+Running security scan...
+Scan: boas-vindas 
+(https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills
+/boas-vindas/SKILL.md/community)  Verdict: SAFE
+Decision: ALLOWED — Allowed (community source, safe verdict)
+Scan provenance: fresh; scanner skills-guard-v9; hash 
+sha256:1359a75f4fed26b70a77af1ac61e7f11ddaa8a16d7447409da36dfd349447bc3
+Source: 
+https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/oficina-testes/skills/
+boas-vindas/SKILL.md; scanned 2026-10-11T03:06:24.734643+00:00; rules: none
+Installed: boas-vindas
+Files: SKILL.md
+

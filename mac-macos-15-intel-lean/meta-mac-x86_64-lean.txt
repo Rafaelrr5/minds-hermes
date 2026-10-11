@@ -1,0 +1,1 @@
+download_mb=421 wall_min=1 runas=sudo -u aluno -H

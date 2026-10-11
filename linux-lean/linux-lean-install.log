@@ -1,0 +1,150 @@
+
+┌─────────────────────────────────────────────────────────┐
+│             ☤ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+✓ prerequisites ok (git, curl)
+→ Cloning https://github.com/NousResearch/hermes-agent.git (main) into /home/aluno/.hermes/hermes-agent
+Cloning into '/home/aluno/.hermes/.hermes-clone-VvJBLD/tree'...
+warning: unable to access '/home/runner/.config/git/ignore': Permission denied
+warning: unable to access '/home/runner/.config/git/attributes': Permission denied
+Updating files:   0% (1/18069)Updating files:   1% (181/18069)Updating files:   2% (362/18069)Updating files:   2% (377/18069)Updating files:   3% (543/18069)Updating files:   4% (723/18069)Updating files:   5% (904/18069)Updating files:   6% (1085/18069)Updating files:   7% (1265/18069)Updating files:   8% (1446/18069)Updating files:   9% (1627/18069)Updating files:  10% (1807/18069)Updating files:  11% (1988/18069)Updating files:  12% (2169/18069)Updating files:  13% (2349/18069)Updating files:  14% (2530/18069)Updating files:  15% (2711/18069)Updating files:  16% (2892/18069)Updating files:  17% (3072/18069)Updating files:  18% (3253/18069)Updating files:  19% (3434/18069)Updating files:  20% (3614/18069)Updating files:  21% (3795/18069)Updating files:  22% (3976/18069)Updating files:  23% (4156/18069)Updating files:  24% (4337/18069)Updating files:  25% (4518/18069)Updating files:  26% (4698/18069)Updating files:  27% (4879/18069)Updating files:  28% (5060/18069)Updating files:  29% (5241/18069)Updating files:  30% (5421/18069)Updating files:  31% (5602/18069)Updating files:  32% (5783/18069)Updating files:  33% (5963/18069)Updating files:  34% (6144/18069)Updating files:  35% (6325/18069)Updating files:  36% (6505/18069)Updating files:  37% (6686/18069)Updating files:  38% (6867/18069)Updating files:  39% (7047/18069)Updating files:  40% (7228/18069)Updating files:  41% (7409/18069)Updating files:  42% (7589/18069)Updating files:  43% (7770/18069)Updating files:  44% (7951/18069)Updating files:  45% (8132/18069)Updating files:  46% (8312/18069)Updating files:  47% (8493/18069)Updating files:  48% (8674/18069)Updating files:  49% (8854/18069)Updating files:  50% (9035/18069)Updating files:  51% (9216/18069)Updating files:  52% (9396/18069)Updating files:  53% (9577/18069)Updating files:  54% (9758/18069)Updating files:  55% (9938/18069)Updating files:  56% (10119/18069)Updating files:  57% (10300/18069)Updating files:  58% (10481/18069)Updating files:  59% (10661/18069)Updating files:  60% (10842/18069)Updating files:  61% (11023/18069)Updating files:  62% (11203/18069)Updating files:  63% (11384/18069)Updating files:  64% (11565/18069)Updating files:  65% (11745/18069)Updating files:  66% (11926/18069)Updating files:  67% (12107/18069)Updating files:  68% (12287/18069)Updating files:  69% (12468/18069)Updating files:  70% (12649/18069)Updating files:  71% (12829/18069)Updating files:  72% (13010/18069)Updating files:  73% (13191/18069)Updating files:  74% (13372/18069)Updating files:  75% (13552/18069)Updating files:  76% (13733/18069)Updating files:  77% (13914/18069)Updating files:  78% (14094/18069)Updating files:  79% (14275/18069)Updating files:  80% (14456/18069)Updating files:  81% (14636/18069)Updating files:  82% (14817/18069)Updating files:  83% (14998/18069)Updating files:  84% (15178/18069)Updating files:  85% (15359/18069)Updating files:  86% (15540/18069)Updating files:  87% (15721/18069)Updating files:  88% (15901/18069)Updating files:  89% (16082/18069)Updating files:  90% (16263/18069)Updating files:  91% (16443/18069)Updating files:  91% (16469/18069)Updating files:  92% (16624/18069)Updating files:  93% (16805/18069)Updating files:  94% (16985/18069)Updating files:  95% (17166/18069)Updating files:  96% (17347/18069)Updating files:  97% (17527/18069)Updating files:  98% (17708/18069)Updating files:  99% (17889/18069)Updating files: 100% (18069/18069)Updating files: 100% (18069/18069), done.
+✓ Hermes Agent cloned
+→ Downloading uv 0.12.3 (linux-x64)
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Downloading Python 3.14
+Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.3MiB)
+ Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+Installed Python 3.14.7 in 842ms
+ + cpython-3.14.7-linux-x86_64-gnu
+✓ bootstrap Python ready; PM prepares the dependency environment
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Installing dependencies (hash-verified via uv.lock)
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  ffmpeg:   3.3%  4.0 MiB / 120.7 MiB
+  ffmpeg:   6.6%  8.0 MiB / 120.7 MiB
+  ffmpeg:   9.9%  12.0 MiB / 120.7 MiB
+  ffmpeg:  13.3%  16.0 MiB / 120.7 MiB
+  ffmpeg:  16.6%  20.0 MiB / 120.7 MiB
+  ffmpeg:  19.9%  24.0 MiB / 120.7 MiB
+  ffmpeg:  23.2%  28.0 MiB / 120.7 MiB
+  ffmpeg:  26.6%  32.1 MiB / 120.7 MiB
+  ffmpeg:  29.9%  36.1 MiB / 120.7 MiB
+  ffmpeg:  33.2%  40.1 MiB / 120.7 MiB
+  ffmpeg:  36.5%  44.1 MiB / 120.7 MiB
+  ffmpeg:  39.9%  48.2 MiB / 120.7 MiB
+  ffmpeg:  43.2%  52.2 MiB / 120.7 MiB
+  ffmpeg:  46.5%  56.2 MiB / 120.7 MiB
+  ffmpeg:  49.8%  60.2 MiB / 120.7 MiB
+  ffmpeg:  53.2%  64.2 MiB / 120.7 MiB
+  ffmpeg:  56.5%  68.2 MiB / 120.7 MiB
+  ffmpeg:  59.8%  72.2 MiB / 120.7 MiB
+  ffmpeg:  63.2%  76.3 MiB / 120.7 MiB
+  ffmpeg:  66.5%  80.3 MiB / 120.7 MiB
+  ffmpeg:  69.8%  84.3 MiB / 120.7 MiB
+  ffmpeg:  73.1%  88.3 MiB / 120.7 MiB
+  ffmpeg:  76.4%  92.3 MiB / 120.7 MiB
+  ffmpeg:  79.7%  96.3 MiB / 120.7 MiB
+  ffmpeg:  83.1%  100.3 MiB / 120.7 MiB
+  ffmpeg:  86.4%  104.3 MiB / 120.7 MiB
+  ffmpeg:  89.8%  108.5 MiB / 120.7 MiB
+  ffmpeg:  93.3%  112.6 MiB / 120.7 MiB
+  ffmpeg:  96.6%  116.6 MiB / 120.7 MiB
+  ffmpeg:  99.9%  120.6 MiB / 120.7 MiB
+  ffmpeg: 100.0%  120.7 MiB / 120.7 MiB
+  ffmpeg: 100.0%  120.7 MiB / 120.7 MiB
+  ffmpeg: unpacking
+✓ ffmpeg
+  node:  12.5%  4.0 MiB / 32.0 MiB
+  node:  28.1%  9.0 MiB / 32.0 MiB
+  node:  43.8%  14.0 MiB / 32.0 MiB
+  node:  56.3%  18.0 MiB / 32.0 MiB
+  node:  68.8%  22.0 MiB / 32.0 MiB
+  node:  84.4%  27.0 MiB / 32.0 MiB
+  node: 100.0%  32.0 MiB / 32.0 MiB
+  node: 100.0%  32.0 MiB / 32.0 MiB
+  node: unpacking
+✓ node
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: unpacking
+✓ npm
+  python:   3.3%  4.0 MiB / 119.7 MiB
+  python:   6.7%  8.0 MiB / 119.7 MiB
+  python:  10.0%  12.0 MiB / 119.7 MiB
+  python:  13.4%  16.0 MiB / 119.7 MiB
+  python:  16.7%  20.0 MiB / 119.7 MiB
+  python:  20.0%  24.0 MiB / 119.7 MiB
+  python:  23.4%  28.0 MiB / 119.7 MiB
+  python:  26.7%  32.0 MiB / 119.7 MiB
+  python:  30.1%  36.0 MiB / 119.7 MiB
+  python:  33.4%  40.0 MiB / 119.7 MiB
+  python:  36.8%  44.0 MiB / 119.7 MiB
+  python:  40.9%  49.0 MiB / 119.7 MiB
+  python:  44.2%  53.0 MiB / 119.7 MiB
+  python:  47.6%  57.0 MiB / 119.7 MiB
+  python:  50.9%  61.0 MiB / 119.7 MiB
+  python:  55.1%  65.9 MiB / 119.7 MiB
+  python:  59.2%  70.9 MiB / 119.7 MiB
+  python:  63.4%  75.9 MiB / 119.7 MiB
+  python:  66.7%  79.9 MiB / 119.7 MiB
+  python:  70.0%  83.9 MiB / 119.7 MiB
+  python:  73.4%  87.9 MiB / 119.7 MiB
+  python:  76.7%  91.9 MiB / 119.7 MiB
+  python:  80.9%  96.8 MiB / 119.7 MiB
+  python:  84.2%  100.8 MiB / 119.7 MiB
+  python:  88.4%  105.8 MiB / 119.7 MiB
+  python:  91.7%  109.8 MiB / 119.7 MiB
+  python:  95.0%  113.8 MiB / 119.7 MiB
+  python:  98.4%  117.8 MiB / 119.7 MiB
+  python: 100.0%  119.7 MiB / 119.7 MiB
+  python: 100.0%  119.7 MiB / 119.7 MiB
+  python: unpacking
+✓ python
+  ripgrep: 100.0%  2.2 MiB / 2.2 MiB
+  ripgrep: 100.0%  2.2 MiB / 2.2 MiB
+  ripgrep: unpacking
+✓ ripgrep
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+✓ venv
+✓ dependencies installed
+✓ config prepared in /home/aluno/.hermes
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Building the hermes command and apps
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  → Preparing Node dependencies…
+  ✓ Preparing Node dependencies
+  → Building the TUI…
+  ✓ Building the TUI
+  → Building the web UI…
+  ✓ Building the web UI
+  ✓ Model catalog cache refreshed from checkout
+
+→ Syncing bundled skills...
+  + 58 new: xurl, llm-wiki, arxiv, grounded-citations, competitor-news-monitor, songwriting-and-ai-music, baoyu-infographic, popular-web-designs, claude-design, design-md, p5js, manim-video, ascii-video, architecture-diagram, humanizer, youtube-content, gif-search, songsee, hermes-agent, opencode, claude-code, computer-use, codex, github, simplify-code, hermes-agent-skill-authoring, codebase-inspection, inspecting-hermes-desktop-dom, dogfood, requesting-code-review, test-driven-development, systematic-debugging, node-inspect-debugger, spike, python-debugpy, sdlc-review, notion, weekly-review-planning, maps, google-workspace, meeting-action-items, teams-meeting-pipeline, box, document-to-action-items, docx, product-price-monitor, powerpoint, xlsx, pdf, airtable, apple-notes, apple-reminders, imessage, findmy, himalaya, email-inbox-triage, blocked-page-recovery, obsidian
+
+→ Syncing bundled skills to all profiles...
+  default: up to date
+
+→ Checking configuration for new options...
+  ✓ Configuration is up to date
+
+✓ Install complete! [main @ 1f2b9e0864]
+
+ℹ Skill curator
+  Background skill maintenance is enabled. First pass is deferred ~7d after installation; only agent-created skills are in scope and nothing is ever auto-deleted (archive is recoverable).
+  Preview now:  hermes curator run --dry-run
+  Pause it:     hermes curator pause
+  Docs:         https://hermes-agent.nousresearch.com/docs/user-guide/features/curator
+✓ added ~/.local/bin to PATH in /home/aluno/.bashrc
+✓ added ~/.local/bin to PATH in /home/aluno/.bash_profile
+✓ app products and hermes command ready
+✓ Hermes Agent install complete. Run: hermes
+→ Reload your shell to use hermes: open a new terminal, or run: source ~/.bashrc
