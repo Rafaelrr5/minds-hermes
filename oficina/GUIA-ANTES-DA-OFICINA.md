@@ -8,6 +8,8 @@ Você **não** precisa ter nada instalado antes, nem ser administrador do Window
 desligar o antivírus. O comando abaixo confere o que o seu computador já tem e instala só o
 que falta. Se você rodar duas vezes, a segunda não baixa nada.
 
+Prefere ver? Vídeo de 1 minuto: [instalar-hermes.mp4](video/instalar-hermes.mp4)
+
 ## Antes de começar
 
 - Deixe pelo menos **6 GB livres** no disco. Se faltar espaço, o próprio comando avisa.

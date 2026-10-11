@@ -112,3 +112,39 @@ foi conferido só até o teste de conversa, numa máquina que já tinha conta co
 - Linux de laboratório onde a pessoa não pode instalar pacotes (sem senha de administrador).
 - Login real com conta ChatGPT gratuita, conta Claude Pro e chave Gemini gratuita.
 - Velocidade em Wi-Fi ruim. A conta acima vem do tamanho medido, não de uma simulação.
+
+
+## Quarta rodada: tudo num comando só, sem ninguém olhando (11/10/2026)
+
+Workflow `oficina-limpa.yml`, run 38111960473 (commit a8970e2). Mesmas máquinas zeradas da
+segunda rodada. Agora o comando também instala as quatro habilidades (`boas-vindas`,
+`cerebro`, `recall-and-claim-verification`, `measurement-validity`) e o cérebro, e não pergunta
+nada: sem ninguém no teclado, termina sozinho. Em quatro máquinas a internet foi cortada por
+90 segundos no meio da instalação.
+
+| Máquina | Corte de internet | Retomou sozinho | Habilidades e cérebro | 2ª vez não baixa | Tempo |
+|---|---|---|---|---|---|
+| Windows Server 2025, conta comum | sim | sim (tentativa 2) | sim | sim (0,3 MB) | 18 min |
+| Windows Server 2022, conta comum | sim | sim (tentativa 1) | sim | sim | 15 min |
+| Mac Apple Silicon sem ferramentas da Apple | sim | não precisou: o instalador aguentou | sim | sim | 8 min, 590 MB |
+| Ubuntu 24.04 sem senha de administrador | sim | sim | sim | sim | 4 min |
+| Ubuntu 24.04 zerado | não | — | sim | sim | 4 min |
+| Ubuntu com git e curl | não | — | sim | sim | 2 min |
+| Fedora 41 zerado | não | — | sim | sim | 4 min |
+| Mac Intel | — | para com aviso, sem instalar | — | — | segundos |
+
+Em todas: a conferência passou, o cérebro guardou e achou um fato, nenhuma habilidade tem
+"minds" no nome e a mensagem final foi "Tudo instalado. Falta só conectar sua conta".
+
+O que mudou para chegar aqui:
+
+- O Mac não pede mais as ferramentas da Apple: se falta o git, o comando baixa uma cópia
+  própria (uns 40 MB), sem janela e sem senha. O mesmo vale para git e curl no Linux sem senha.
+- A conferência de habilidade olha a pasta instalada, porque a lista do Hermes corta nomes
+  longos e dava falso "não instalou".
+- Cortar toda a rede do Windows derrubava o próprio servidor de testes; o corte passou a
+  bloquear só os endereços de download.
+
+Ainda não testado: login real até o fim com conta de participante; Windows 11 doméstico com
+antivírus; internet fora por horas (o comando espera até 6 horas, mas só 90 segundos foram
+testados).

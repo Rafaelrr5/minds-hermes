@@ -14,16 +14,18 @@ conversar.
 
 ### 3 dias antes: mensagem para a turma
 
-Mandar o `GUIA-ANTES-DA-OFICINA.md`, com um único comando por sistema. O comando
-(`oficina/preparar.*`) confere o que o computador tem e instala só o que falta. Exemplos: as
-ferramentas da Apple num Mac que não tem, o git e o curl num Linux zerado. Depois instala o
-Hermes enxuto, sem administrador e sem perguntas no meio. Rodar de novo não baixa nada. Foi
-testado em máquinas sem nada instalado (`RESULTADOS-TESTES.md`, segunda rodada).
+Mandar o `GUIA-ANTES-DA-OFICINA.md` e o vídeo de 1 minuto, com um único comando por sistema.
+A pessoa cola e pode sair de perto: o comando (`oficina/preparar.*`) não faz pergunta nenhuma
+até o fim. Ele confere o que o computador tem e instala só o que falta (no Mac sem as
+ferramentas da Apple e no Linux sem git ou curl, baixa uma cópia própria, sem senha), instala
+o Hermes enxuto, as quatro habilidades (`boas-vindas`, `cerebro` e as duas de honestidade) e o
+cérebro, e confere tudo. Se a internet cair, ele espera voltar e continua; o computador não
+dorme enquanto baixa. Rodar de novo não baixa nada. Testado em máquinas zeradas, com a
+internet cortada no meio da instalação (`RESULTADOS-TESTES.md`, quarta rodada).
 
-No fim, o próprio comando confere a instalação, abre o login do ChatGPT ou do Claude e faz
-uma pergunta de teste. Cada pessoa manda no grupo o print da tela final. "Tudo pronto" quer
-dizer instalado e conectado; "a conexão fica para a oficina" quer dizer só instalado. Esses
-prints viram a lista de prontos.
+No fim, se houver alguém na frente, ele oferece o login do ChatGPT (1) ou do Claude (2); sem
+resposta em 2 minutos, termina sozinho com "Tudo instalado. Falta só conectar sua conta".
+Cada pessoa manda no grupo o print da tela final. Esses prints viram a lista de prontos.
 
 ### 1 dia antes: plantão online de 30 minutos
 
