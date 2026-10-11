@@ -45,7 +45,8 @@ step version "hermes --version"
 step approvals "hermes config get approvals.mode"
 yes_no approvals_manual "grep -qi manual '$P-approvals.log'"
 step skills_list "hermes skills list"
-yes_no skills_listadas "grep -qw boas-vindas '$P-skills_list.log' && grep -qw cerebro '$P-skills_list.log' && grep -qw measurement-validity '$P-skills_list.log'"
+SK="$HOME/.hermes/skills"
+yes_no skills_listadas "[ -s $SK/boas-vindas/SKILL.md ] && [ -s $SK/cerebro/SKILL.md ] && [ -s $SK/recall-and-claim-verification/SKILL.md ] && [ -s $SK/measurement-validity/SKILL.md ] && grep -q 'boas-vindas' '$P-skills_list.log'"
 yes_no sem_minds_no_nome "! grep -qi minds '$P-skills_list.log'"
 PY=$(find "$HOME/.hermes/installs" -path '*venv/bin/python' 2>/dev/null | head -1)
 if [ -n "$PY" ]; then

@@ -89,10 +89,13 @@ function Conferir-Instalacao {
 }
 
 function Instalar-Habilidade([string]$nome, [string]$url) {
-    if ((hermes skills list 2>$null | Out-String) -match "\b$([regex]::Escape($nome))\b") { Ok "Habilidade $nome já instalada"; return }
+    # Confere pela pasta: a lista do Hermes corta nomes longos.
+    $casa = if ($env:HERMES_HOME) { $env:HERMES_HOME } else { Join-Path $env:LOCALAPPDATA 'hermes' }
+    $arq = Join-Path $casa "skills\$nome\SKILL.md"
+    if (Test-Path $arq) { Ok "Habilidade $nome já instalada"; return }
     $feito = Tentar "A habilidade $nome" 5 {
         hermes skills install $url --yes *> $null
-        (hermes skills list 2>$null | Out-String) -match "\b$([regex]::Escape($nome))\b"
+        Test-Path $arq
     }
     if ($feito) { Ok "Habilidade $nome instalada" } else { Faz "A habilidade $nome não instalou agora; dá para instalar depois, na oficina." }
 }

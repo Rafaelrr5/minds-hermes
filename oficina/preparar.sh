@@ -143,9 +143,10 @@ conferir() {
   ok "O comando hermes vai funcionar nas próximas janelas do terminal"
 }
 
-habilidade() {  # habilidade NOME URL
-  if hermes skills list 2>/dev/null | grep -qw -- "$1"; then ok "Habilidade $1 já instalada"; return 0; fi
-  if tentar "A habilidade $1" 5 sh -c "hermes skills install '$2' --yes </dev/null >/dev/null 2>&1 && hermes skills list 2>/dev/null | grep -qw -- '$1'"; then
+habilidade() {  # habilidade NOME URL   (confere pela pasta: a lista do Hermes corta nomes longos)
+  PASTA="${HERMES_HOME:-$HOME/.hermes}/skills/$1/SKILL.md"
+  if [ -s "$PASTA" ]; then ok "Habilidade $1 já instalada"; return 0; fi
+  if tentar "A habilidade $1" 5 sh -c "hermes skills install '$2' --yes </dev/null >/dev/null 2>&1; [ -s '$PASTA' ]"; then
     ok "Habilidade $1 instalada"
   else
     faz "A habilidade $1 não instalou agora; dá para instalar depois, na oficina."

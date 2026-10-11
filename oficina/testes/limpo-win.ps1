@@ -57,7 +57,8 @@ Run 'version' 'hermes --version' 120 | Out-Null
 $a = Run 'approvals' 'hermes config get approvals.mode' 120
 $res.approvals_manual = [bool]($a -match 'manual')
 $list = Run 'skills_list' 'hermes skills list' 120
-$res.skills_listadas = [bool](($list -match '\bboas-vindas\b') -and ($list -match '\bcerebro\b') -and ($list -match 'measurement-validity'))
+$sk = Join-Path $env:LOCALAPPDATA 'hermes\skills'
+$res.skills_listadas = [bool](($list -match 'boas-vindas') -and (@('boas-vindas','cerebro','recall-and-claim-verification','measurement-validity' | Where-Object { Test-Path (Join-Path $sk "$_\SKILL.md") }).Count -eq 4))
 $res.sem_minds_no_nome = -not ($list -match '(?i)minds')
 $py = Get-ChildItem "$env:LOCALAPPDATA\hermes\installs" -Recurse -Filter python.exe -ErrorAction SilentlyContinue |
       Where-Object { $_.FullName -match '\\venv\\Scripts\\python\.exe$' } | Select-Object -First 1
