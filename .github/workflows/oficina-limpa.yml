@@ -65,23 +65,27 @@ jobs:
       - uses: actions/checkout@v4
       - name: ${{ matrix.name }}
         run: |
+          set +e
           mkdir -p out; chmod 777 out
-          docker run -d --name c -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash -c '
-            set -e
-            ${{ matrix.base }}
-            useradd -m -s /bin/bash aluno
-            if [ "${{ matrix.sudo }}" = yes ]; then echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno; fi
-            su - aluno -c "bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}"
-          '
+          cat > out/dentro.sh <<'EOF'
+          set -e
+          ${{ matrix.base }}
+          useradd -m -s /bin/bash aluno
+          if [ "${{ matrix.sudo }}" = yes ]; then echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno; fi
+          su - aluno -c "bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}"
+          EOF
+          docker run --name c -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash /out/dentro.sh > out/container.txt 2>&1 &
+          CPID=$!
           if [ "${{ matrix.name }}" = ubuntu-sem-senha-queda-de-rede ]; then
             # Drop the container's network for 90 s once the Hermes install has started.
-            until grep -qs 'Instalando o Hermes' out/*preparar_1.log; do sleep 3; done
+            for i in $(seq 1 600); do grep -qs 'Instalando o Hermes' out/*preparar_1.log && break; sleep 3; done
             sleep 20
             docker network disconnect bridge c && echo "queda_inicio=$(date +%T)" > out/queda.txt
             sleep 90
             docker network connect bridge c && echo "queda_fim=$(date +%T)" >> out/queda.txt
           fi
-          docker wait c; docker logs c | tail -20
+          wait $CPID; echo "container exit $?"
+          tail -30 out/container.txt
           cat out/*steps.txt; echo; cat out/*inventario-antes.txt; echo; cat out/queda.txt 2>/dev/null || true
       - if: always()
         uses: actions/upload-artifact@v4
