@@ -1,24 +1,27 @@
 ---
-name: minds-boas-vindas
-description: "Use no primeiro uso do Hermes no minicurso Minds. Configura e entrevista a pessoa."
-version: 1.0.0
-author: Rafael Rocha Ribeiro (github.com/Rafaelrr5) - Minds of the Future, FACC/UFJF
+name: boas-vindas
+description: "Use no primeiro uso do Hermes por quem não é da área técnica. Confere e entrevista."
+version: 2.0.0
+author: Rafael Rocha Ribeiro (github.com/Rafaelrr5)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [onboarding, minds, iniciante, memoria, configuracao, pt-br]
+    tags: [onboarding, iniciante, primeiro-uso, memoria, configuracao, pt-br]
+    related_skills: [cerebro, recall-and-claim-verification, measurement-validity]
 ---
 
-# Boas-vindas Minds
+# Boas-vindas
 
-Você está ajudando uma pessoa **sem formação técnica** que acabou de instalar o Hermes
-durante o minicurso do Minds of the Future (projeto de extensão da FACC/UFJF com apoio do
-Governo de Minas Gerais). Em uns 10 minutos, deixe o assistente:
+Você está ajudando uma pessoa **sem formação técnica** que acabou de começar a usar o
+Hermes. Em uns 10 minutos, deixe o assistente:
 
 1. pedindo licença antes de qualquer ação arriscada;
-2. com duas habilidades de honestidade instaladas;
+2. com as habilidades de honestidade e o cérebro funcionando;
 3. sabendo quem a pessoa é, o que ela faz e como gosta de ser atendida.
+
+Parte disso pode já ter sido feita pelo instalador. **Confira antes de fazer**: o que já
+estiver certo, só confirme em uma frase e siga.
 
 ## Regras de conversa (do início ao fim)
 
@@ -35,13 +38,14 @@ Governo de Minas Gerais). Em uns 10 minutos, deixe o assistente:
 
 ## Passo 1 - Combinar
 
-Em até quatro linhas, explique o que vai acontecer: duas configurações rápidas, três
-habilidades novas, seis perguntas sobre a pessoa e, no fim, a lista do que ficou guardado
-para ela conferir. Pergunte se pode começar.
+Em até quatro linhas, explique o que vai acontecer: uma conferência rápida do que já está
+pronto, seis perguntas sobre a pessoa e, no fim, a lista do que ficou guardado para ela
+conferir. Pergunte se pode começar.
 
 ## Passo 2 - Segurança e idioma
 
-Rode, um de cada vez, explicando antes:
+Confira com `hermes config get approvals.mode` e `hermes config get display.language`.
+Só rode o que estiver diferente, explicando antes:
 
 ```bash
 hermes config set approvals.mode manual
@@ -52,23 +56,20 @@ hermes config set display.language pt
   (apagar arquivos, instalar programas, mexer no sistema).
 - O segundo deixa em português as mensagens fixas do sistema, como o pedido de autorização.
 
-Confirme com `hermes config get approvals.mode`: a resposta precisa ser `manual`.
+## Passo 3 - Habilidades
 
-## Passo 3 - Habilidades novas
+Rode `hermes skills list` e procure `recall-and-claim-verification`, `measurement-validity`
+e `cerebro`. Instale só as que faltarem:
 
 ```bash
 hermes skills install https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/skills/recall-and-claim-verification/SKILL.md --yes
 hermes skills install https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/skills/measurement-validity/SKILL.md --yes
-hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/minds-cerebro/SKILL.md --yes
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/cerebro/SKILL.md --yes
 ```
 
-Use sempre o endereço completo, como acima. O atalho `Rafaelrr5/...` consulta um serviço do
-GitHub que bloqueia depois de 60 pedidos por hora vindos da mesma internet, e numa sala
-com 20 pessoas isso acaba em minutos. O endereço completo baixa o arquivo direto e não
-tem esse limite.
-
-A terceira habilidade é o **cérebro**: um caderno de memória longa. Não instale nada nele
-agora; ele é apresentado no fim da oficina.
+Use sempre o endereço completo, como acima. O atalho `usuario/repositorio/...` consulta um
+serviço do GitHub que bloqueia depois de 60 pedidos por hora vindos da mesma internet; numa
+sala com muita gente isso acaba em minutos. O endereço completo não tem esse limite.
 
 Explique sem termo técnico:
 
@@ -77,18 +78,19 @@ Explique sem termo técnico:
   em vez de inventar uma resposta bonita.
 - **Conferir o número antes de decidir**: antes de usar um número para tomar uma decisão
   (preço, nota, prazo), o assistente confere de onde ele veio.
+- **Cérebro**: um caderno de memória longa, que fica só no computador da pessoa.
 
-Depois rode `hermes skills list` e, **só se aparecerem na lista**, conte que algumas
-habilidades já vêm prontas: revisão da semana (`weekly-review-planning`), tarefas e prazos de
-um documento (`document-to-action-items`), tarefas de uma reunião (`meeting-action-items`) e
-texto menos robótico (`humanizer`). Descreva pelo efeito, não pelo nome.
+Se aparecerem na lista, conte que algumas habilidades já vêm prontas: revisão da semana
+(`weekly-review-planning`), tarefas e prazos de um documento (`document-to-action-items`),
+tarefas de uma reunião (`meeting-action-items`) e texto menos robótico (`humanizer`).
+Descreva pelo efeito, não pelo nome.
 
 Se a instalação falhar:
 
 | O que apareceu | O que fazer |
 |---|---|
-| Limite de uso do GitHub (*rate limit*) | Comum em internet compartilhada de sala de aula. Siga para o passo 4 e tente de novo no fim, ou mais tarde |
-| Bloqueio da verificação de segurança | Não force a instalação. Diga para a pessoa chamar o monitor |
+| Limite de uso do GitHub (*rate limit*) | Siga para o passo 4 e tente de novo no fim, ou mais tarde |
+| Bloqueio da verificação de segurança | Não force a instalação. Diga para a pessoa pedir ajuda a quem a acompanha |
 | "Já instalada" | Está tudo certo, siga em frente |
 | Sem internet | Siga para o passo 4; as habilidades podem ser instaladas depois |
 
@@ -100,8 +102,7 @@ resposta vier vaga, faça no máximo uma pergunta de acompanhamento.
 1. Como você se chama, e como prefere ser chamado?
 2. O que você faz hoje? Estuda, trabalha, os dois? Em quê?
 3. Em que parte da sua rotina você mais perde tempo com coisa repetida?
-4. No começo do minicurso você anotou num papel uma tarefa chata que se repete. Qual é?
-   (Se a pessoa não tiver o papel, pule.)
+4. Se eu pudesse fazer uma tarefa chata por você toda semana, qual seria?
 5. Como você prefere minhas respostas: curtas ou explicadas? Mais formais ou mais leves?
 6. Tem alguma coisa que eu **nunca** devo fazer sem te perguntar antes?
 
@@ -113,7 +114,7 @@ entrada**, frase afirmativa em terceira pessoa. Exemplos de formato:
 - "Chama-se Ana Souza; prefere ser chamada de Ana."
 - "Cursa o 2º ano do ensino médio e quer aprender a organizar os estudos."
 - "Perde mais tempo montando o resumo semanal das aulas."
-- "Tarefa repetitiva que quer automatizar: lembrar os prazos de trabalhos da escola."
+- "Tarefa que quer passar para o assistente: lembrar os prazos de trabalhos da escola."
 - "Prefere respostas curtas e linguagem informal."
 - "Nunca enviar mensagem ou e-mail em nome dela sem confirmar antes."
 
@@ -128,12 +129,12 @@ mostre a lista final.
   que conversamos.)
 - Proponha **uma** primeira tarefa concreta, ligada às respostas 3 e 4, e pergunte se a
   pessoa quer tentar agora.
-- Termine com três linhas: o que ficou configurado, quais habilidades entraram e o que você
-  sabe sobre ela.
+- Termine com três linhas: o que ficou configurado, quais habilidades estão ativas e o que
+  você sabe sobre ela.
 
 ## Verificação (antes de dizer que terminou)
 
 - [ ] `hermes config get approvals.mode` respondeu `manual`.
-- [ ] `hermes skills list` mostra as três habilidades novas, ou você disse quais falharam.
+- [ ] `hermes skills list` mostra as três habilidades, ou você disse quais falharam.
 - [ ] Cada fato da entrevista foi salvo e a pessoa viu a lista final.
 - [ ] Nada de senha, documento, endereço ou telefone foi salvo.

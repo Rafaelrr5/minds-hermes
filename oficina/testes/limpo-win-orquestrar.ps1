@@ -40,6 +40,18 @@ $rx0 = RxBytes; $t0 = Get-Date
 $tr = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File $root\limpo-win.ps1 -Out $out -Variant $Variant -Ref $env:GITHUB_SHA -Conta $Conta"
 schtasks /create /tn "oficina-limpo" /ru $user /rp $pw /sc once /st 23:59 /rl LIMITED /f /tr $tr | Out-Null
 schtasks /run /tn "oficina-limpo" | Out-Null
+# Internet drop in the middle of the install: everything outbound blocked for 90 s.
+$queda = Start-Job -ScriptBlock {
+    Start-Sleep 150
+    Set-NetFirewallProfile -All -Enabled True
+    New-NetFirewallRule -DisplayName 'queda-teste' -Direction Outbound -Action Block | Out-Null
+    $inicio = Get-Date -Format HH:mm:ss
+    Start-Sleep 5
+    $efetiva = try { Invoke-WebRequest https://github.com -Method Head -TimeoutSec 10 -UseBasicParsing | Out-Null; $false } catch { $true }
+    Start-Sleep 85
+    Remove-NetFirewallRule -DisplayName 'queda-teste'
+    "queda_inicio=$inicio queda_efetiva=$efetiva queda_fim=$(Get-Date -Format HH:mm:ss)"
+}
 $deadline = (Get-Date).AddMinutes(65)
 while (-not (Test-Path "$out\done-$Variant.flag") -and (Get-Date) -lt $deadline) { Start-Sleep 20; Write-Host "$(Get-Date -f HH:mm:ss) waiting" }
 $rx1 = RxBytes
@@ -48,6 +60,7 @@ $meta = [ordered]@{
     variant = $Variant; image = $env:ImageOS; os_caption = (Get-CimInstance Win32_OperatingSystem).Caption
     download_mb_total = [math]::Round(($rx1 - $rx0) / 1MB); wall_min = [math]::Round(((Get-Date) - $t0).TotalMinutes, 1)
     profile_disk_mb = [math]::Round($size / 1MB); finished = (Test-Path "$out\done-$Variant.flag")
+    queda = [string](Receive-Job $queda -Wait -ErrorAction SilentlyContinue)
 }
 $meta | ConvertTo-Json | Set-Content -Encoding UTF8 "$out\meta-win-$Variant.json"
 $meta | ConvertTo-Json

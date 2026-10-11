@@ -1,5 +1,7 @@
 # Runs AS the standard student account on a machine stripped of developer tools.
-# Inventory -> preparar.ps1 (as in the guide) -> inventory -> preparar.ps1 again -> checks.
+# inventory -> preparar.ps1 as in the guide (CONTA set, login capped) -> preparar.ps1 again
+# with no account (must finish alone and install nothing) -> independent checks.
+# ASCII-only markers: Windows PowerShell 5.1 reads this BOM-less file as ANSI.
 param([string]$Out, [string]$Variant, [string]$Ref = 'oficina-testes', [string]$Conta = 'chatgpt')
 $ErrorActionPreference = 'Continue'
 $res = [ordered]@{ os = 'windows'; variant = $Variant; user = $env:USERNAME }
@@ -16,7 +18,7 @@ function Run([string]$name, [string]$cmdline, [int]$timeoutSec = 600, [string]$s
     $null = $p.Handle
     $done = $p.WaitForExit($timeoutSec * 1000)
     if (-not $done) { try { $p.Kill() } catch {} }
-    $txt = ''; if (Test-Path $log) { $txt = [string](Get-Content $log -Raw -ErrorAction SilentlyContinue) }
+    $txt = ''; if (Test-Path $log) { $txt = [string](Get-Content $log -Raw -Encoding UTF8 -ErrorAction SilentlyContinue) }
     $tail = if ($txt.Length -gt 1500) { $txt.Substring($txt.Length - 1500) } else { $txt }
     $res[$name] = [ordered]@{ exit = $(if ($done) { $p.ExitCode } else { 'TIMEOUT' }); secs = [math]::Round($sw.Elapsed.TotalSeconds); tail = $tail }
     Save
@@ -24,52 +26,45 @@ function Run([string]$name, [string]$cmdline, [int]$timeoutSec = 600, [string]$s
 }
 function Rx { try { (Get-NetAdapterStatistics -ErrorAction Stop | Measure-Object ReceivedBytes -Sum).Sum } catch { $null } }
 
-$inv = '(where git & where python & where python3 & where node & where cargo & where rustc & echo PATH=%PATH% & dir /b %USERPROFILE%\.cargo\bin %USERPROFILE%\.dotnet\tools)'
+$inv = '(where git & where python & where python3 & where node & where cargo & where rustc & echo PATH=%PATH%)'
 Run 'inventario_antes' $inv 60 | Out-Null
-$res.user_path_antes = [Environment]::GetEnvironmentVariable('Path', 'User')
 
 $url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/preparar.ps1"
+$env:PREPARAR_REF = $Ref
 $r0 = Rx
-$env:CONTA = $Conta
-# Logins wait for a human (the device code up to 15 min, the Claude paste prompt reads the
-# console directly). Cap the wait and capture what the login printed. The uncapped console
-# branch was checked in run 38074773985: link shown, browser opened, waiting at the prompt.
-if ($Conta -eq 'chatgpt') {
-    # Real participant branch, captured through cmd. The device code expires on its own
-    # (about 15 min), so the run continues afterwards.
-    $t = Run 'preparar_1' "powershell.exe -NoProfile -Command `"irm $url | iex`"" 2700 'cmd'
-} else {
-    $env:PREPARAR_LIMITE = '40'
-    $t = Run 'preparar_1' "irm $url | iex" 2400 'ps'
-}
+$env:CONTA = $Conta; $env:PREPARAR_LIMITE = '40'
+$t = Run 'preparar_1' "irm $url | iex" 3000 'ps'
 Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
 $r1 = Rx
 $res.conferencia_ok = [bool](($t -match 'do Hermes conferidas') -and ($t -match 'vai funcionar nas pr'))
+$res.habilidades_ok = ([regex]::Matches($t, 'Habilidade (boas-vindas|cerebro|recall-and-claim-verification|measurement-validity) (instalada|j. instalada)')).Count -eq 4
+$res.cerebro_baixado = [bool](($t -match 'rebro baixado') -and (Test-Path "$HOME\.cortex\cortex.py"))
 $res.login_aberto = [bool]($t -match 'auth.openai.com/codex/device|claude.ai/oauth/authorize')
-$res.final_honesto = [bool]($t -match 'com a conta fica para a oficina')
+$res.final_honesto = [bool]($t -match 'conectar sua conta')
+$res.retentou_rede = [bool]($t -match 'tentativa \d de|Sem internet agora')
 $res.preparar_1_download_mb = if ($r0 -and $r1) { [math]::Round(($r1 - $r0) / 1MB) } else { 'n/a' }
-
-$res.user_path_depois = [Environment]::GetEnvironmentVariable('Path', 'User')
 $env:Path = [Environment]::GetEnvironmentVariable('Path', 'User') + ';' + [Environment]::GetEnvironmentVariable('Path', 'Machine')
 Run 'inventario_depois' $inv 60 | Out-Null
 
-$t = Run 'preparar_2' "irm $url | iex" 600 'ps'
+$t = Run 'preparar_2' "irm $url | iex" 900 'ps'
 $r2 = Rx
-$res.preparar_2_pulou = [bool](($t -match 'j. est. instalado') -and -not ($t -match 'Instalando o Hermes'))
+$res.preparar_2_pulou = [bool](($t -match 'j. est. instalado') -and -not ($t -match 'Instalando o Hermes') -and (([regex]::Matches($t, 'j. instalada')).Count -eq 4))
+$res.preparar_2_sozinho = [bool]($t -match 'conectar sua conta')
+$res.preparar_2_secs = $res['preparar_2'].secs
 $res.preparar_2_download_mb = if ($r1 -and $r2) { [math]::Round(($r2 - $r1) / 1MB, 1) } else { 'n/a' }
 
 Run 'version' 'hermes --version' 120 | Out-Null
-$raw = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/skills"
-Run 'skill_install' "hermes skills install $raw/minds-boas-vindas/SKILL.md --yes" 300 | Out-Null
-Run 'skill_install_cerebro' "hermes skills install $raw/minds-cerebro/SKILL.md --yes" 300 | Out-Null
+$a = Run 'approvals' 'hermes config get approvals.mode' 120
+$res.approvals_manual = [bool]($a -match 'manual')
 $list = Run 'skills_list' 'hermes skills list' 120
-$res.skill_listed = [bool]($list -match 'minds-boas-vindas')
-$res.cerebro_listed = [bool]($list -match 'minds-cerebro')
+$res.skills_listadas = [bool](($list -match '\bboas-vindas\b') -and ($list -match '\bcerebro\b') -and ($list -match 'measurement-validity'))
+$res.sem_minds_no_nome = -not ($list -match '(?i)minds')
 $py = Get-ChildItem "$env:LOCALAPPDATA\hermes\installs" -Recurse -Filter python.exe -ErrorAction SilentlyContinue |
       Where-Object { $_.FullName -match '\\venv\\Scripts\\python\.exe$' } | Select-Object -First 1
 if ($py) {
-    Invoke-WebRequest "$raw/minds-cerebro/SKILL.md" -OutFile "$env:USERPROFILE\sk.md" -UseBasicParsing
-    Invoke-WebRequest "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/testes/testa_cerebro.py" -OutFile "$env:USERPROFILE\tc.py" -UseBasicParsing
+    $raw = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref"
+    Invoke-WebRequest "$raw/skills/cerebro/SKILL.md" -OutFile "$env:USERPROFILE\sk.md" -UseBasicParsing
+    Invoke-WebRequest "$raw/oficina/testes/testa_cerebro.py" -OutFile "$env:USERPROFILE\tc.py" -UseBasicParsing
     $s = Run 'brain' "`"$($py.FullName)`" `"$env:USERPROFILE\tc.py`" `"$env:USERPROFILE\sk.md`" $Ref" 180
     $res.brain_ok = [bool]($s -match 'CEREBRO_OK')
 }

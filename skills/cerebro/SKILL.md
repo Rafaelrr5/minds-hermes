@@ -1,22 +1,22 @@
 ---
-name: minds-cerebro
-description: "Use para instalar e usar o cérebro de longo prazo do minicurso Minds."
-version: 1.0.0
-author: Rafael Rocha Ribeiro (github.com/Rafaelrr5) - Minds of the Future, FACC/UFJF
+name: cerebro
+description: "Use para guardar e buscar fatos de longo prazo da pessoa (cérebro local)."
+version: 2.0.0
+author: Rafael Rocha Ribeiro (github.com/Rafaelrr5)
 license: MIT
 platforms: [linux, macos, windows]
 metadata:
   hermes:
-    tags: [memoria, cerebro, minds, iniciante, pt-br]
-    related_skills: [minds-boas-vindas]
+    tags: [memoria, cerebro, memoria-longa, iniciante, pt-br]
+    related_skills: [boas-vindas]
 ---
 
-# Cérebro Minds
+# Cérebro
 
 O Hermes já tem uma memória curta, que entra em toda conversa. O **cérebro** é a memória
 longa: um caderno sem limite de tamanho, onde cada fato fica guardado e só é lido quando
-a conversa precisa dele. É a mesma ideia que o Rafael usa no dia a dia, em versão simples:
-um arquivo, sem programa extra para instalar e sem nada saindo do computador da pessoa.
+a conversa precisa dele. Fica num arquivo só, sem programa extra para instalar e sem nada
+saindo do computador da pessoa.
 
 ## Regras de conversa
 
@@ -41,7 +41,7 @@ cortex = Path.home() / ".cortex" / "cortex.py"       # o caderno fica nessa mesm
 cortex.parent.mkdir(parents=True, exist_ok=True)
 if not cortex.exists():
     urllib.request.urlretrieve(
-        "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/cerebro/cortex.py", cortex)
+        "https://raw.githubusercontent.com/Rafaelrr5/agent-cortex/main/cortex.py", cortex)
 
 def cerebro(*args):
     sys.argv = ["cortex", *args]
@@ -64,12 +64,13 @@ Depois, no mesmo bloco, chame `cerebro(...)`:
 
 Categorias úteis: `perfil`, `preferencia`, `rotina`, `projeto`, `decisao`.
 
-## Instalar (primeira vez)
+## Primeira vez
 
 1. Explique em até três linhas: "Vou criar um caderno de memória longa. Ele fica só no seu
    computador. Eu consulto quando precisar, sem você ter que repetir as coisas."
-2. Rode o bloco acima. A saída precisa mostrar a contagem (algo como `current 0`). Se der erro de
-   internet, diga que o caderno será criado quando a internet voltar e siga a conversa.
+2. Rode o bloco acima. Se o instalador já baixou o caderno, ele não precisa de internet. A
+   saída precisa mostrar a contagem (algo como `current 0`). Se der erro de internet, diga
+   que o caderno será criado quando a internet voltar e siga a conversa.
 3. Guarde **um** fato de teste que a pessoa escolher, busque por uma palavra dele e mostre
    que voltou. Só então diga que o cérebro está funcionando.
 
