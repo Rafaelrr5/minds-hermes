@@ -74,15 +74,15 @@ jobs:
           if [ "${{ matrix.sudo }}" = yes ]; then echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno; fi
           su - aluno -c "bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}"
           EOF
-          docker run --name c -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash /out/dentro.sh > out/container.txt 2>&1 &
+          docker run --name aluno-pc -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash /out/dentro.sh > out/container.txt 2>&1 &
           CPID=$!
           if [ "${{ matrix.name }}" = ubuntu-sem-senha-queda-de-rede ]; then
             # Drop the container's network for 90 s once the Hermes install has started.
             for i in $(seq 1 600); do grep -qs 'Instalando o Hermes' out/*preparar_1.log && break; sleep 3; done
             sleep 20
-            docker network disconnect bridge c && echo "queda_inicio=$(date +%T)" > out/queda.txt
+            docker network disconnect bridge aluno-pc && echo "queda_inicio=$(date +%T)" > out/queda.txt
             sleep 90
-            docker network connect bridge c && echo "queda_fim=$(date +%T)" >> out/queda.txt
+            docker network connect bridge aluno-pc && echo "queda_fim=$(date +%T)" >> out/queda.txt
           fi
           wait $CPID; echo "container exit $?"
           tail -30 out/container.txt
