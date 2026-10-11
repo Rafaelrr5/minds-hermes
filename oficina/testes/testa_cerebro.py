@@ -1,4 +1,4 @@
-"""Runs the exact code block from skills/minds-cerebro/SKILL.md with the Python that
+"""Runs the exact code block from skills/cerebro/SKILL.md with the Python that
 Hermes installed, the same way the execute_code tool would. Usage:
     <hermes python> testa_cerebro.py <SKILL.md path> <git ref for raw URLs>
 Prints CEREBRO_OK on success."""

@@ -1,6 +1,6 @@
 # Antes da oficina: instale o Hermes em casa
 
-Leva de 10 a 30 minutos, quase tudo esperando o download. Faça com a internet de casa: são
+Leva de 10 a 30 minutos, e você não precisa ficar olhando. Faça com a internet de casa: são
 cerca de 1,6 GB no Windows e no Linux, e até 1,5 GB no Mac. Na oficina, a internet é dividida
 pela turma toda e não aguenta 20 instalações ao mesmo tempo.
 
@@ -39,9 +39,8 @@ irm https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/prepar
 curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/preparar.sh | bash
 ```
 
-3. Se o Mac não tiver as ferramentas de desenvolvedor da Apple, vai abrir uma janela
-   pedindo para instalar. Clique em **Instalar** e aceite. O comando espera essa instalação
-   terminar e depois continua sozinho. Não feche o Terminal.
+3. Não precisa instalar as ferramentas de desenvolvedor da Apple: se faltar o git, o
+   comando baixa uma cópia só para você, sem abrir janela nem pedir senha.
 
 ## Linux
 
@@ -53,25 +52,25 @@ curl -fsSL https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina
 wget -qO- https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/oficina/preparar.sh | bash
 ```
 
-3. Se faltar alguma peça, o computador pede a **sua senha** para instalar. É normal.
+3. O comando não pede senha. Se faltar o git ou o curl, ele baixa uma cópia só para você.
+   A única peça que ele não consegue pôr sozinho é a `libatomic`, que quase todo Linux já
+   traz; se faltar, a mensagem diz o que pedir ao dono do computador.
 
-## Depois de instalar: conferência e login
+## Depois de colar: pode deixar baixando
 
-Quando a instalação termina, o próprio comando confere se tudo ficou certo e depois
-pergunta com qual conta você quer usar o Hermes:
+Você não precisa responder nada. O comando:
 
-- **1) ChatGPT**: aparece um endereço e um código. Abra o endereço no navegador, entre na
-  sua conta do ChatGPT e digite o código.
-- **2) Claude**: o navegador abre sozinho. Entre na sua conta do Claude, autorize, copie o
-  código que aparecer e cole na janela do PowerShell ou do Terminal.
+- espera a internet voltar, se ela cair, e continua de onde parou (até 6 horas);
+- não deixa o computador dormir enquanto baixa;
+- instala o Hermes, as habilidades (boas-vindas, cérebro e as duas de honestidade) e o cérebro;
+- confere se ficou tudo certo.
 
-Depois do login, o comando faz uma pergunta de teste ao Hermes. Se ele responder, aparece
-`[ok] Tudo pronto`. **Mande um print dessa tela no grupo.**
+No fim, se você estiver na frente do computador, ele oferece conectar sua conta do ChatGPT
+(1) ou do Claude (2). Se ninguém responder em 2 minutos, ele termina sozinho com
+`[ok] Tudo instalado. Falta só conectar sua conta`. **Mande um print dessa tela no grupo.**
 
-Se o login não der certo, tudo bem: o Hermes continua instalado e a conexão é feita junto
-na oficina. Mande o print do mesmo jeito.
-
-Rodar o comando de novo é seguro: ele não instala outra vez, só confere e oferece o login.
+A conta é conectada na oficina, em 2 minutos: você cola o mesmo comando de novo e escolhe
+1 ou 2. Rodar o comando de novo é seguro: ele não baixa nada outra vez.
 
 ## Se travar
 

@@ -47,20 +47,20 @@ Run 'child_policy' 'Get-ExecutionPolicy' 60 'ps' | Out-Null
 try { Invoke-WebRequest https://api.github.com/repos/Rafaelrr5/minds-hermes -UseBasicParsing | Out-Null; $res.api_quota_exhausted = $false } catch { $res.api_quota_exhausted = $true }
 
 $raw = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/skills"
-Run 'skill_install_shortcut' 'hermes skills install Rafaelrr5/minds-hermes/skills/minds-boas-vindas --yes' 300 | Out-Null
-Run 'skill_install' "hermes skills install $raw/minds-boas-vindas/SKILL.md --yes" 300 | Out-Null
-Run 'skill_install_cerebro' "hermes skills install $raw/minds-cerebro/SKILL.md --yes" 300 | Out-Null
+Run 'skill_install_shortcut' 'hermes skills install Rafaelrr5/minds-hermes/skills/boas-vindas --yes' 300 | Out-Null
+Run 'skill_install' "hermes skills install $raw/boas-vindas/SKILL.md --yes" 300 | Out-Null
+Run 'skill_install_cerebro' "hermes skills install $raw/cerebro/SKILL.md --yes" 300 | Out-Null
 $list = Run 'skills_list' 'hermes skills list' 120
-$res.skill_listed = [bool]($list -match 'minds-boas-vindas')
-$res.cerebro_listed = [bool]($list -match 'minds-cerebro')
+$res.skill_listed = [bool]($list -match 'boas-vindas')
+$res.cerebro_listed = [bool]($list -match 'cerebro')
 
 # Brain: run the skill's own code block with the Python Hermes brought (as execute_code does).
 $py = Get-ChildItem "$env:LOCALAPPDATA\hermes\installs" -Recurse -Filter python.exe -ErrorAction SilentlyContinue |
       Where-Object { $_.FullName -match '\\venv\\Scripts\\python\.exe$' } | Select-Object -First 1
 $res.python = "$($py.FullName)"
 if ($py) {
-    $sk = "$env:USERPROFILE\minds-cerebro-SKILL.md"
-    Invoke-WebRequest "$raw/minds-cerebro/SKILL.md" -OutFile $sk -UseBasicParsing
+    $sk = "$env:USERPROFILE\cerebro-SKILL.md"
+    Invoke-WebRequest "$raw/cerebro/SKILL.md" -OutFile $sk -UseBasicParsing
     Invoke-WebRequest "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/testes/testa_cerebro.py" -OutFile "$env:USERPROFILE\testa_cerebro.py" -UseBasicParsing
     $s = Run 'brain' "`"$($py.FullName)`" `"$env:USERPROFILE\testa_cerebro.py`" `"$sk`" $Ref" 180
     $res.brain_ok = [bool]($s -match 'CEREBRO_OK')

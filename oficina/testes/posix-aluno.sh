@@ -27,19 +27,19 @@ step doctor 300 "hermes doctor"
 for i in $(seq 1 65); do curl -s -o /dev/null https://api.github.com/repos/Rafaelrr5/minds-hermes; done
 code=$(curl -s -o /dev/null -w '%{http_code}' https://api.github.com/repos/Rafaelrr5/minds-hermes); echo "api_after_burn=$code" >> "$STEPS"
 RAW="https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$REF"
-step skill_install_shortcut 300 "hermes skills install Rafaelrr5/minds-hermes/skills/minds-boas-vindas --yes"
-step skill_install 300 "hermes skills install $RAW/skills/minds-boas-vindas/SKILL.md --yes"
-step skill_install_cerebro 300 "hermes skills install $RAW/skills/minds-cerebro/SKILL.md --yes"
+step skill_install_shortcut 300 "hermes skills install Rafaelrr5/minds-hermes/skills/boas-vindas --yes"
+step skill_install 300 "hermes skills install $RAW/skills/boas-vindas/SKILL.md --yes"
+step skill_install_cerebro 300 "hermes skills install $RAW/skills/cerebro/SKILL.md --yes"
 step skills_list 120 "hermes skills list"
-grep -q minds-boas-vindas "$P-skills_list.log" && echo "skill_listed=yes" >> "$STEPS" || echo "skill_listed=no" >> "$STEPS"
-grep -q minds-cerebro "$P-skills_list.log" && echo "cerebro_listed=yes" >> "$STEPS" || echo "cerebro_listed=no" >> "$STEPS"
+grep -q boas-vindas "$P-skills_list.log" && echo "skill_listed=yes" >> "$STEPS" || echo "skill_listed=no" >> "$STEPS"
+grep -q cerebro "$P-skills_list.log" && echo "cerebro_listed=yes" >> "$STEPS" || echo "cerebro_listed=no" >> "$STEPS"
 
 PY=$(find "$HOME/.hermes/installs" -path '*venv/bin/python' 2>/dev/null | head -1)
 echo "python=$PY" >> "$STEPS"
 if [ -n "$PY" ]; then
-  curl -fsSL "$RAW/skills/minds-cerebro/SKILL.md" -o "$HOME/minds-cerebro-SKILL.md"
+  curl -fsSL "$RAW/skills/cerebro/SKILL.md" -o "$HOME/cerebro-SKILL.md"
   curl -fsSL "$RAW/oficina/testes/testa_cerebro.py" -o "$HOME/testa_cerebro.py"
-  step brain 180 "'$PY' '$HOME/testa_cerebro.py' '$HOME/minds-cerebro-SKILL.md' $REF"
+  step brain 180 "'$PY' '$HOME/testa_cerebro.py' '$HOME/cerebro-SKILL.md' $REF"
   grep -q CEREBRO_OK "$P-brain.log" && echo "brain_ok=yes" >> "$STEPS" || echo "brain_ok=no" >> "$STEPS"
 fi
 du -sm "$HOME" 2>/dev/null | awk '{print "home_disk_mb="$1}' >> "$STEPS"

@@ -42,8 +42,8 @@ Leva 2 minutos.
 Quero aplicar o setup padrão do minicurso Minds of the Future no meu Hermes.
 
 1. Rode este comando e me conte o resultado em uma linha:
-hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/minds-boas-vindas/SKILL.md --yes
-2. Confira com hermes skills list se a habilidade minds-boas-vindas aparece na lista.
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/boas-vindas/SKILL.md --yes
+2. Confira com hermes skills list se a habilidade boas-vindas aparece na lista.
 3. Não mude mais nada. A conversa de apresentação eu faço com o próprio Hermes.
 ```
 

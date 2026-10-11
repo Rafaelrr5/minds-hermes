@@ -16,13 +16,13 @@ Feito para quem não é da área técnica. Em uns 10 minutos o seu assistente:
 Com o Hermes já instalado e conversando (módulo 3 do minicurso):
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/minds-boas-vindas/SKILL.md --yes
+hermes skills install https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/main/skills/boas-vindas/SKILL.md --yes
 ```
 
 Depois abra o Hermes, comece uma conversa nova com `/new` e digite:
 
 ```
-/minds-boas-vindas
+/boas-vindas
 ```
 
 Ele não pede nem guarda senha, documento, endereço ou telefone.

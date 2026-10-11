@@ -56,7 +56,7 @@ M1/M2/M3/M4", instala. Se aparecer "Processador Intel", fica em dupla.
 | 0:00 – 0:10 | Abertura e demonstração ao vivo do resultado final | A turma vê aonde vai chegar |
 | 0:10 – 0:20 | Conferência: cada um abre o terminal e roda `hermes --version` | Grupos separados: prontos, atrasados, duplas |
 | 0:20 – 0:45 | Quem não conectou em casa roda o mesmo comando de novo: ele pula a instalação e abre o login. Enquanto isso, os atrasados instalam pela rede reserva | Hermes respondendo um "oi" |
-| 0:45 – 1:15 | `/minds-boas-vindas`: segurança, idioma, três habilidades e entrevista | O Hermes sabe quem a pessoa é |
+| 0:45 – 1:15 | `/boas-vindas`: segurança, idioma, três habilidades e entrevista | O Hermes sabe quem a pessoa é |
 | 1:15 – 1:30 | Cérebro: guardar dois fatos da própria rotina e buscar um deles | Memória longa funcionando |
 | 1:30 – 2:00 | Casos de uso, Telegram, testes e outros provedores | Primeira tarefa real |
 
@@ -77,9 +77,9 @@ com uma conta ChatGPT gratuita e uma chave Gemini gratuita.
 
 ## Habilidades e cérebro
 
-- `minds-boas-vindas`: configura a segurança e o idioma, instala três habilidades (duas de
+- `boas-vindas`: configura a segurança e o idioma, instala três habilidades (duas de
   honestidade e o cérebro), faz seis perguntas e guarda as respostas.
-- `minds-cerebro`: o caderno de memória longa, na versão simples do cérebro do Rafael. É um
+- `cerebro`: o caderno de memória longa, na versão simples do cérebro do Rafael. É um
   arquivo só, roda com o Python que já vem no Hermes e nada sai do computador.
 - **Toda instalação usa o endereço completo** (`https://raw.githubusercontent.com/...`).
   O atalho `Rafaelrr5/...` quebra quando mais de 60 pedidos saem da mesma internet.
