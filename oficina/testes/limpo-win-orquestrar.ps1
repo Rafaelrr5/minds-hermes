@@ -40,11 +40,16 @@ $rx0 = RxBytes; $t0 = Get-Date
 $tr = "powershell.exe -NoProfile -ExecutionPolicy Bypass -File $root\limpo-win.ps1 -Out $out -Variant $Variant -Ref $env:GITHUB_SHA -Conta $Conta"
 schtasks /create /tn "oficina-limpo" /ru $user /rp $pw /sc once /st 23:59 /rl LIMITED /f /tr $tr | Out-Null
 schtasks /run /tn "oficina-limpo" | Out-Null
-# Internet drop in the middle of the install: everything outbound blocked for 90 s.
+# Internet drop in the middle of the install: every download host blocked for 90 s.
+# Blocking ALL outbound also cuts the runner from GitHub (windows-2025 lost the job that way).
 $queda = Start-Job -ScriptBlock {
     Start-Sleep 150
+    $hosts = 'github.com', 'raw.githubusercontent.com', 'objects.githubusercontent.com', 'release-assets.githubusercontent.com',
+             'codeload.github.com', 'hermes-agent.nousresearch.com', 'pypi.org', 'files.pythonhosted.org', 'astral.sh',
+             'releases.astral.sh', 'nodejs.org', 'registry.npmjs.org', 'python.org', 'www.python.org'
+    $ips = $hosts | ForEach-Object { try { (Resolve-DnsName $_ -ErrorAction Stop | Where-Object { $_.IPAddress }).IPAddress } catch {} } | Sort-Object -Unique
     Set-NetFirewallProfile -All -Enabled True
-    New-NetFirewallRule -DisplayName 'queda-teste' -Direction Outbound -Action Block | Out-Null
+    New-NetFirewallRule -DisplayName 'queda-teste' -Direction Outbound -Action Block -RemoteAddress $ips | Out-Null
     $inicio = Get-Date -Format HH:mm:ss
     Start-Sleep 5
     $efetiva = try { Invoke-WebRequest https://github.com -Method Head -TimeoutSec 10 -UseBasicParsing | Out-Null; $false } catch { $true }

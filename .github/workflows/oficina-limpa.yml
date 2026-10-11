@@ -72,7 +72,7 @@ jobs:
           ${{ matrix.base }}
           useradd -m -s /bin/bash aluno
           if [ "${{ matrix.sudo }}" = yes ]; then echo "aluno ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/aluno; fi
-          su - aluno -c "bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}"
+          cd /home/aluno && sudo -u aluno -H bash /t/limpo-posix.sh /out ${{ matrix.name }} ${{ github.sha }} ${{ matrix.conta }}
           EOF
           docker run --name aluno-pc -v "$PWD/oficina/testes:/t:ro" -v "$PWD/out:/out" ${{ matrix.image }} bash /out/dentro.sh > out/container.txt 2>&1 &
           CPID=$!
