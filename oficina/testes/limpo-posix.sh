@@ -36,7 +36,7 @@ yes_no final_honesto "grep -q 'Falta só conectar sua conta' '$L1' && ! grep -q 
 yes_no retentou_rede "grep -qE 'não terminou \\(tentativa|Sem internet agora' '$L1'"
 inv > "$P-inventario-depois.txt" 2>&1
 
-step preparar_2 "$GET | PREPARAR_REF=$REF bash < /dev/null"
+step preparar_2 "$GET | PREPARAR_REF=$REF bash"   # no terminal in CI: nobody at the keyboard
 L2="$P-preparar_2.log"
 yes_no preparar_2_pulou "grep -q 'já está instalado' '$L2' && ! grep -q 'Instalando o Hermes' '$L2' && [ \$(grep -c 'já instalada' '$L2') -eq 4 ]"
 yes_no preparar_2_sozinho "grep -q 'Falta só conectar sua conta' '$L2'"
