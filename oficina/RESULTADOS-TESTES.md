@@ -148,3 +148,17 @@ O que mudou para chegar aqui:
 Ainda não testado: login real até o fim com conta de participante; Windows 11 doméstico com
 antivírus; internet fora por horas (o comando espera até 6 horas, mas só 90 segundos foram
 testados).
+
+## Quinta rodada: Gemini como opção 3 (16/10/2026)
+
+O comando passou a oferecer o Gemini (3). A pessoa cria a chave gratuita em
+aistudio.google.com/apikey e cola escondida; o comando deixa o Gemini 3.8 Flash escolhido.
+Os testes usaram uma chave falsa de propósito, para conferir o caminho até o Google.
+
+| Máquina | Resultado |
+|---|---|
+| Windows 2025 (Gemini) | chave salva, o Google recusou a chave falsa e a mensagem certa apareceu. A primeira versão travou esperando teclado; corrigida e testada de novo |
+| Fedora zerado (Gemini) | mesmo resultado |
+| Windows 2022, Mac, três Ubuntu (ChatGPT e Claude) | sem mudança, tudo certo |
+
+Ainda não testado: uma chave Gemini de verdade respondendo, e quanto dura a cota gratuita.
