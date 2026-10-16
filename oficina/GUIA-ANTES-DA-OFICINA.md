@@ -21,8 +21,8 @@ Prefere ver? Vídeo de 1 minuto: [instalar-hermes.mp4](video/instalar-hermes.mp4
 - **ChatGPT**: uma conta em chatgpt.com.
 - **Claude**: uma conta em claude.ai. Atenção: segundo a documentação do Hermes, o plano
   Pro do Claude não libera esse uso. Se você só tem o Pro, prefira o ChatGPT.
-- **Gemini**: uma conta Google. Crie uma chave gratuita em aistudio.google.com/apikey
-  e guarde-a; ela é conectada na oficina. A chave gratuita usa o Gemini 3.8 Flash. O
+- **Gemini**: uma conta Google. A chave gratuita é criada em aistudio.google.com/apikey;
+  o comando mostra o caminho na hora de conectar. A chave gratuita usa o Gemini 3.8 Flash. O
   modelo mais novo, o Gemini 4 Argon, só funciona com cobrança ativada no Google, nem o
   plano Google AI Pro libera.
 
@@ -72,11 +72,11 @@ Você não precisa responder nada. O comando:
 - confere se ficou tudo certo.
 
 No fim, se você estiver na frente do computador, ele oferece conectar sua conta do ChatGPT
-(1) ou do Claude (2). Se ninguém responder em 2 minutos, ele termina sozinho com
+(1), do Claude (2) ou do Gemini (3). Se ninguém responder em 2 minutos, ele termina sozinho com
 `[ok] Tudo instalado. Falta só conectar sua conta`. **Mande um print dessa tela no grupo.**
 
 A conta é conectada na oficina, em 2 minutos: você cola o mesmo comando de novo e escolhe
-1 ou 2. Rodar o comando de novo é seguro: ele não baixa nada outra vez.
+1, 2 ou 3. Rodar o comando de novo é seguro: ele não baixa nada outra vez.
 
 ## Se travar
 

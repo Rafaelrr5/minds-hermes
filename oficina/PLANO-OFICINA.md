@@ -23,7 +23,7 @@ cérebro, e confere tudo. Se a internet cair, ele espera voltar e continua; o co
 dorme enquanto baixa. Rodar de novo não baixa nada. Testado em máquinas zeradas, com a
 internet cortada no meio da instalação (`RESULTADOS-TESTES.md`, quarta rodada).
 
-No fim, se houver alguém na frente, ele oferece o login do ChatGPT (1) ou do Claude (2); sem
+No fim, se houver alguém na frente, ele oferece o login do ChatGPT (1), do Claude (2) ou do Gemini (3); sem
 resposta em 2 minutos, termina sozinho com "Tudo instalado. Falta só conectar sua conta".
 Cada pessoa manda no grupo o print da tela final. Esses prints viram a lista de prontos.
 
@@ -70,7 +70,7 @@ certo, porque ainda não há provedor configurado.
 | Provedor | Como entra | Situação |
 |---|---|---|
 | **ChatGPT (OpenAI)** | `hermes model`, opção ChatGPT. Aparece um código para digitar no site da OpenAI | Testado até a tela do código. **Falta testar se conta gratuita funciona** |
-| **Gemini** | Chave gratuita criada em aistudio.google.com e colada no `hermes model`. Na chave gratuita, usar o **Gemini 3.8 Flash** | Não testado com chave real. A documentação avisa que a cota gratuita acaba rápido |
+| **Gemini** | Opção 3 do comando: a pessoa cria a chave gratuita em aistudio.google.com/apikey e cola escondida. O comando já deixa o **Gemini 3.8 Flash** escolhido | Não testado com chave real. A documentação avisa que a cota gratuita acaba rápido |
 | **Claude (Anthropic)** | Link de login e código colado de volta | Testado até a tela do link. A documentação diz que **o plano Pro não funciona** e que o Max só funciona com créditos extras. Sem isso, só com chave de API paga |
 
 Recomendação: ChatGPT como padrão da turma e Gemini como plano gratuito. Claude só para
