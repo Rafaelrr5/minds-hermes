@@ -181,24 +181,39 @@ conectar() {  # nunca trava: a escolha espera 2 minutos e segue sozinha
   if [ -z "$conta" ] && [ "$TECLADO" = /dev/tty ]; then
     echo ""
     echo "  Se você estiver aqui, já dá para conectar sua conta (opcional):"
-    echo "    1) ChatGPT (OpenAI)     2) Claude (Anthropic)"
-    printf "  Digite 1 ou 2 e Enter. Sem resposta em 2 minutos, eu termino sem conectar: "
+    echo "    1) ChatGPT (OpenAI)     2) Claude (Anthropic)     3) Gemini (Google)"
+    printf "  Digite 1, 2 ou 3 e Enter. Sem resposta em 2 minutos, eu termino sem conectar: "
     op=""; read -r -t "${PREPARAR_ESPERA:-120}" op </dev/tty || true; echo ""
-    case "$op" in 1) conta=chatgpt ;; 2) conta=claude ;; esac
+    case "$op" in 1) conta=chatgpt ;; 2) conta=claude ;; 3) conta=gemini ;; esac
   fi
   case "$conta" in
     chatgpt) PROV=openai-codex
              faz "Abra o endereço que vai aparecer, entre na sua conta do ChatGPT e digite o código." ;;
     claude)  PROV=anthropic
              faz "O navegador vai abrir. Entre na sua conta do Claude, autorize e cole aqui o código que aparecer." ;;
+    gemini)  PROV=gemini
+             faz "Abra aistudio.google.com/apikey, entre com sua conta Google e clique em criar chave."
+             faz "Copie a chave e cole aqui. Ela não aparece na tela enquanto você cola: é normal." ;;
     *) return 1 ;;
   esac
   LIMITE=""; [ -n "${PREPARAR_LIMITE:-}" ] && tem timeout && LIMITE="timeout $PREPARAR_LIMITE"
-  $LIMITE hermes auth add "$PROV" --type oauth <"$TECLADO"
+  if [ "$PROV" = gemini ]; then
+    # PREPARAR_CHAVE existe só para os testes automáticos; o aluno cola a chave escondida.
+    if [ -n "${PREPARAR_CHAVE:-}" ]; then hermes auth add gemini --type api-key --api-key "$PREPARAR_CHAVE"
+    else $LIMITE hermes auth add gemini --type api-key <"$TECLADO"; fi
+    # A chave gratuita usa o 3.8 Flash; o Gemini 4 Argon só funciona com cobrança ativada.
+    hermes config set model.default gemini-3.8-flash >/dev/null 2>&1
+  else
+    $LIMITE hermes auth add "$PROV" --type oauth <"$TECLADO"
+  fi
   hermes config set model.provider "$PROV" >/dev/null 2>&1
   faz "Testando uma conversa de verdade"
   if conversa_ok; then ok "Conectado: o Hermes respondeu pela sua conta"; return 0; fi
-  if [ "$PROV" = anthropic ] && hermes auth status anthropic 2>/dev/null | grep -q 'logged in'; then
+  if [ "$PROV" = gemini ]; then
+    if hermes chat -q "oi" --oneshot </dev/null 2>&1 | grep -qE 'API key not valid|API_KEY_INVALID'; then
+      faz "O Google recusou a chave. Confira se copiou a chave inteira em aistudio.google.com/apikey."
+    else faz "O Gemini não respondeu agora. Se a cota gratuita acabou, espere 1 minuto e rode de novo."; fi
+  elif [ "$PROV" = anthropic ] && hermes auth status anthropic 2>/dev/null | grep -q 'logged in'; then
     faz "O login no Claude deu certo, mas a conta não liberou conversa pelo Hermes. O plano Pro não libera esse uso."
   else faz "O login não terminou."; fi
   return 1
@@ -227,7 +242,7 @@ main() {
   else
     echo ""
     ok "Tudo instalado. Falta só conectar sua conta, o que leva 2 minutos na oficina:"
-    ok "lá você cola este mesmo comando de novo e escolhe ChatGPT ou Claude."
+    ok "lá você cola este mesmo comando de novo e escolhe ChatGPT, Claude ou Gemini."
   fi
   ok "Mande um print desta tela no grupo."
 }

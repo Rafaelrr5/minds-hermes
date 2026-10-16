@@ -127,7 +127,7 @@ function Escolha-Com-Prazo([int]$segundos) {   # nunca trava: sem tecla no prazo
         if ([Console]::IsInputRedirected) { return '' }
         $fim = (Get-Date).AddSeconds($segundos)
         while ((Get-Date) -lt $fim) {
-            if ([Console]::KeyAvailable) { $k = [Console]::ReadKey($true).KeyChar; if ('1', '2' -contains "$k") { Write-Host $k; return "$k" } }
+            if ([Console]::KeyAvailable) { $k = [Console]::ReadKey($true).KeyChar; if ('1', '2', '3' -contains "$k") { Write-Host $k; return "$k" } }
             Start-Sleep -Milliseconds 200
         }
     } catch {}
@@ -142,19 +142,31 @@ function Conectar-Conta {
     if (-not $conta) {
         Write-Host ""
         Write-Host "  Se você estiver aqui, já dá para conectar sua conta (opcional):"
-        Write-Host "    1) ChatGPT (OpenAI)     2) Claude (Anthropic)"
-        Write-Host -NoNewline "  Aperte 1 ou 2. Sem resposta em 2 minutos, eu termino sem conectar: "
+        Write-Host "    1) ChatGPT (OpenAI)     2) Claude (Anthropic)     3) Gemini (Google)"
+        Write-Host -NoNewline "  Aperte 1, 2 ou 3. Sem resposta em 2 minutos, eu termino sem conectar: "
         $espera = if ($env:PREPARAR_ESPERA) { [int]$env:PREPARAR_ESPERA } else { 120 }
         $op = Escolha-Com-Prazo $espera
         Write-Host ""
-        if ($op -eq '1') { $conta = 'chatgpt' } elseif ($op -eq '2') { $conta = 'claude' }
+        if ($op -eq '1') { $conta = 'chatgpt' } elseif ($op -eq '2') { $conta = 'claude' } elseif ($op -eq '3') { $conta = 'gemini' }
     }
     if ($conta -eq 'chatgpt') { $prov = 'openai-codex'; Faz "Abra o endereço que vai aparecer, entre na sua conta do ChatGPT e digite o código." }
     elseif ($conta -eq 'claude') { $prov = 'anthropic'; Faz "O navegador vai abrir. Entre na sua conta do Claude, autorize e cole aqui o código que aparecer." }
+    elseif ($conta -eq 'gemini') {
+        $prov = 'gemini'
+        Faz "Abra aistudio.google.com/apikey, entre com sua conta Google e clique em criar chave."
+        Faz "Copie a chave e cole aqui (botão direito do mouse). Ela não aparece na tela enquanto você cola: é normal."
+    }
     else { return $false }
 
     $exe = (Get-Command hermes).Source
-    if ($env:PREPARAR_LIMITE) {
+    if ($prov -eq 'gemini') {
+        # PREPARAR_CHAVE existe só para os testes automáticos; o aluno cola a chave escondida.
+        if ($env:PREPARAR_CHAVE) { hermes auth add gemini --type api-key --api-key $env:PREPARAR_CHAVE | Out-Host }
+        else { Start-Process -FilePath $exe -ArgumentList "auth add gemini --type api-key" -NoNewWindow -Wait }
+        # A chave gratuita usa o 3.8 Flash; o Gemini 4 Argon só funciona com cobrança ativada.
+        hermes config set model.default gemini-3.8-flash *> $null
+    }
+    elseif ($env:PREPARAR_LIMITE) {
         # Só para testes automáticos: limita a espera e mostra o que o login escreveu.
         $tmp = [IO.Path]::GetTempFileName(); $env:PYTHONUNBUFFERED = '1'
         $p = Start-Process -FilePath $exe -ArgumentList "auth add $prov --type oauth" -NoNewWindow -PassThru -RedirectStandardOutput $tmp -RedirectStandardError "$tmp.err"
@@ -167,7 +179,12 @@ function Conectar-Conta {
     hermes config set model.provider $prov *> $null
     Faz "Testando uma conversa de verdade"
     if (Conversa-Ok) { Ok "Conectado: o Hermes respondeu pela sua conta"; return $true }
-    if ($prov -eq 'anthropic' -and ((hermes auth status anthropic 2>$null | Out-String) -match 'logged in')) {
+    if ($prov -eq 'gemini') {
+        if ((hermes chat -q "oi" --oneshot 2>&1 | Out-String) -match 'API key not valid|API_KEY_INVALID') {
+            Faz "O Google recusou a chave. Confira se copiou a chave inteira em aistudio.google.com/apikey."
+        } else { Faz "O Gemini não respondeu agora. Se a cota gratuita acabou, espere 1 minuto e rode de novo." }
+    }
+    elseif ($prov -eq 'anthropic' -and ((hermes auth status anthropic 2>$null | Out-String) -match 'logged in')) {
         Faz "O login no Claude deu certo, mas a conta não liberou conversa pelo Hermes. O plano Pro não libera esse uso."
     } else { Faz "O login não terminou." }
     return $false
@@ -192,7 +209,7 @@ function Preparar-Hermes {
         Ok "Tudo pronto e conectado. Abra uma janela nova do PowerShell e digite: hermes"
     } else {
         Ok "Tudo instalado. Falta só conectar sua conta, o que leva 2 minutos na oficina:"
-        Ok "lá você cola este mesmo comando de novo e escolhe ChatGPT ou Claude."
+        Ok "lá você cola este mesmo comando de novo e escolhe ChatGPT, Claude ou Gemini."
     }
     Ok "Mande um print desta tela no grupo."
 }

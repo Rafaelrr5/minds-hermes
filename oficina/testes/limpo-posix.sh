@@ -25,13 +25,14 @@ URL="https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$REF/oficina/prepa
 if command -v curl >/dev/null 2>&1; then GET="curl -fsSL $URL"; else GET="wget -qO- $URL"; fi
 echo "fetcher=$(echo $GET | cut -d' ' -f1)" >> "$S"
 
-step preparar_1 "$GET | PREPARAR_REF=$REF CONTA=$CONTA PREPARAR_LIMITE=40 bash"
+CHAVE=""; [ "$CONTA" = gemini ] && CHAVE="PREPARAR_CHAVE=AIzaChaveFalsaDeTesteOficina0000000000"
+step preparar_1 "$GET | PREPARAR_REF=$REF CONTA=$CONTA $CHAVE PREPARAR_LIMITE=40 bash"
 export PATH="$HOME/.local/bin:$PATH"
 L1="$P-preparar_1.log"
 yes_no conferencia_ok "grep -q 'Peças do Hermes conferidas' '$L1' && grep -q 'vai funcionar nas próximas' '$L1'"
 yes_no habilidades_ok "[ \$(grep -cE 'Habilidade (boas-vindas|cerebro|recall-and-claim-verification|measurement-validity) (instalada|já instalada)' '$L1') -eq 4 ]"
 yes_no cerebro_baixado "grep -q 'Cérebro baixado' '$L1' && [ -s '$HOME/.cortex/cortex.py' ]"
-yes_no login_aberto "grep -qE 'auth.openai.com/codex/device|claude.ai/oauth/authorize' '$L1'"
+yes_no login_aberto "grep -qE 'auth.openai.com/codex/device|claude.ai/oauth/authorize|O Google recusou a chave' '$L1'"
 yes_no final_honesto "grep -q 'Falta só conectar sua conta' '$L1' && ! grep -q 'já está conectado' '$L1'"
 yes_no retentou_rede "grep -qE 'não terminou \\(tentativa|Sem internet agora' '$L1'"
 inv > "$P-inventario-depois.txt" 2>&1

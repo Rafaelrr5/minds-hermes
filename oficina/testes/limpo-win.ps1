@@ -33,13 +33,14 @@ $url = "https://raw.githubusercontent.com/Rafaelrr5/minds-hermes/$Ref/oficina/pr
 $env:PREPARAR_REF = $Ref
 $r0 = Rx
 $env:CONTA = $Conta; $env:PREPARAR_LIMITE = '40'
+if ($Conta -eq 'gemini') { $env:PREPARAR_CHAVE = 'AIzaChaveFalsaDeTesteOficina0000000000' }
 $t = Run 'preparar_1' "irm $url | iex" 3000 'ps'
-Remove-Item Env:CONTA, Env:PREPARAR_LIMITE -ErrorAction SilentlyContinue
+Remove-Item Env:CONTA, Env:PREPARAR_LIMITE, Env:PREPARAR_CHAVE -ErrorAction SilentlyContinue
 $r1 = Rx
 $res.conferencia_ok = [bool](($t -match 'do Hermes conferidas') -and ($t -match 'vai funcionar nas pr'))
 $res.habilidades_ok = ([regex]::Matches($t, 'Habilidade (boas-vindas|cerebro|recall-and-claim-verification|measurement-validity) (instalada|j. instalada)')).Count -eq 4
 $res.cerebro_baixado = [bool](($t -match 'rebro baixado') -and (Test-Path "$HOME\.cortex\cortex.py"))
-$res.login_aberto = [bool]($t -match 'auth.openai.com/codex/device|claude.ai/oauth/authorize')
+$res.login_aberto = [bool]($t -match 'auth.openai.com/codex/device|claude.ai/oauth/authorize|O Google recusou a chave')
 $res.final_honesto = [bool]($t -match 'conectar sua conta')
 $res.retentou_rede = [bool]($t -match 'tentativa \d de|Sem internet agora')
 $res.preparar_1_download_mb = if ($r0 -and $r1) { [math]::Round(($r1 - $r0) / 1MB) } else { 'n/a' }
