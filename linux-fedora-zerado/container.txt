@@ -1,0 +1,128 @@
+Unable to find image 'fedora:41' locally
+41: Pulling from library/fedora
+168b92bffbf3: Pulling fs layer
+168b92bffbf3: Verifying Checksum
+168b92bffbf3: Download complete
+168b92bffbf3: Pull complete
+Digest: sha256:f1a3fab47bcb3c3ddf3135d5ee7ba8b7b25f2e809a47440936212a3a50957f3d
+Status: Downloaded newer image for fedora:41
+Package "sudo-1.9.17-2.p1.fc41.x86_64" is already installed.
+Package "xz-1:5.8.1-2.fc41.x86_64" is already installed.
+Package "bzip2-1.0.8-19.fc41.x86_64" is already installed.
+
+[ 1/65] Verify package files            100% | 557.0   B/s |  63.0   B |  00m00s
+[ 2/65] Prepare transaction             100% | 926.0   B/s |  63.0   B |  00m00s
+[ 3/65] Installing libgpg-error-0:1.50- 100% | 109.3 MiB/s | 895.4 KiB |  00m00s
+[ 4/65] Installing libassuan-0:2.5.7-2. 100% |  53.9 MiB/s | 165.6 KiB |  00m00s
+[ 5/65] Installing expat-0:2.7.2-1.fc41 100% |  75.4 MiB/s | 308.9 KiB |  00m00s
+[ 6/65] Installing polkit-libs-0:125-1. 100% |  51.2 MiB/s | 209.8 KiB |  00m00s
+[ 7/65] Installing libgcrypt-0:1.11.0-3 100% | 220.3 MiB/s |   1.5 MiB |  00m00s
+[ 8/65] Installing libksba-0:1.6.7-2.fc 100% | 130.5 MiB/s | 401.0 KiB |  00m00s
+[ 9/65] Installing libfdisk-0:2.40.4-1. 100% | 116.3 MiB/s | 357.4 KiB |  00m00s
+[10/65] Installing npth-0:1.7-2.fc41.x8 100% |  24.7 MiB/s |  50.7 KiB |  00m00s
+[11/65] Installing libcbor-0:0.11.0-2.f 100% |  36.8 MiB/s |  75.3 KiB |  00m00s
+[12/65] Installing libpkgconf-0:2.3.0-1 100% |  38.7 MiB/s |  79.3 KiB |  00m00s
+[13/65] Installing pkgconf-0:2.3.0-1.fc 100% |  22.2 MiB/s |  91.1 KiB |  00m00s
+[14/65] Installing pkgconf-m4-0:2.3.0-1 100% |  14.5 MiB/s |  14.8 KiB |  00m00s
+[15/65] Installing pkgconf-pkg-config-0 100% | 443.4 KiB/s |   1.8 KiB |  00m00s
+[16/65] Installing kmod-0:33-1.fc41.x86 100% |  39.1 MiB/s | 240.0 KiB |  00m00s
+[17/65] Installing kbd-misc-0:2.6.4-4.f 100% |  32.0 MiB/s |   2.6 MiB |  00m00s
+[18/65] Installing kbd-legacy-0:2.6.4-4 100% |  17.2 MiB/s | 616.8 KiB |  00m00s
+[19/65] Installing kbd-0:2.6.4-4.fc41.x 100% |  86.7 MiB/s |   1.6 MiB |  00m00s
+[20/65] Installing kmod-libs-0:33-1.fc4 100% |  48.3 MiB/s | 148.3 KiB |  00m00s
+[21/65] Installing libbpf-2:1.4.7-1.fc4 100% |  98.5 MiB/s | 403.4 KiB |  00m00s
+[22/65] Installing xkeyboard-config-0:2 100% | 139.1 MiB/s |   6.5 MiB |  00m00s
+[23/65] Installing duktape-0:2.7.0-8.fc 100% | 120.7 MiB/s | 618.2 KiB |  00m00s
+[24/65] Installing pcsc-lite-libs-0:2.3 100% |  22.6 MiB/s |  69.5 KiB |  00m00s
+[25/65] Installing dbus-common-1:1.14.1 100% | 398.6 KiB/s |  13.6 KiB |  00m00s
+[26/65] Installing dbus-broker-0:36-5.f 100% |  34.6 MiB/s | 389.2 KiB |  00m00s
+[27/65] Installing dbus-1:1.14.10-4.fc4 100% | 121.1 KiB/s | 124.0   B |  00m00s
+[28/65] Installing libseccomp-0:2.5.5-2 100% |  57.0 MiB/s | 175.2 KiB |  00m00s
+[29/65] Installing systemd-pam-0:256.17 100% |  98.7 MiB/s |   1.1 MiB |  00m00s
+[30/65] Installing systemd-0:256.17-1.f 100% |  48.0 MiB/s |  16.6 MiB |  00m00s
+>>> Running %post scriptlet: systemd-0:256.17-1.fc41.x86_64                     
+>>> Finished %post scriptlet: systemd-0:256.17-1.fc41.x86_64                    
+>>> Scriptlet output:                                                           
+>>> Creating group 'systemd-journal' with GID 190.                              
+>>> Creating group 'systemd-oom' with GID 999.                                  
+>>> Creating user 'systemd-oom' (systemd Userspace OOM Killer) with UID 999 and 
+>>>                                                                             
+[31/65] Installing polkit-0:125-1.fc41. 100% |  22.8 MiB/s | 489.6 KiB |  00m00s
+[32/65] Installing device-mapper-libs-0 100% |  67.7 MiB/s | 415.8 KiB |  00m00s
+[33/65] Installing device-mapper-0:1.02 100% |  85.9 MiB/s | 351.8 KiB |  00m00s
+[34/65] Installing cryptsetup-libs-0:2. 100% | 378.2 MiB/s |   2.6 MiB |  00m00s
+[35/65] Installing libusb1-0:1.0.29-1.f 100% |  56.2 MiB/s | 172.6 KiB |  00m00s
+[36/65] Installing libsecret-0:0.21.7-1 100% |  95.3 MiB/s | 585.8 KiB |  00m00s
+[37/65] Installing python-pip-wheel-0:2 100% | 310.4 MiB/s |   1.2 MiB |  00m00s
+[38/65] Installing mpdecimal-0:2.5.1-16 100% | 100.6 MiB/s | 206.0 KiB |  00m00s
+[39/65] Installing libb2-0:0.98.1-12.fc 100% |   6.0 MiB/s |  43.3 KiB |  00m00s
+[40/65] Installing python3-libs-0:3.13. 100% | 130.1 MiB/s |  41.0 MiB |  00m00s
+[41/65] Installing python3-0:3.13.9-1.f 100% |  11.3 MiB/s |  34.6 KiB |  00m00s
+[42/65] Installing pcsc-lite-ccid-0:1.6 100% |  28.4 MiB/s | 407.2 KiB |  00m00s
+[43/65] Installing pcsc-lite-0:2.3.1-1. 100% |   8.5 MiB/s | 225.1 KiB |  00m00s
+>>> Running %post scriptlet: pcsc-lite-0:2.3.1-1.fc41.x86_64                    
+>>> Finished %post scriptlet: pcsc-lite-0:2.3.1-1.fc41.x86_64                   
+>>> Scriptlet output:                                                           
+>>> Created symlink '/etc/systemd/system/sockets.target.wants/pcscd.socket' 
+>>>                                                                             
+[44/65] Installing protobuf-c-0:1.5.0-4 100% |  27.1 MiB/s |  55.5 KiB |  00m00s
+[45/65] Installing hiredis-0:1.2.0-3.fc 100% |   4.4 MiB/s | 111.8 KiB |  00m00s
+[46/65] Installing unbound-libs-0:1.24. 100% | 182.0 MiB/s |   1.5 MiB |  00m00s
+[47/65] Installing gnutls-dane-0:3.8.10 100% |   2.5 MiB/s |  66.2 KiB |  00m00s
+>>> Running %pre scriptlet: tpm2-tss-0:4.1.3-3.fc41.x86_64                      
+>>> Finished %pre scriptlet: tpm2-tss-0:4.1.3-3.fc41.x86_64                     
+>>> Scriptlet output:                                                           
+>>> useradd: Warning: missing or non-executable shell '/usr/sbin/nologin'       
+>>>                                                                             
+[48/65] Installing tpm2-tss-0:4.1.3-3.f 100% |  98.8 MiB/s |   1.6 MiB |  00m00s
+[49/65] Installing gnupg2-0:2.4.5-3.fc4 100% | 265.1 MiB/s |   9.5 MiB |  00m00s
+[50/65] Installing gpgme-0:1.23.2-5.fc4 100% | 113.6 MiB/s | 581.7 KiB |  00m00s
+[51/65] Installing wget2-libs-0:2.2.0-3 100% |  90.6 MiB/s | 371.0 KiB |  00m00s
+[52/65] Installing wget2-0:2.2.0-3.fc41 100% | 263.8 MiB/s |   1.1 MiB |  00m00s
+[53/65] Installing wget2-wget-0:2.2.0-3 100% | 433.6 KiB/s | 444.0   B |  00m00s
+[54/65] Installing gnupg2-smime-0:2.4.5 100% | 141.4 MiB/s | 579.1 KiB |  00m00s
+[55/65] Installing unbound-anchor-0:1.2 100% |   2.8 MiB/s |  59.2 KiB |  00m00s
+>>> Running %post scriptlet: unbound-anchor-0:1.24.1-1.fc41.x86_64              
+>>> Finished %post scriptlet: unbound-anchor-0:1.24.1-1.fc41.x86_64             
+>>> Scriptlet output:                                                           
+>>> Created symlink '/etc/systemd/system/timers.target.wants/unbound-anchor.time
+>>>                                                                             
+[56/65] Installing python-unversioned-c 100% | 414.1 KiB/s | 424.0   B |  00m00s
+[57/65] Installing pinentry-0:1.3.1-2.f 100% |  50.8 MiB/s | 260.3 KiB |  00m00s
+[58/65] Installing systemd-udev-0:256.1 100% |  29.3 MiB/s |  12.2 MiB |  00m00s
+>>> Running %post scriptlet: systemd-udev-0:256.17-1.fc41.x86_64                
+>>> Finished %post scriptlet: systemd-udev-0:256.17-1.fc41.x86_64               
+>>> Scriptlet output:                                                           
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.home1.service' 
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/systemd-homed.s
+>>> Created symlink '/etc/systemd/system/systemd-homed.service.wants/systemd-hom
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.oom1.service' 
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/systemd-oomd.se
+>>> Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-pstore.ser
+>>> Created symlink '/etc/systemd/system/multi-user.target.wants/remote-cryptset
+>>>                                                                             
+[59/65] Installing polkit-pkla-compat-0 100% |  19.2 MiB/s |  98.3 KiB |  00m00s
+[60/65] Installing systemd-networkd-0:2 100% |  72.6 MiB/s |   2.1 MiB |  00m00s
+[61/65] Installing systemd-resolved-0:2 100% |  31.4 MiB/s | 675.2 KiB |  00m00s
+>>> Running %post scriptlet: systemd-resolved-0:256.17-1.fc41.x86_64            
+>>> Finished %post scriptlet: systemd-resolved-0:256.17-1.fc41.x86_64           
+>>> Scriptlet output:                                                           
+>>> Created symlink '/etc/systemd/system/dbus-org.freedesktop.resolve1.service' 
+>>> Created symlink '/etc/systemd/system/sysinit.target.wants/systemd-resolved.s
+>>>                                                                             
+[62/65] Installing libxkbcommon-0:1.7.0 100% |  82.5 MiB/s | 338.1 KiB |  00m00s
+[63/65] Installing libfido2-0:1.15.0-2. 100% |  58.5 MiB/s | 239.7 KiB |  00m00s
+[64/65] Installing qrencode-libs-0:4.1. 100% |  53.0 MiB/s | 162.7 KiB |  00m00s
+[65/65] Installing diffutils-0:3.10-8.f 100% |   2.0 MiB/s |   1.6 MiB |  00m01s
+>>> Running %triggerin scriptlet: systemd-0:256.17-1.fc41.x86_64                
+>>> Finished %triggerin scriptlet: systemd-0:256.17-1.fc41.x86_64               
+>>> Scriptlet output:                                                           
+>>> Creating group 'systemd-coredump' with GID 997.                             
+>>> Creating user 'systemd-coredump' (systemd Core Dumper) with UID 997 and GID 
+>>> Creating group 'systemd-network' with GID 192.                              
+>>> Creating user 'systemd-network' (systemd Network Management) with UID 192 an
+>>> Creating group 'systemd-resolve' with GID 193.                              
+>>> Creating user 'systemd-resolve' (systemd Resolver) with UID 193 and GID 193.
+>>> Creating group 'systemd-timesync' with GID 996.                             
+>>> Creating user 'systemd-timesync' (systemd Time Synchronization) with UID 996
+>>>                                                                             

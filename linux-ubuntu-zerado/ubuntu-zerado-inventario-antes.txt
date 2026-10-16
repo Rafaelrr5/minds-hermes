@@ -1,0 +1,13 @@
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+git: absent
+curl: absent
+wget: /usr/bin/wget | GNU Wget 1.21.4 built on linux-gnu.
+python3: absent
+node: absent
+cargo: absent
+rustc: absent
+hermes: absent
+micromamba: absent
+pacotes:
+  wget
+sudo sem senha: sim

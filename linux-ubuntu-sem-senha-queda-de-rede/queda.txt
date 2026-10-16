@@ -1,0 +1,2 @@
+queda_inicio=22:36:48
+queda_fim=22:38:18

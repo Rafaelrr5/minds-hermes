@@ -1,0 +1,20 @@
+fetcher=wget
+preparar_1 exit=0 secs=258
+conferencia_ok=yes
+habilidades_ok=yes
+cerebro_baixado=yes
+login_aberto=yes
+final_honesto=yes
+retentou_rede=yes
+preparar_2 exit=0 secs=8
+preparar_2_pulou=yes
+preparar_2_sozinho=yes
+version exit=0 secs=1
+approvals exit=0 secs=0
+approvals_manual=yes
+skills_list exit=0 secs=2
+skills_listadas=yes
+sem_minds_no_nome=yes
+brain exit=0 secs=0
+brain_ok=yes
+home_disk_mb=3158

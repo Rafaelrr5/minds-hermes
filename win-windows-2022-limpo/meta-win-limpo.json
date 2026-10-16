@@ -1,0 +1,10 @@
+{
+  "variant": "limpo",
+  "image": "win22",
+  "os_caption": "Microsoft Windows Server 2022 Datacenter",
+  "download_mb_total": 1603.0,
+  "wall_min": 14.1,
+  "profile_disk_mb": 4096.0,
+  "finished": true,
+  "queda": "queda_inicio=22:38:42 queda_efetiva=True queda_fim=22:40:12"
+}

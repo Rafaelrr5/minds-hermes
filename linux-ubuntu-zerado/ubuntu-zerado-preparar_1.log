@@ -1,0 +1,192 @@
+
+  Preparando o computador para o Hermes. Pode deixar rodando: não precisa responder nada.
+
+  [ok] Espaço livre: 85 GB
+  [..] Faltam: git curl libatomic
+debconf: delaying package configuration, since apt-utils is not installed
+  [ok] Instalado: git curl libatomic
+  [..] Instalando o Hermes. Leva de 5 a 30 minutos, conforme a internet. Pode deixar baixando.
+
+┌─────────────────────────────────────────────────────────┐
+│             ☤ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+✓ prerequisites ok (git, curl)
+→ Installing the latest stable release (v0.22.2); --channel main follows every commit
+→ Cloning https://github.com/NousResearch/hermes-agent.git (main) into /home/aluno/.hermes/hermes-agent
+Cloning into '/home/aluno/.hermes/.hermes-clone-VwWYM4/tree'...
+→ Fetching v0.22.2
+→ Checking out v0.22.2 (attempt 1 of 2)
+HEAD is now at d923a5eb48 Release 0.22.2 from release/0.22.1 with the published v0.22.1 as a parent
+✓ Hermes Agent cloned
+→ Downloading uv 0.12.3 (linux-x64)
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Downloading Python 3.14
+Downloading cpython-3.14.7-linux-x86_64-gnu (download) (34.3MiB)
+ Downloaded cpython-3.14.7-linux-x86_64-gnu (download)
+Installed Python 3.14.7 in 1.08s
+ + cpython-3.14.7-linux-x86_64-gnu
+✓ bootstrap Python ready; PM prepares the dependency environment
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Installing dependencies (hash-verified via uv.lock)
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  ffmpeg:   3.3%  4.0 MiB / 120.7 MiB
+  ffmpeg:   6.6%  8.0 MiB / 120.7 MiB
+  ffmpeg:   9.9%  12.0 MiB / 120.7 MiB
+  ffmpeg:  14.1%  17.0 MiB / 120.7 MiB
+  ffmpeg:  17.4%  21.0 MiB / 120.7 MiB
+  ffmpeg:  20.7%  25.0 MiB / 120.7 MiB
+  ffmpeg:  24.0%  29.0 MiB / 120.7 MiB
+  ffmpeg:  27.3%  33.0 MiB / 120.7 MiB
+  ffmpeg:  30.6%  37.0 MiB / 120.7 MiB
+  ffmpeg:  34.0%  41.0 MiB / 120.7 MiB
+  ffmpeg:  38.1%  46.0 MiB / 120.7 MiB
+  ffmpeg:  41.4%  50.0 MiB / 120.7 MiB
+  ffmpeg:  44.7%  54.0 MiB / 120.7 MiB
+  ffmpeg:  48.0%  58.0 MiB / 120.7 MiB
+  ffmpeg:  51.4%  62.0 MiB / 120.7 MiB
+  ffmpeg:  54.7%  66.0 MiB / 120.7 MiB
+  ffmpeg:  58.0%  70.0 MiB / 120.7 MiB
+  ffmpeg:  61.3%  74.0 MiB / 120.7 MiB
+  ffmpeg:  64.6%  78.0 MiB / 120.7 MiB
+  ffmpeg:  67.9%  82.0 MiB / 120.7 MiB
+  ffmpeg:  71.2%  86.0 MiB / 120.7 MiB
+  ffmpeg:  74.5%  90.0 MiB / 120.7 MiB
+  ffmpeg:  78.7%  95.0 MiB / 120.7 MiB
+  ffmpeg:  82.1%  99.1 MiB / 120.7 MiB
+  ffmpeg:  85.5%  103.2 MiB / 120.7 MiB
+  ffmpeg:  88.8%  107.2 MiB / 120.7 MiB
+  ffmpeg:  92.2%  111.3 MiB / 120.7 MiB
+  ffmpeg:  95.6%  115.4 MiB / 120.7 MiB
+  ffmpeg:  99.0%  119.6 MiB / 120.7 MiB
+  ffmpeg: 100.0%  120.7 MiB / 120.7 MiB
+  ffmpeg: 100.0%  120.7 MiB / 120.7 MiB
+  ffmpeg: unpacking
+✓ ffmpeg
+  node:  12.5%  4.0 MiB / 32.0 MiB
+  node:  25.0%  8.0 MiB / 32.0 MiB
+  node:  37.5%  12.0 MiB / 32.0 MiB
+  node:  50.0%  16.0 MiB / 32.0 MiB
+  node:  65.6%  21.0 MiB / 32.0 MiB
+  node:  81.3%  26.0 MiB / 32.0 MiB
+  node:  96.9%  31.0 MiB / 32.0 MiB
+  node: 100.0%  32.0 MiB / 32.0 MiB
+  node: 100.0%  32.0 MiB / 32.0 MiB
+  node: unpacking
+✓ node
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: unpacking
+✓ npm
+  python:   3.3%  4.0 MiB / 119.7 MiB
+  python:   6.7%  8.0 MiB / 119.7 MiB
+  python:  10.0%  12.0 MiB / 119.7 MiB
+  python:  14.2%  17.0 MiB / 119.7 MiB
+  python:  17.5%  21.0 MiB / 119.7 MiB
+  python:  20.9%  25.0 MiB / 119.7 MiB
+  python:  24.2%  29.0 MiB / 119.7 MiB
+  python:  27.6%  33.0 MiB / 119.7 MiB
+  python:  30.9%  37.0 MiB / 119.7 MiB
+  python:  34.2%  41.0 MiB / 119.7 MiB
+  python:  37.6%  45.0 MiB / 119.7 MiB
+  python:  40.9%  49.0 MiB / 119.7 MiB
+  python:  44.3%  53.0 MiB / 119.7 MiB
+  python:  47.6%  57.0 MiB / 119.7 MiB
+  python:  51.0%  61.0 MiB / 119.7 MiB
+  python:  54.3%  65.0 MiB / 119.7 MiB
+  python:  57.6%  69.0 MiB / 119.7 MiB
+  python:  61.0%  73.0 MiB / 119.7 MiB
+  python:  64.3%  77.0 MiB / 119.7 MiB
+  python:  68.5%  82.0 MiB / 119.7 MiB
+  python:  72.6%  87.0 MiB / 119.7 MiB
+  python:  76.0%  91.0 MiB / 119.7 MiB
+  python:  79.3%  95.0 MiB / 119.7 MiB
+  python:  82.7%  99.0 MiB / 119.7 MiB
+  python:  86.8%  103.9 MiB / 119.7 MiB
+  python:  90.9%  108.9 MiB / 119.7 MiB
+  python:  95.0%  113.8 MiB / 119.7 MiB
+  python:  99.2%  118.7 MiB / 119.7 MiB
+  python: 100.0%  119.7 MiB / 119.7 MiB
+  python: 100.0%  119.7 MiB / 119.7 MiB
+  python: unpacking
+✓ python
+  ripgrep: 100.0%  2.2 MiB / 2.2 MiB
+  ripgrep: 100.0%  2.2 MiB / 2.2 MiB
+  ripgrep: unpacking
+✓ ripgrep
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+✓ venv
+✓ dependencies installed
+✓ config prepared in /home/aluno/.hermes
+✓ uv ready (uv 0.12.3 (x86_64-unknown-linux-gnu))
+→ Building the hermes command and apps
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  → Preparing Node dependencies…
+  ✓ Preparing Node dependencies
+  → Building the TUI…
+  ✓ Building the TUI
+  → Building the web UI…
+  ✓ Building the web UI
+  ✓ Model catalog cache refreshed from checkout
+
+→ Syncing bundled skills...
+  + 58 new: xurl, llm-wiki, arxiv, grounded-citations, competitor-news-monitor, songwriting-and-ai-music, baoyu-infographic, popular-web-designs, claude-design, design-md, p5js, manim-video, ascii-video, architecture-diagram, humanizer, youtube-content, gif-search, songsee, hermes-agent, opencode, claude-code, computer-use, codex, github, simplify-code, hermes-agent-skill-authoring, codebase-inspection, inspecting-hermes-desktop-dom, dogfood, requesting-code-review, test-driven-development, systematic-debugging, node-inspect-debugger, spike, python-debugpy, sdlc-review, notion, weekly-review-planning, maps, google-workspace, meeting-action-items, teams-meeting-pipeline, box, document-to-action-items, docx, product-price-monitor, powerpoint, xlsx, pdf, airtable, apple-notes, apple-reminders, imessage, findmy, himalaya, email-inbox-triage, blocked-page-recovery, obsidian
+
+→ Syncing bundled skills to all profiles...
+  default: up to date
+
+→ Checking configuration for new options...
+  ✓ Configuration is up to date
+
+✓ Install complete! [detached @ d923a5eb48]
+
+ℹ Skill curator
+  Background skill maintenance is enabled. First pass is deferred ~7d after installation; only agent-created skills are in scope and nothing is ever auto-deleted (archive is recoverable).
+  Preview now:  hermes curator run --dry-run
+  Pause it:     hermes curator pause
+  Docs:         https://hermes-agent.nousresearch.com/docs/user-guide/features/curator
+✓ added ~/.local/bin to PATH in /home/aluno/.bashrc
+✓ app products and hermes command ready
+✓ Hermes Agent install complete. Run: hermes
+
+  [..] Conferindo a instalação
+  [ok] O Hermes abre: Hermes Agent v0.22.2 (2026.9.24) · stable · local d923a5eb487a
+  [ok] Peças do Hermes conferidas
+  [ok] O comando hermes vai funcionar nas próximas janelas do terminal
+
+  [..] Deixando tudo pronto para o primeiro uso
+  [ok] O Hermes vai pedir sua licença antes de ações arriscadas
+  [ok] Mensagens do Hermes em português
+  [ok] Habilidade boas-vindas instalada
+  [ok] Habilidade cerebro instalada
+  [ok] Habilidade recall-and-claim-verification instalada
+  [ok] Habilidade measurement-validity instalada
+  [ok] Cérebro baixado
+
+  [..] Conferindo se o Hermes já conversa com uma inteligência artificial
+  [..] Abra o endereço que vai aparecer, entre na sua conta do ChatGPT e digite o código.
+Signing in to OpenAI Codex...
+(Hermes creates its own session — won't affect Codex CLI or VS Code)
+
+To continue, follow these steps:
+
+  1. Open this URL in your browser:
+     [94mhttps://auth.openai.com/codex/device[0m
+
+  2. Enter this code:
+     [94m0UVK-499ZK[0m
+
+Waiting for sign-in... (press Ctrl+C to cancel)
+  [..] Testando uma conversa de verdade
+  [..] O login não terminou.
+
+  [ok] Tudo instalado. Falta só conectar sua conta, o que leva 2 minutos na oficina:
+  [ok] lá você cola este mesmo comando de novo e escolhe ChatGPT, Claude ou Gemini.
+  [ok] Mande um print desta tela no grupo.

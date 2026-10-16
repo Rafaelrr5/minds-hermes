@@ -1,0 +1,9 @@
+jsonl 0 · db 0 · current 0 · embedded 0
+backend: lexical only (pip install fastembed numpy)
+added 4129c0824471fe6d  [perfil]
+search: 'enfermagem'   (lexical, device runnervm0xl3a)
+------------------------------------------------------------------------
+  1. [0.050] Ana estuda enfermagem e não gosta de jargão técnico
+     4129c0824471fe6d · perfil · trust 0.50 · used 0x
+
+CEREBRO_OK C:\Users\alunolimpo\.cortex

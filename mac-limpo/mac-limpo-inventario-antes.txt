@@ -1,0 +1,12 @@
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+git: /usr/bin/git | xcode-select: note: No developer tools were found, requesting install.
+curl: /usr/bin/curl | curl 8.7.1 (x86_64-apple-darwin24.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.64.0
+wget: absent
+python3: /usr/bin/python3 | Python 3.14.7
+node: absent
+cargo: absent
+rustc: absent
+hermes: absent
+micromamba: absent
+xcode-select -p: xcode-select: error: Unable to get active developer directory. Use `sudo xcode-select --switch path/to/Xcode.app` to set one (or see `man xcode-select`)
+sudo sem senha: nao

@@ -1,0 +1,1 @@
+download_mb_total=694 wall_min=8

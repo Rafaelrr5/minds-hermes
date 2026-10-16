@@ -1,0 +1,150 @@
+
+  Preparando o computador para o Hermes. Pode deixar rodando: não precisa responder nada.
+
+  [ok] Espaço livre: 42 GB
+  [..] Baixando o git (uns 40 MB), sem precisar das ferramentas de desenvolvedor da Apple
+  [ok] git pronto
+  [..] Instalando o Hermes. Leva de 5 a 30 minutos, conforme a internet. Pode deixar baixando.
+
+┌─────────────────────────────────────────────────────────┐
+│             ☤ Hermes Agent Installer                    │
+├─────────────────────────────────────────────────────────┤
+│  An open source AI agent by Nous Research.              │
+└─────────────────────────────────────────────────────────┘
+
+✓ prerequisites ok (git, curl)
+→ Installing the latest stable release (v0.22.2); --channel main follows every commit
+→ Cloning https://github.com/NousResearch/hermes-agent.git (main) into /Users/aluno/.hermes/hermes-agent
+Cloning into '/Users/aluno/.hermes/.hermes-clone-use5z6/tree'...
+→ Fetching v0.22.2
+→ Checking out v0.22.2 (attempt 1 of 2)
+error: RPC failed; curl 92 HTTP/2 stream 3 reset by server (error 0x8 CANCEL)
+error: 2738 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+fatal: could not fetch c6d5e1cc43a100ce951cd81e1333c30068760ebd from promisor remote
+→ Checking out v0.22.2 (attempt 2 of 2)
+HEAD is now at d923a5eb48 Release 0.22.2 from release/0.22.1 with the published v0.22.1 as a parent
+✓ Hermes Agent cloned
+→ Downloading uv 0.12.3 (darwin-arm64)
+✓ uv ready (uv 0.12.3 (507230998 2026-08-07 aarch64-apple-darwin))
+✓ bootstrap Python ready; PM prepares the dependency environment
+✓ uv ready (uv 0.12.3 (507230998 2026-08-07 aarch64-apple-darwin))
+→ Installing dependencies (hash-verified via uv.lock)
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  ffmpeg:  16.2%  4.4 MiB / 27.1 MiB
+  ffmpeg:  30.9%  8.4 MiB / 27.1 MiB
+  ffmpeg:  45.7%  12.4 MiB / 27.1 MiB
+  ffmpeg:  63.3%  17.2 MiB / 27.1 MiB
+  ffmpeg:  80.9%  22.0 MiB / 27.1 MiB
+  ffmpeg:  98.6%  26.7 MiB / 27.1 MiB
+  ffmpeg: 100.0%  27.1 MiB / 27.1 MiB
+  ffmpeg: 100.0%  27.1 MiB / 27.1 MiB
+  ffmpeg: unpacking
+✓ ffmpeg
+  node:  13.9%  4.0 MiB / 28.8 MiB
+  node:  29.8%  8.6 MiB / 28.8 MiB
+  node:  45.8%  13.2 MiB / 28.8 MiB
+  node:  59.7%  17.2 MiB / 28.8 MiB
+  node:  77.8%  22.4 MiB / 28.8 MiB
+  node:  94.4%  27.2 MiB / 28.8 MiB
+  node: 100.0%  28.8 MiB / 28.8 MiB
+  node: 100.0%  28.8 MiB / 28.8 MiB
+  node: unpacking
+✓ node
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: 100.0%  2.9 MiB / 2.9 MiB
+  npm: unpacking
+✓ npm
+  python:  16.4%  4.2 MiB / 25.4 MiB
+  python:  32.2%  8.2 MiB / 25.4 MiB
+  python:  48.6%  12.4 MiB / 25.4 MiB
+  python:  64.3%  16.4 MiB / 25.4 MiB
+  python:  84.7%  21.5 MiB / 25.4 MiB
+  python: 100.0%  25.4 MiB / 25.4 MiB
+  python: 100.0%  25.4 MiB / 25.4 MiB
+  python: unpacking
+✓ python
+  ripgrep: 100.0%  1.7 MiB / 1.7 MiB
+  ripgrep: 100.0%  1.7 MiB / 1.7 MiB
+  ripgrep: unpacking
+✓ ripgrep
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+✓ venv
+✓ dependencies installed
+✓ config prepared in /Users/aluno/.hermes
+✓ uv ready (uv 0.12.3 (507230998 2026-08-07 aarch64-apple-darwin))
+→ Building the hermes command and apps
+Preparing the isolated Hermes runtime…
+  → Installing Python dependencies…
+  ✓ Installing Python dependencies
+  → Preparing Node dependencies…
+  ✓ Preparing Node dependencies
+  → Building the TUI…
+  ✓ Building the TUI
+  → Building the web UI…
+  ✓ Building the web UI
+  ✓ Model catalog cache refreshed from checkout
+
+→ Syncing bundled skills...
+  + 58 new: youtube-content, songsee, gif-search, maps, teams-meeting-pipeline, box, xlsx, pdf, document-to-action-items, meeting-action-items, notion, airtable, product-price-monitor, powerpoint, google-workspace, weekly-review-planning, docx, claude-code, codex, hermes-agent, computer-use, opencode, himalaya, email-inbox-triage, baoyu-infographic, songwriting-and-ai-music, ascii-video, claude-design, design-md, popular-web-designs, manim-video, humanizer, p5js, architecture-diagram, obsidian, blocked-page-recovery, test-driven-development, systematic-debugging, inspecting-hermes-desktop-dom, github, hermes-agent-skill-authoring, python-debugpy, codebase-inspection, spike, requesting-code-review, simplify-code, node-inspect-debugger, dogfood, sdlc-review, xurl, grounded-citations, competitor-news-monitor, llm-wiki, arxiv, apple-reminders, imessage, findmy, apple-notes
+
+→ Syncing bundled skills to all profiles...
+  default: up to date
+
+→ Checking configuration for new options...
+  ✓ Configuration is up to date
+
+✓ Install complete! [detached @ d923a5eb48]
+
+ℹ Skill curator
+  Background skill maintenance is enabled. First pass is deferred ~7d after installation; only agent-created skills are in scope and nothing is ever auto-deleted (archive is recoverable).
+  Preview now:  hermes curator run --dry-run
+  Pause it:     hermes curator pause
+  Docs:         https://hermes-agent.nousresearch.com/docs/user-guide/features/curator
+✓ added ~/.local/bin to PATH in /Users/aluno/.zshrc
+✓ added ~/.local/bin to PATH in /Users/aluno/.zprofile
+✓ app products and hermes command ready
+✓ Hermes Agent install complete. Run: hermes
+
+  [..] Conferindo a instalação
+  [ok] O Hermes abre: Hermes Agent v0.22.2 (2026.9.24) · stable · local d923a5eb487a
+  [ok] Peças do Hermes conferidas
+  [ok] O comando hermes vai funcionar nas próximas janelas do terminal
+
+  [..] Deixando tudo pronto para o primeiro uso
+  [ok] O Hermes vai pedir sua licença antes de ações arriscadas
+  [ok] Mensagens do Hermes em português
+  [ok] Habilidade boas-vindas instalada
+  [ok] Habilidade cerebro instalada
+  [ok] Habilidade recall-and-claim-verification instalada
+  [ok] Habilidade measurement-validity instalada
+  [ok] Cérebro baixado
+
+  [..] Conferindo se o Hermes já conversa com uma inteligência artificial
+  [..] O navegador vai abrir. Entre na sua conta do Claude, autorize e cole aqui o código que aparecer.
+
+Authorize Hermes with your Claude Pro/Max subscription.
+
+╭─ Claude Pro/Max Authorization ────────────────────╮
+│                                                   │
+│  Open this link in your browser:                  │
+╰───────────────────────────────────────────────────╯
+
+  https://claude.ai/oauth/authorize?code=true&client_id=9d1c250a-e61b-44d9-88ed-5944d1962f5e&response_type=code&redirect_uri=https%3A%2F%2Fconsole.anthropic.com%2Foauth%2Fcode%2Fcallback&scope=org%3Acreate_api_key+user%3Aprofile+user%3Ainference&code_challenge=S8yKok0csa85bSea1MBPoDYSWHQ72XAUAlqRvT35_Hw&code_challenge_method=S256&state=jo1sJLf6ft3tWRhDKNJyWHxCe1CLszsyZzbJvRE9rJc
+
+  (Browser opened automatically)
+
+After authorizing, you'll see a code. Paste it below.
+
+Authorization code: Anthropic OAuth login did not return credentials.
+  [..] Testando uma conversa de verdade
+  [..] O login não terminou.
+
+  [ok] Tudo instalado. Falta só conectar sua conta, o que leva 2 minutos na oficina:
+  [ok] lá você cola este mesmo comando de novo e escolhe ChatGPT, Claude ou Gemini.
+  [ok] Mande um print desta tela no grupo.

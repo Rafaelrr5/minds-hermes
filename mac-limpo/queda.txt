@@ -1,0 +1,3 @@
+queda_inicio=22:36:44
+queda_efetiva=True
+queda_fim=22:38:22

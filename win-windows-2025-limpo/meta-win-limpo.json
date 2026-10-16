@@ -1,0 +1,10 @@
+{
+  "variant": "limpo",
+  "image": "win25-vs2026",
+  "os_caption": "Microsoft Windows Server 2025 Datacenter",
+  "download_mb_total": 1617.0,
+  "wall_min": 17.1,
+  "profile_disk_mb": 3985.0,
+  "finished": true,
+  "queda": "queda_inicio=22:38:45 queda_efetiva=False queda_fim=22:40:16"
+}

@@ -1,0 +1,12 @@
+PATH=/Users/aluno/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+git: /Users/aluno/.local/bin/git | git version 2.56.0
+curl: /usr/bin/curl | curl 8.7.1 (x86_64-apple-darwin24.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.64.0
+wget: absent
+python3: /usr/bin/python3 | Python 3.14.7
+node: absent
+cargo: absent
+rustc: absent
+hermes: /Users/aluno/.local/bin/hermes | Hermes Agent v0.22.2 (2026.9.24) · stable · local d923a5eb487a
+micromamba: absent
+xcode-select -p: xcode-select: error: Unable to get active developer directory. Use `sudo xcode-select --switch path/to/Xcode.app` to set one (or see `man xcode-select`)
+sudo sem senha: nao

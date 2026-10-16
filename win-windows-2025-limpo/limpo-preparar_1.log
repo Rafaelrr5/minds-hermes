@@ -1,0 +1,677 @@
+﻿
+  Preparando o computador para o Hermes. Pode deixar rodando: não precisa responder nada.
+
+  [ok] Espaço livre: 27 GB
+  [ok] Não precisa instalar mais nada: o Hermes traz tudo o que usa
+  [..] Instalando o Hermes. Leva de 5 a 30 minutos, conforme a internet. Pode deixar baixando.
+
++---------------------------------------------------------+
+|             * Hermes Agent Installer                    |
++---------------------------------------------------------+
+|  An open source AI agent by Nous Research.              |
++---------------------------------------------------------+
+
+-> installing git 2.53.0+3 (win32-x64)
+[OK] prerequisites ok (git)
+-> Installing the latest stable release (v0.22.2); -Channel main follows every commit
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+  Cloning https://github.com/NousResearch/hermes-agent.git (main) into C:\Users\alunolimpo\AppData
+                                                                                                  
+  Fetching v0.22.2                                                                                
+                                                                                                  
+  Checking out v0.22.2 (attempt 1 of 2)                                                           
+  Checking out v0.22.2 (attempt 1 of 2): HEAD is now at d923a5eb48 Release 0.22.2 from release/0.2
+                                                                                                  
+[OK] Hermes Agent cloned
+-> downloading uv 0.12.3 (win32-x64)
+  Downloading Python 3.14                                                                         
+  Downloading Python 3.14: Downloading cpython-3.14.7-windows-x86_64-none (download) (21.7MiB)    
+  Downloading Python 3.14: Downloaded cpython-3.14.7-windows-x86_64-none (download)               
+  Downloading Python 3.14: Installed Python 3.14.7 in 3.57s                                       
+  Downloading Python 3.14: + cpython-3.14.7-windows-x86_64-none                                   
+                                                                                                  
+[OK] bootstrap Python ready; PM prepares the dependency environment
+  Installing dependencies (hash-verified via uv.lock)                                             
+  Installing dependencies (hash-verified via uv.lock): Preparing the isolated Hermes runtimeà     
+  Installing dependencies (hash-verified via uv.lock): ? Installing Python dependenciesà          
+  Installing dependencies (hash-verified via uv.lock): ? Installing Python dependencies           
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:   2.5%  4.0 MiB / 161.4 MiB        
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:   5.0%  8.0 MiB / 161.4 MiB        
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:   7.4%  12.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:   9.9%  16.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  12.4%  20.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  14.9%  24.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  17.4%  28.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  20.5%  33.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  23.5%  38.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  26.0%  42.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  31.6%  51.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  35.3%  57.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  38.4%  62.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  41.5%  67.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  44.6%  72.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  48.3%  78.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  50.8%  82.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  53.3%  86.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  55.8%  90.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  58.3%  94.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  60.7%  98.0 MiB / 161.4 MiB       
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  63.3%  102.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  66.4%  107.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  68.9%  111.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  71.4%  115.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  75.1%  121.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  77.6%  125.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  80.7%  130.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  83.3%  134.3 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  85.7%  138.3 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  89.5%  144.3 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  91.9%  148.3 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  94.4%  152.3 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  97.2%  156.9 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg:  99.9%  161.2 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg: 100.0%  161.4 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg: 100.0%  161.4 MiB / 161.4 MiB      
+  Installing dependencies (hash-verified via uv.lock): ffmpeg: unpacking                          
+  Installing dependencies (hash-verified via uv.lock): Γ£ô ffmpeg                                 
+  Installing dependencies (hash-verified via uv.lock): node:  10.2%  4.0 MiB / 39.3 MiB           
+  Installing dependencies (hash-verified via uv.lock): node:  20.4%  8.0 MiB / 39.3 MiB           
+  Installing dependencies (hash-verified via uv.lock): node:  30.6%  12.0 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node:  43.3%  17.0 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node:  55.6%  21.8 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node:  68.1%  26.7 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node:  80.6%  31.6 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node:  92.8%  36.5 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node: 100.0%  39.3 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node: 100.0%  39.3 MiB / 39.3 MiB          
+  Installing dependencies (hash-verified via uv.lock): node: unpacking                            
+  Installing dependencies (hash-verified via uv.lock): Γ£ô node                                   
+  Installing dependencies (hash-verified via uv.lock): npm: 100.0%  2.9 MiB / 2.9 MiB             
+  Installing dependencies (hash-verified via uv.lock): npm: 100.0%  2.9 MiB / 2.9 MiB             
+  Installing dependencies (hash-verified via uv.lock): npm: unpacking                             
+  Installing dependencies (hash-verified via uv.lock): Γ£ô npm                                    
+  Installing dependencies (hash-verified via uv.lock): Γ£ù python: install failed: download failed
+  Installing dependencies (hash-verified via uv.lock): Γ£ù python: install failed: download failed
+                                                                                                  
+[X] Installing dependencies (hash-verified via uv.lock) failed (exit 1). Last output:
+      ffmpeg: unpacking
+    Γ£ô ffmpeg
+      node:  10.2%  4.0 MiB / 39.3 MiB
+      node:  20.4%  8.0 MiB / 39.3 MiB
+      node:  30.6%  12.0 MiB / 39.3 MiB
+      node:  43.3%  17.0 MiB / 39.3 MiB
+      node:  55.6%  21.8 MiB / 39.3 MiB
+      node:  68.1%  26.7 MiB / 39.3 MiB
+      node:  80.6%  31.6 MiB / 39.3 MiB
+      node:  92.8%  36.5 MiB / 39.3 MiB
+      node: 100.0%  39.3 MiB / 39.3 MiB
+      node: 100.0%  39.3 MiB / 39.3 MiB
+      node: unpacking
+    Γ£ô node
+      npm: 100.0%  2.9 MiB / 2.9 MiB
+      npm: 100.0%  2.9 MiB / 2.9 MiB
+      npm: unpacking
+    Γ£ô npm
+    Γ£ù python: install failed: download failed from https://github.com/astral-sh/python-build-sta
+ndalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-pc-windows-msvc-install_only.tar
+.gz: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by 
+its access permissions> ΓÇö retry, or run `hermes pm doctor`
+    Γ£ù python: install failed: download failed from https://github.com/astral-sh/python-build-sta
+ndalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-pc-windows-msvc-install_only.tar
+.gz: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by 
+its access permissions> ΓÇö retry, or run `hermes pm doctor`
+    full log: C:\Users\alunolimpo\AppData\Local\hermes\logs\install.log
+[X] dependency install failed
+  [..] A instalação do Hermes não terminou (tentativa 1 de 8). Vou tentar de novo, continuando de 
+onde parou.
+
++---------------------------------------------------------+
+|             * Hermes Agent Installer                    |
++---------------------------------------------------------+
+|  An open source AI agent by Nous Research.              |
++---------------------------------------------------------+
+
+[OK] prerequisites ok (git)
+-> Updating C:\Users\alunolimpo\AppData\Local\hermes\hermes-agent to the latest stable release 
+(v0.22.2)
+  Fetching v0.22.2                                                                                
+                                                                                                  
+-> Keeping its checkout: it already has v0.22.2 (`hermes update` moves it to the next release)
+[OK] bootstrap Python ready; PM prepares the dependency environment
+  Installing dependencies (hash-verified via uv.lock)                                             
+  Installing dependencies (hash-verified via uv.lock): Γ£ô ffmpeg                                 
+  Installing dependencies (hash-verified via uv.lock): Γ£ô node                                   
+  Installing dependencies (hash-verified via uv.lock): Γ£ô npm                                    
+  Installing dependencies (hash-verified via uv.lock): Γ£ù python: install failed: download failed
+  Installing dependencies (hash-verified via uv.lock): Γ£ù python: install failed: download failed
+                                                                                                  
+[X] Installing dependencies (hash-verified via uv.lock) failed (exit 1). Last output:
+    Γ£ô ffmpeg
+    Γ£ô node
+    Γ£ô npm
+    Γ£ù python: install failed: download failed from https://github.com/astral-sh/python-build-sta
+ndalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-pc-windows-msvc-install_only.tar
+.gz: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by 
+its access permissions> ΓÇö retry, or run `hermes pm doctor`
+    Γ£ù python: install failed: download failed from https://github.com/astral-sh/python-build-sta
+ndalone/releases/download/20260901/cpython-3.14.7+20260901-x86_64-pc-windows-msvc-install_only.tar
+.gz: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by 
+its access permissions> ΓÇö retry, or run `hermes pm doctor`
+    full log: C:\Users\alunolimpo\AppData\Local\hermes\logs\install.log
+[X] dependency install failed
+  [..] A instalação do Hermes não terminou (tentativa 2 de 8). Vou tentar de novo, continuando de 
+onde parou.
+
++---------------------------------------------------------+
+|             * Hermes Agent Installer                    |
++---------------------------------------------------------+
+|  An open source AI agent by Nous Research.              |
++---------------------------------------------------------+
+
+[OK] prerequisites ok (git)
+-> Updating C:\Users\alunolimpo\AppData\Local\hermes\hermes-agent to the latest stable release 
+(v0.22.2)
+  Fetching v0.22.2                                                                                
+                                                                                                  
+-> Keeping its checkout: it already has v0.22.2 (`hermes update` moves it to the next release)
+[OK] bootstrap Python ready; PM prepares the dependency environment
+  Installing dependencies (hash-verified via uv.lock)                                             
+  Installing dependencies (hash-verified via uv.lock): Γ£ô ffmpeg                                 
+  Installing dependencies (hash-verified via uv.lock): Γ£ô node                                   
+  Installing dependencies (hash-verified via uv.lock): Γ£ô npm                                    
+  Installing dependencies (hash-verified via uv.lock): python:  10.6%  5.0 MiB / 47.2 MiB         
+  Installing dependencies (hash-verified via uv.lock): python:  27.5%  13.0 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  37.9%  17.9 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  46.4%  21.9 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  56.8%  26.8 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  65.2%  30.8 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  75.0%  35.4 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  83.5%  39.4 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python:  93.9%  44.3 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python: 100.0%  47.2 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python: 100.0%  47.2 MiB / 47.2 MiB        
+  Installing dependencies (hash-verified via uv.lock): python: unpacking                          
+  Installing dependencies (hash-verified via uv.lock): Γ£ô python                                 
+  Installing dependencies (hash-verified via uv.lock): ripgrep: 100.0%  1.7 MiB / 1.7 MiB         
+  Installing dependencies (hash-verified via uv.lock): ripgrep: 100.0%  1.7 MiB / 1.7 MiB         
+  Installing dependencies (hash-verified via uv.lock): ripgrep: unpacking                         
+  Installing dependencies (hash-verified via uv.lock): Γ£ô ripgrep                                
+  Installing dependencies (hash-verified via uv.lock): ΓåÆ Installing Python dependenciesΓÇª      
+  Installing dependencies (hash-verified via uv.lock): Γ£ô Installing Python dependencies         
+  Installing dependencies (hash-verified via uv.lock): Γ£ô venv                                   
+                                                                                                  
+[OK] dependencies installed
+[OK] config prepared in C:\Users\alunolimpo\AppData\Local\hermes
+  Building the hermes command and apps                                                            
+  Building the hermes command and apps: Preparing the isolated Hermes runtimeΓÇª                  
+  Building the hermes command and apps: ΓåÆ Installing Python dependenciesΓÇª                     
+  Building the hermes command and apps: Γ£ô Installing Python dependencies                        
+  Building the hermes command and apps: ΓåÆ Preparing Node dependenciesΓÇª                        
+  Building the hermes command and apps: Γ£ô Preparing Node dependencies                           
+  Building the hermes command and apps: ΓåÆ Building the TUIΓÇª                                   
+  Building the hermes command and apps: Γ£ô Building the TUI                                      
+  Building the hermes command and apps: ΓåÆ Building the web UIΓÇª                                
+  Building the hermes command and apps: Γ£ô Building the web UI                                   
+  Building the hermes command and apps: Γ£ô Model catalog cache refreshed from checkout           
+  Building the hermes command and apps: ΓåÆ Syncing bundled skills...                             
+  Building the hermes command and apps: + 58 new: blocked-page-recovery, codebase-inspection, dogf
+  Building the hermes command and apps: ΓåÆ Syncing bundled skills to all profiles...             
+  Building the hermes command and apps: default: up to date                                       
+  Building the hermes command and apps: ΓåÆ Checking configuration for new options...             
+  Building the hermes command and apps: Γ£ô Configuration is up to date                           
+  Building the hermes command and apps: Γ£ô Install complete! [detached @ d923a5eb48]             
+  Building the hermes command and apps: Γä╣ Skill curator                                         
+  Building the hermes command and apps: Background skill maintenance is enabled. First pass is def
+  Building the hermes command and apps: Preview now:  hermes curator run --dry-run                
+  Building the hermes command and apps: Pause it:     hermes curator pause                        
+  Building the hermes command and apps: Docs:         https://hermes-agent.nousresearch.com/docs/u
+                                                                                                  
+[OK] app products and hermes command ready
+  Publishing the hermes command                                                                   
+  Publishing the hermes command: C:\Users\alunolimpo\AppData\Local\hermes\bin\hermes.exe          
+  Publishing the hermes command: C:\Users\alunolimpo\AppData\Local\hermes\bin\hermes-acp.exe      
+                                                                                                  
+[OK] hermes command installed at C:\Users\alunolimpo\AppData\Local\hermes\bin
+[OK] Hermes Agent install complete (pinned d923a5eb487a17c0a68801bba9ef0f56c81040a8). Run: hermes
+
+  [..] Conferindo a instalação
+  [ok] O Hermes abre: Hermes Agent v0.22.2 (2026.9.24) ┬╖ stable
+  [ok] Peças do Hermes conferidas
+  [ok] O comando hermes vai funcionar nas próximas janelas do PowerShell
+
+  [..] Deixando tudo pronto para o primeiro uso
+  [ok] O Hermes vai pedir sua licença antes de ações arriscadas
+  [ok] Mensagens do Hermes em português
+  [ok] Habilidade boas-vindas instalada
+  [ok] Habilidade cerebro instalada
+  [ok] Habilidade recall-and-claim-verification instalada
+  [ok] Habilidade measurement-validity instalada
+  [ok] Cérebro baixado
+
+
+  [..] Conferindo se o Hermes já conversa com uma inteligência artificial
+  [..] Abra aistudio.google.com/apikey, entre com sua conta Google e clique em criar chave.
+  [..] Copie a chave e cole aqui (botão direito do mouse). Ela não aparece na tela enquanto você 
+cola: é normal.
+  [..] Testando uma conversa de verdade
+  [..] O Google recusou a chave. Confira se copiou a chave inteira em aistudio.google.com/apikey.
+  [ok] Tudo instalado. Falta só conectar sua conta, o que leva 2 minutos na oficina:
+  [ok] lá você cola este mesmo comando de novo e escolhe ChatGPT, Claude ou Gemini.
+  [ok] Mande um print desta tela no grupo.
