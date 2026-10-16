@@ -161,4 +161,7 @@ Os testes usaram uma chave falsa de propósito, para conferir o caminho até o G
 | Fedora zerado (Gemini) | mesmo resultado |
 | Windows 2022, Mac, três Ubuntu (ChatGPT e Claude) | sem mudança, tudo certo |
 
-Ainda não testado: uma chave Gemini de verdade respondendo, e quanto dura a cota gratuita.
+Depois, com uma chave gratuita de verdade: o Hermes respondeu "cinco" à pergunta de teste
+3 de 3 vezes, de 20 a 30 segundos cada, usando o Gemini 3.8 Flash. A mesma chave pedindo o
+Gemini 4 Argon recebeu do Google "cota gratuita: limite 0", confirmando que o Argon não
+sai na chave gratuita. Ainda não medido: quantas perguntas a cota gratuita aguenta por dia.

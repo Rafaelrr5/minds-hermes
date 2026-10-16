@@ -70,7 +70,7 @@ certo, porque ainda não há provedor configurado.
 | Provedor | Como entra | Situação |
 |---|---|---|
 | **ChatGPT (OpenAI)** | `hermes model`, opção ChatGPT. Aparece um código para digitar no site da OpenAI | Testado até a tela do código. **Falta testar se conta gratuita funciona** |
-| **Gemini** | Opção 3 do comando: a pessoa cria a chave gratuita em aistudio.google.com/apikey e cola escondida. O comando já deixa o **Gemini 3.8 Flash** escolhido | Não testado com chave real. A documentação avisa que a cota gratuita acaba rápido |
+| **Gemini** | Opção 3 do comando: a pessoa cria a chave gratuita em aistudio.google.com/apikey e cola escondida. O comando já deixa o **Gemini 3.8 Flash** escolhido | **Testado com chave gratuita real em 16/10/2026**: respondeu certo 3 de 3 vezes, em 20 a 30 segundos. A documentação avisa que a cota gratuita acaba rápido |
 | **Claude (Anthropic)** | Link de login e código colado de volta | Testado até a tela do link. A documentação diz que **o plano Pro não funciona** e que o Max só funciona com créditos extras. Sem isso, só com chave de API paga |
 
 Recomendação: ChatGPT como padrão da turma e Gemini como plano gratuito. Claude só para
@@ -101,4 +101,4 @@ demonstração no bloco de outros provedores, rodando numa chave paga do instrut
 ## Pendências antes de marcar a próxima oficina
 
 1. Instalar com o guia num notebook Windows 11 de verdade, com antivírus ligado.
-2. Testar o login com uma conta ChatGPT gratuita e uma chave Gemini gratuita.
+2. Testar o login com uma conta ChatGPT gratuita. A chave Gemini gratuita já foi testada.
