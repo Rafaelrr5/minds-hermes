@@ -161,8 +161,20 @@ function Conectar-Conta {
     $exe = (Get-Command hermes).Source
     if ($prov -eq 'gemini') {
         # PREPARAR_CHAVE existe só para os testes automáticos; o aluno cola a chave escondida.
-        if ($env:PREPARAR_CHAVE) { hermes auth add gemini --type api-key --api-key $env:PREPARAR_CHAVE | Out-Host }
-        else { Start-Process -FilePath $exe -ArgumentList "auth add gemini --type api-key" -NoNewWindow -Wait }
+        $chave = $env:PREPARAR_CHAVE
+        if (-not $chave) {
+            $seg = Read-Host -AsSecureString "  Cole a chave e aperte Enter"
+            $chave = [Runtime.InteropServices.Marshal]::PtrToStringBSTR([Runtime.InteropServices.Marshal]::SecureStringToBSTR($seg))
+        }
+        $chave = "$chave".Trim()
+        if (-not $chave) { Faz "Nenhuma chave colada."; return $false }
+        # Sem teclado e com prazo: o Hermes nunca fica esperando resposta escondida.
+        $tmp = [IO.Path]::GetTempFileName(); $vazio = [IO.Path]::GetTempFileName()
+        $p = Start-Process -FilePath $exe -ArgumentList "auth add gemini --type api-key --api-key $chave" -NoNewWindow -PassThru -RedirectStandardInput $vazio -RedirectStandardOutput $tmp -RedirectStandardError "$tmp.err"
+        if (-not $p.WaitForExit(90000)) { try { $p.Kill() } catch {} }
+        $saida = (Get-Content $tmp, "$tmp.err" -ErrorAction SilentlyContinue | Out-String)
+        Remove-Item $tmp, "$tmp.err", $vazio -ErrorAction SilentlyContinue
+        if ($saida -notmatch 'Added gemini credential') { Write-Host $saida.Replace($chave, '***') }
         # A chave gratuita usa o 3.8 Flash; o Gemini 4 Argon só funciona com cobrança ativada.
         hermes config set model.default gemini-3.8-flash *> $null
     }
