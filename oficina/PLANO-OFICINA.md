@@ -70,12 +70,24 @@ certo, porque ainda não há provedor configurado.
 | Provedor | Como entra | Situação |
 |---|---|---|
 | **ChatGPT (OpenAI)** | `hermes model`, opção ChatGPT. Aparece um código para digitar no site da OpenAI | Testado até a tela do código. **Falta testar se conta gratuita funciona** |
-| **Gemini** | Chave gratuita criada em aistudio.google.com e colada no `hermes model` | Não testado com chave real. A documentação avisa que a cota gratuita acaba rápido |
+| **Gemini** | Chave gratuita criada em aistudio.google.com e colada no `hermes model`. Na chave gratuita, usar o **Gemini 3.8 Flash** | Não testado com chave real. A documentação avisa que a cota gratuita acaba rápido |
 | **Claude (Anthropic)** | Link de login e código colado de volta | Testado até a tela do link. A documentação diz que **o plano Pro não funciona** e que o Max só funciona com créditos extras. Sem isso, só com chave de API paga |
 
 Recomendação: ChatGPT como padrão da turma e Gemini como plano gratuito. Claude só para
 quem já tem créditos de API ou Max com créditos extras. Antes da oficina, testar o login
 com uma conta ChatGPT gratuita e uma chave Gemini gratuita.
+
+### Gemini: qual modelo escolher (preços do Google em 16/10/2026)
+
+| Modelo | Chave gratuita | Chave paga, por 1 milhão de tokens (token = pedaço de palavra) |
+|---|---|---|
+| **Gemini 3.8 Flash**: o mais forte da linha rápida, bom para agente e programação | Grátis, dentro da cota | US$ 0,75 de entrada e US$ 3,75 de saída até 31/12/2026; o dobro a partir de 2027 |
+| **Gemini 3.5 Flash-Lite**: mais leve, para tarefa simples e repetitiva | Grátis, dentro da cota | US$ 0,30 de entrada e US$ 2,50 de saída |
+| **Gemini 4 Argon**: o modelo mais novo e mais forte do Google, lançado em 13/10/2026 | **Não funciona** | US$ 2 de entrada e US$ 10 de saída até 30/11/2026; US$ 4 e US$ 20 a partir de 1/12/2026 |
+
+O Argon não sai nem na chave gratuita nem no plano Google AI Pro: só com cobrança ativada
+na chave da API. Para a turma, o padrão é o 3.8 Flash na chave gratuita. O Argon fica como
+demonstração no bloco de outros provedores, rodando numa chave paga do instrutor.
 
 ## Habilidades e cérebro
 

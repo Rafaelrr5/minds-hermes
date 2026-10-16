@@ -21,6 +21,10 @@ Prefere ver? Vídeo de 1 minuto: [instalar-hermes.mp4](video/instalar-hermes.mp4
 - **ChatGPT**: uma conta em chatgpt.com.
 - **Claude**: uma conta em claude.ai. Atenção: segundo a documentação do Hermes, o plano
   Pro do Claude não libera esse uso. Se você só tem o Pro, prefira o ChatGPT.
+- **Gemini**: uma conta Google. Crie uma chave gratuita em aistudio.google.com/apikey
+  e guarde-a; ela é conectada na oficina. A chave gratuita usa o Gemini 3.8 Flash. O
+  modelo mais novo, o Gemini 4 Argon, só funciona com cobrança ativada no Google, nem o
+  plano Google AI Pro libera.
 
 ## Windows
 
